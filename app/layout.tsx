@@ -66,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={Rajdhani.className} lang="en">
-      <body className="max-w-screen-lg mx-auto bg-green">
+    <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
+      <body className="max-w-screen-lg mx-auto bg-green relative">
         <Navbar />
         {children}
       </body>

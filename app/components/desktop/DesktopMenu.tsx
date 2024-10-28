@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 const DesktopMenu: React.FC = () => {
   return (
-    <div className="hidden md:flex py-10 px-6">
+    <div className="hidden md:flex py-10 px-6 absolute top-0 left-0 w-screen">
       {/* Left Navigation */}
       <nav className="flex justify-center items-center gap-5">
         <Link href="/about">
