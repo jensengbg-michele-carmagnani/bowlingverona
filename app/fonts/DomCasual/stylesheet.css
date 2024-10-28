@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Dom Casual D';
+    src: url('DomCasualD-Bold.woff2') format('woff2'),
+        url('DomCasualD-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dom Casual D';
+    src: url('DomCasualD-BoldItalic.woff2') format('woff2'),
+        url('DomCasualD-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dom Casual D';
+    src: url('DomCasualD-Italic.woff2') format('woff2'),
+        url('DomCasualD-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dom Casual D';
+    src: url('DomCasualD.woff2') format('woff2'),
+        url('DomCasualD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
