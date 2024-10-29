@@ -6,7 +6,6 @@ type heroProps = {
 };
 
 const Hero: React.FC<heroProps> = ({ backgroundImage, backgroundVideo }) => {
-  console.log(heroImage.src);
   return (
     <div className="relative h-[874px]">
       {backgroundVideo ? (
