@@ -5,7 +5,7 @@ type heroProps = {
   backgroundVideo?: string;
 };
 
-const Hero: React.FC<heroProps> = ({ backgroundImage, backgroundVideo }) => {
+const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
   return (
     <div className="relative h-[874px]">
       {backgroundVideo ? (
@@ -34,8 +34,8 @@ const Hero: React.FC<heroProps> = ({ backgroundImage, backgroundVideo }) => {
               Benvenuti a Bowling Verona – la vostra destinazione ideale per
               divertimento ed emozioni! Che siate professionisti o semplicemente
               alla ricerca di un buon momento con amici e famiglia, offriamo
-              piste di alta qualità, eventi e un'atmosfera vivace. Unitevi a noi
-              per esperienze di bowling indimenticabili nel cuore di Verona!
+              piste di alta qualità, eventi e un&#39;atmosfera vivace. Unitevi a
+              noi per esperienze di bowling indimenticabili nel cuore di Verona!
             </p>
           </div>
         </div>
