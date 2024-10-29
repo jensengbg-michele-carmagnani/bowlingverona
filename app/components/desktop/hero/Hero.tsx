@@ -1,3 +1,4 @@
+"use client";
 import heroImage from "@/public/assets/shape_image/Rectangle1.png";
 
 type heroProps = {
@@ -7,7 +8,7 @@ type heroProps = {
 
 const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
   return (
-    <div className="relative h-[874px]">
+    <div className="relative w-full h-[874px]">
       {backgroundVideo ? (
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -25,7 +26,7 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
             backgroundPosition: "center",
           }}
         >
-          <div className="flex flex-col justify-center items-center  space-y-7 px-10  h-full">
+          <div className="flex flex-col justify-center items-center  space-y-7 px-10 h-full">
             <h1 className="text-5xl text-center uppercase font-[DomCasualD] font-light">
               <span className="text-orange-400">bowling verona:</span> where
               every roll strike fun!

@@ -67,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
-      <body className="max-w-screen-lg mx-auto bg-green relative">
+      <body className="w-screen mx-auto bg-green relative">
         <Navbar />
         {children}
       </body>

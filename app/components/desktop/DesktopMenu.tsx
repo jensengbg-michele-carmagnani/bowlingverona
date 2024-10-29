@@ -10,11 +10,11 @@ import { Button } from "@/components/ui/button";
 
 const DesktopMenu: React.FC = () => {
   return (
-    <div className="hidden md:flex py-10 px-6 absolute top-0 left-0 w-screen">
+    <div className="hidden md:flex justify-center items-center py-10 px-6 absolute top-0 left-0 z-40 w-screen">
       {/* Left Navigation */}
       <nav className="flex justify-center items-center gap-5">
-        <Link href="/about">
-          <Button>HOME</Button>
+        <Link href="/about" className="cursor-pointer">
+          <Button className="">HOME</Button>
         </Link>
         <Link href="/about">
           <Button>ABOUT US</Button>
@@ -37,7 +37,7 @@ const DesktopMenu: React.FC = () => {
           <Button>CORPORATE</Button>
         </Link>
         <Link href="/reservation">
-          <Button className="text-black" imgUrl={buttonIcon}>
+          <Button className="text-black hover:text-white " imgUrl={buttonIcon}>
             reservation
           </Button>
         </Link>
