@@ -12,7 +12,7 @@ const DesktopMenu: React.FC = () => {
   return (
     <div className="hidden md:flex justify-center items-center py-10 px-6 absolute top-0 left-0 z-40 w-screen">
       {/* Left Navigation */}
-      <nav className="flex justify-center items-center gap-5">
+      <nav className="flex justify-center items-center 2xl:gap-5">
         <Link href="/about" className="cursor-pointer">
           <Button className="">HOME</Button>
         </Link>

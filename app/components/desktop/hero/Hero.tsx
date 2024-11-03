@@ -8,7 +8,7 @@ type heroProps = {
 
 const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
   return (
-    <div className="relative w-full h-[874px]">
+    <div className="relative h-[874px] ">
       {backgroundVideo ? (
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -19,7 +19,7 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
         />
       ) : (
         <div
-          className="w-full h-full"
+          className="w-screen h-full"
           style={{
             backgroundImage: `url(${heroImage.src})`,
             backgroundSize: "cover",

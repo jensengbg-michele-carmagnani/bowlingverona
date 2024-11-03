@@ -33,12 +33,9 @@ const MobileMenu = () => {
   }, []);
 
   return (
-    <div
-      className="sm:visible md:hidden  absolute w-screen inset-0 z-50"
-      ref={menuRef}
-    >
+    <div className="sm:visible md:hidden  absolute inset-6 z-50" ref={menuRef}>
       {/* Menu button */}
-      <nav className="flex justify-between items-center px-5 py-8 ">
+      <nav className="flex justify-between items-center ">
         {/* Icon */}
 
         <Link className="block" href="/">
