@@ -55,12 +55,13 @@ const About: React.FC = () => {
               possibilità di gioco per gruppi di amici, famiglie e anche per
               tornei più competitivi. Oltre al bowling, la struttura dispone di
               13 tavoli da biliardo, ideali per chi desidera sfidarsi in una
-              partita di precisione e abilità. Per completare l’offerta di
+              partita di precisione e abilità. Per completare l&apos;offerta di
               intrattenimento, il Bowling Verona mette a disposizione anche un
               angolo dedicato ai videogames, pensato per tutte le età e per chi
-              vuole fare una pausa diversa tra una partita e l'altra. Anno dopo
-              anno, il Bowling Verona ha continuato a crescere e ad evolversi,
-              mantenendo sempre viva la sua atmosfera familiare e accogliente.
+              vuole fare una pausa diversa tra una partita e l&apos;altra. Anno
+              dopo anno, il Bowling Verona ha continuato a crescere e ad
+              evolversi, mantenendo sempre viva la sua atmosfera familiare e
+              accogliente.
             </p>
           </div>
         </div>
