@@ -1,11 +1,13 @@
 import Hero from "./components/desktop/hero/Hero";
 import About from "./components/desktop/about/About";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className="">
+    <main className="font-[DomCasualD] mx-auto w-screen">
       <Hero />
       <About />
     </main>
   );
-}
+};
+
+export default Home;

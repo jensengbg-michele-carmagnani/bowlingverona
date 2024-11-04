@@ -8,7 +8,7 @@ type heroProps = {
 
 const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
   return (
-    <div className="relative h-[874px] ">
+    <div className="relative h-[874px] w-full">
       {backgroundVideo ? (
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -26,12 +26,12 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
             backgroundPosition: "center",
           }}
         >
-          <div className="flex flex-col justify-center items-center  space-y-7 px-10 h-full">
+          <div className="flex flex-col justify-center items-center  space-y-7 px-2 md:px-0 h-full">
             <h1 className="text-5xl text-center uppercase font-[DomCasualD] font-light">
               <span className="text-orange-400">bowling verona:</span> where
               every roll strike fun!
             </h1>
-            <p className="font-[Rajdhani] tracking-wider text-center">
+            <p className="font-[Rajdhani] font-light text-2xl text-center">
               Benvenuti a Bowling Verona – la vostra destinazione ideale per
               divertimento ed emozioni! Che siate professionisti o semplicemente
               alla ricerca di un buon momento con amici e famiglia, offriamo

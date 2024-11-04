@@ -1,35 +1,51 @@
-import shape from "@/public/assets/shape_image/Parallelepipedo.png";
+"use client";
+
+import vectroMobile from "@/public/assets/shape_image/About-mobile-vector.png";
+import vectroDesck from "@/public/assets/shape_image/About-desk-vector.png";
 import Image from "next/image";
 import aboutImg from "@/public/assets/shape_image/aboutUs.png";
+import aboutMini from "@/public/assets/shape_image/about-mini.png";
+import useScreenWidth from "@/lib/useScreenWidth";
+
 const About: React.FC = () => {
+  const screenSize = useScreenWidth();
+  const isXs = screenSize === "xs";
+  console.log(isXs);
+
   return (
     <div
-      className="relative "
+      className="relative bg-no-repeat bg-center  bg-contain  md:p-0 md:w-screen"
       style={{
-        backgroundImage: `url(${shape.src})`,
+        backgroundImage: `url(${isXs ? vectroMobile.src : vectroDesck.src})`,
       }}
     >
-      {/* <Image src={aboutImg} alt="img"></Image> */}
-      <div className="pt-24 grid grid-cols-1 md:grid-cols-2 gap-4 h-full font-[DomCasualD]">
-        <div className=" w-[80%] h-[50%] mx-auto">
+      <div className="pt-24 grid grid-cols-1 md:grid-cols-2 gap-4 font-[Rajdhani] md:w-[80%] mx-auto px-7 ">
+        <div className=" mx-auto relative">
+          <Image
+            src={aboutMini.src}
+            alt="about us"
+            width={200}
+            height={100}
+            className="absolute -inset-5 border border-orange-400 rounded-sm"
+          />
           <Image
             src={aboutImg.src}
             alt="about us"
             width={400}
-            height={200}
-            className="border rounded-sm mx-auto"
+            height={500}
+            className="border rounded-sm "
           />
         </div>
-        <div className="flex flex-col items-center justify-center p-4 gap-5">
-          <div className="flex gap-2 items-center uppercase ">
+        <div className="relative flex flex-col items-center justify-center gap-5">
+          <div className="flex gap-2 items-center uppercase absolute -top-1 md:-top-4 left-1/2 transform -translate-x-1/2 md:left-8 md:translate-x-8">
             <div className="h-[1px] w-[40px] bg-orange-400" />
             <div className="text-orange-400 text-base">about us</div>
           </div>
-          <div>
-            <h2 className="text-5xl text-center uppercase  font-light">
+          <div className="mt-10">
+            <h2 className="text-5xl text-center uppercase font-light md:text-left md:pl-16">
               Our History
             </h2>
-            <p className="p-4 text-center">
+            <p className="text-center text-xl md:text-left font-extralight md:font-light md:px-16 md:pb-8 ">
               Il Bowling Verona è stato fondato nel 1990 da Marco e da allora è
               rimasto un autentico business di famiglia, gestito con passione e
               dedizione. Fin dai suoi esordi, questo luogo si è affermato come
