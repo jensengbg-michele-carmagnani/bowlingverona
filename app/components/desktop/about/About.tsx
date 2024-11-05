@@ -35,7 +35,7 @@ const About: React.FC = () => {
             height={500}
             className="border rounded-sm "
           />
-        </div>
+        </div> 
         <div className="relative flex flex-col items-center justify-center gap-5">
           <div className="flex gap-2 items-center uppercase absolute -top-1 md:-top-4 left-1/2 transform -translate-x-1/2 md:left-8 md:translate-x-8">
             <div className="h-[1px] w-[40px] bg-orange-400" />

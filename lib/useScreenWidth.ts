@@ -22,6 +22,10 @@ function useScreenSize() {
 }
 
 function getCurrentScreenSize() {
+  if (typeof window === "undefined") {
+    return "unknown"; // Return a default value when window is not defined
+  }
+
   const width = window.innerWidth;
 
   if (width < 640) return "xs"; // Extra small
