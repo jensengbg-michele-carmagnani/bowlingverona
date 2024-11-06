@@ -1,8 +1,8 @@
 "use client";
 
-import vectroMobile from "@/public/assets/shape_image/About-mobile-vector.png";
+import vectorMobile from "@/public/assets/shape_image/About-mobile-vector.png";
+import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
-import vectroDesck from "@/public/assets/shape_image/About-desk-vector.png";
 import Image from "next/image";
 import aboutImg from "@/public/assets/shape_image/aboutUs.png";
 import aboutMini from "@/public/assets/shape_image/about-mini.png";
@@ -15,12 +15,12 @@ const About: React.FC = () => {
 
   return (
     <div
-      className="relative bg-no-repeat bg-center bg-contain w-screen min-h-[700px]"
+      className="relative bg-no-repeat bg-center bg-contain w-screen min-h-[800px]"
       style={{
-        backgroundImage: `url(${isXs ? vectroMobile.src : vectroDesck.src})`,
+        backgroundImage: `url(${isXs ? vectorMobile.src : vectorDesk.src})`,
       }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0 h-full gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0  gap-5">
         <div className="mx-auto relative">
           <Image
             src={aboutMini.src}
@@ -44,7 +44,7 @@ const About: React.FC = () => {
           </div>
           <div className="text-center md:text-left">
             <h2 className="text-5xl uppercase font-light">Our History</h2>
-            <p className="text-xl font-extralight md:font-light md:pr-10">
+            <p className="text-base font-extralight md:font-light md:pr-10 px-2">
               Il Bowling Verona è stato fondato nel 1990 da Marco e da allora è
               rimasto un autentico business di famiglia, gestito con passione e
               dedizione. Fin dai suoi esordi, questo luogo si è affermato come
