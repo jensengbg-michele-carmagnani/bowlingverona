@@ -12,12 +12,12 @@ import { Button } from "@/components/ui/button";
 const About: React.FC = () => {
   const screenSize = useScreenWidth();
   const isXs = screenSize === "xs";
-
+  console.log(vectorMobile.src)
   return (
     <div
       className="relative bg-no-repeat bg-center bg-contain w-screen min-h-[800px]"
       style={{
-        backgroundImage: `url(${isXs ? vectorMobile.src : vectorDesk.src})`,
+        backgroundImage: `url(${isXs ? vectorMobile?.src : vectorDesk?.src})`,
       }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0  gap-5">
