@@ -37,7 +37,10 @@ const DesktopMenu: React.FC = () => {
           <Button>CORPORATE</Button>
         </Link>
         <Link href="/reservation">
-          <Button className="text-black hover:text-white " imgUrl={buttonIcon}>
+          <Button
+            className="text-black hover:text-white hover:transform hover:scale-105 transition-all duration-500"
+            imgUrl={buttonIcon}
+          >
             reservation
           </Button>
         </Link>

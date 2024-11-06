@@ -31,7 +31,7 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
               <span className="text-orange-400">bowling verona:</span> where
               every roll strike fun!
             </h1>
-            <p className="font-[Rajdhani] font-light text-2xl text-center">
+            <p className="font-[Rajdhani] font-light text-2xl text-center max-w-2xl ">
               Benvenuti a Bowling Verona – la vostra destinazione ideale per
               divertimento ed emozioni! Che siate professionisti o semplicemente
               alla ricerca di un buon momento con amici e famiglia, offriamo
@@ -42,7 +42,6 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
         </div>
       )}
     </div>
-  );
-};
+  );};
 
 export default Hero;
