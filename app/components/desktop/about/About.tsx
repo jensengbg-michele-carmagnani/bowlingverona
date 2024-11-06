@@ -15,14 +15,12 @@ const About: React.FC = () => {
 
   return (
     <div
-      className="relative bg-no-repeat bg-center bg-cover"
+      className="relative bg-no-repeat bg-center bg-contain w-screen min-h-[700px]"
       style={{
         backgroundImage: `url(${isXs ? vectroMobile.src : vectroDesck.src})`,
-        width: "100vw",
-        height: "100vh",
       }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0 h-full ">
+      <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0 h-full gap-5">
         <div className="mx-auto relative">
           <Image
             src={aboutMini.src}
@@ -36,15 +34,15 @@ const About: React.FC = () => {
             alt="about us"
             width={400}
             height={500}
-            className="border rounded-sm md:transform md:translate-y-72"
+            className="border rounded-sm md:transform md:translate-y-1/3"
           />
         </div>
-        <div className="relative flex flex-col items-center md:items-start justify-center gap-5 mt-10 md:mt-0">
+        <div className="relative flex flex-col items-center md:items-start justify-center gap-5 transform translate-y-20 md:mt-0 ">
           <div className="flex gap-2 items-center uppercase self-center md:self-start">
             <div className="h-[1px] w-[40px] bg-orange-400" />
             <div className="text-orange-400 text-base">about us</div>
           </div>
-          <div className="mt-10 text-center md:text-left">
+          <div className="text-center md:text-left">
             <h2 className="text-5xl uppercase font-light">Our History</h2>
             <p className="text-xl font-extralight md:font-light md:pr-10">
               Il Bowling Verona è stato fondato nel 1990 da Marco e da allora è
@@ -66,7 +64,7 @@ const About: React.FC = () => {
             </p>
             <div className="flex justify-center md:justify-start w-full">
               <Button
-                className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500 "
+                className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500"
                 imgUrl={buttonIcon}
               >
                 reservation
