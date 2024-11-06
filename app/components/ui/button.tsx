@@ -7,7 +7,12 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({ className, imgUrl, target, children }) => {
+export const Button: React.FC<ButtonProps> = ({
+  className,
+  imgUrl,
+  target,
+  children,
+}) => {
   return (
     <a href="#" target={target} className={`button ${className}`}>
       {imgUrl && <img src={imgUrl} alt="icon" className="button-icon" />}

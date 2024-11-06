@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { MapPin, PhoneCall, LucideHourglass, InfoIcon } from "lucide-react";
+import { MapPin, PhoneCall, InfoIcon } from "lucide-react";
 
 const InfoSection: React.FC = () => {
   return (
