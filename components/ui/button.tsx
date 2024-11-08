@@ -55,7 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     // Apply the background image if imgUrl is provided
     const backgroundStyle = imgUrl
-      ? { backgroundImage: `url(${imgUrl.src})`, backgroundSize: "cover" }
+      ? { backgroundImage: `url(${imgUrl.src})`, backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }
       : {};
 
     return (

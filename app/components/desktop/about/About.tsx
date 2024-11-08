@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 const About: React.FC = () => {
   const screenSize = useScreenWidth();
   const isXs = screenSize === "xs";
-  console.log(vectorMobile.src)
+  console.log(vectorMobile.src);
   return (
     <div
       className="relative bg-no-repeat bg-center bg-contain w-screen min-h-[800px]"
@@ -42,7 +42,7 @@ const About: React.FC = () => {
             <div className="h-[1px] w-[40px] bg-orange-400" />
             <div className="text-orange-400 text-base">about us</div>
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left max-w-2xl">
             <h2 className="text-5xl uppercase font-light">Our History</h2>
             <p className="text-base font-extralight md:font-light md:pr-10 px-2">
               Il Bowling Verona è stato fondato nel 1990 da Marco e da allora è
