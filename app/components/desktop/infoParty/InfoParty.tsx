@@ -16,7 +16,7 @@ const InfoParty = (props: Props) => {
   const isXs = screenSize === "xs";
   return (
     <div
-      className="bg-no-repeat bg-center bg-contain min-h-[800px] flex items-center justify-center font-[DomCasualD] uppercase "
+      className="relative bg-no-repeat bg-center bg-contain w-screen h-[800px] font-[DomCasualD] uppercase flex justify-center items-center mx-auto"
       style={{
         backgroundImage: `url(${isXs ? vectorMobile?.src : vectorDesk?.src})`,
       }}

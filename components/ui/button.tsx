@@ -46,7 +46,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  imgUrl?: ImageData; // Adding the imgUrl prop
+  imgUrl?: ImageData | string; // Allow imgUrl to be either ImageData or strin
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -55,7 +55,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     // Apply the background image if imgUrl is provided
     const backgroundStyle = imgUrl
-      ? { backgroundImage: `url(${imgUrl.src})`, backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }
+      ? {
+          backgroundImage: `url(${typeof imgUrl === "string" ? imgUrl : imgUrl?.src})`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }
       : {};
 
     return (

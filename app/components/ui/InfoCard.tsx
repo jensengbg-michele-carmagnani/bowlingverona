@@ -1,4 +1,7 @@
 import React from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Description {
   text: string;
@@ -12,6 +15,10 @@ interface InfoCardProps {
   title: string;
   descriptions: Description[];
   borderPosition?: BorderPosition;
+  className?: string;
+  classTitle?: string;
+  classDescription?: string;
+  actionButton?: { text: string; className: string; imgUrl: string };
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({
@@ -19,6 +26,10 @@ const InfoCard: React.FC<InfoCardProps> = ({
   title,
   descriptions,
   borderPosition = "none",
+  className = "",
+  classDescription = "",
+  classTitle = "",
+  actionButton,
 }) => {
   // Map border position to the appropriate class names
   const borderClasses = {
@@ -32,15 +43,17 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <div
-      className={`md:p-10 gap-3 space-y-2 w-full md:min-h-52 rounded-md ${borderClasses[borderPosition]}`}
+      className={cn(
+        `md:p-10 gap-3 space-y-2 w-full md:min-h-52 rounded-md ${borderClasses[borderPosition]} ${className}`
+      )}
     >
       <div className="flex gap-3">
         <div>{Icon && <Icon size={20} />}</div>
-        <h2 className="uppercase text-xl">{title}</h2>
+        <h2 className={cn(`uppercase text-xl ${classTitle}`)}>{title}</h2>
       </div>
-      <div className="flex justify-center flex-col space-y-2 text-slate-400 font-[Rajani]">
+      <div className="flex justify-center flex-col space-y-2 font-[Rajani]">
         {descriptions.map((desc, index) => (
-          <p key={index} className="leading-tight">
+          <p key={index} className={cn(`leading-tight ${classDescription}`)}>
             {desc.text}{" "}
             {desc.highlight && (
               <span className="text-orange-400">{desc.highlight}</span>
@@ -48,6 +61,19 @@ const InfoCard: React.FC<InfoCardProps> = ({
           </p>
         ))}
       </div>
+      {/* Render the ActionButton if provided */}
+      {actionButton && (
+        <div className="mt-4 flex justify-center">
+          <Link href={"/menu"}>
+            <Button
+              className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500 min-w-10  font-[Rajdhani] upperca"
+              imgUrl={actionButton?.imgUrl}
+            >
+              {actionButton.text}
+            </Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
