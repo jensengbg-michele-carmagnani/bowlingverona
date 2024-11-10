@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const Corporate = (props: Props) => {
+const Corporate = () => {
   return (
     <div className="pt-28">
       <div>corporate</div>

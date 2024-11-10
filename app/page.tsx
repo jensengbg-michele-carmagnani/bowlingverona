@@ -7,7 +7,7 @@ import MenuFlyer from "./components/desktop/menuflyer/MenuFlyer"
 
 const Home: React.FC = () => {
   return (
-    <main className="font-[DomCasualD] mx-auto">
+    <main className=" mx-auto">
       <div className="mx-auto">
         <Hero />
         <About />

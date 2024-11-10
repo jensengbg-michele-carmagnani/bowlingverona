@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const Birthday = (props: Props) => {
+const Birthday = () => {
   return (
     <div className="pt-28">
       <div>birthday</div>

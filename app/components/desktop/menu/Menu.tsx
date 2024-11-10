@@ -3,7 +3,6 @@ import InfoCard from "../../ui/InfoCard";
 import Image from "next/image";
 import menuSandwich from "@/public/assets/shape_image/menu-sandwichjpg.jpg";
 import { menuStatic } from "./menu-static";
-import { Button } from "@/components/ui/button";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 
 const Menu = () => {

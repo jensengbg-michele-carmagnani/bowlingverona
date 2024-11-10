@@ -9,14 +9,13 @@ import useScreenWidth from "@/lib/useScreenWidth";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-type Props = {};
 
-const InfoParty = (props: Props) => {
+const InfoParty = () => {
   const screenSize = useScreenWidth();
   const isXs = screenSize === "xs";
   return (
     <div
-      className="relative bg-no-repeat bg-center bg-contain w-screen h-[800px] font-[DomCasualD] uppercase flex justify-center items-center mx-auto"
+      className="relative bg-no-repeat bg-center bg-contain w-screen h-[800px] cuppercase flex justify-center items-center mx-auto"
       style={{
         backgroundImage: `url(${isXs ? vectorMobile?.src : vectorDesk?.src})`,
       }}
