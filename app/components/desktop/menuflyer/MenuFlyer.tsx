@@ -1,9 +1,10 @@
 import React from "react";
 import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
 import Image from "next/image";
-import { bowlingPrices } from "../../ui/tables/Column";
-import { BowlingTable } from "../../ui/tables/BowlingTable";
-import { columns } from "../../ui/tables/Column";
+import { bowlingPrices } from "../../ui/tables/ColumnBowling";
+import { TablePrices } from "../../ui/tables/Table";
+import { columnsBowling } from "../../ui/tables/ColumnBowling";
+import { columnsPools, poolsPrices } from "../../ui/tables/ColumnPools";
 import headermenuimage from "@/public/assets/shape_image/header-menu.png";
 
 const MenuFlyer = async () => {
@@ -31,7 +32,16 @@ const MenuFlyer = async () => {
           </h2>
         </div>
 
-        <BowlingTable data={bowlingPrices} columns={columns} />
+        <TablePrices data={bowlingPrices} columns={columnsBowling} />
+      </div>
+      <div className="w-5/6 mx-auto space-y-3">
+        <div>
+          <h2 className="text-center text-5xl w-full font-[DomCasualD] py-10 text-black text-shadow-outline uppercase">
+            Pools
+          </h2>
+        </div>
+
+        <TablePrices data={poolsPrices} columns={columnsBowling} />
       </div>
     </div>
   );

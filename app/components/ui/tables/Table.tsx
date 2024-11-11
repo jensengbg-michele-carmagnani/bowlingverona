@@ -21,7 +21,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-export function BowlingTable<TData, TValue>({
+export function TablePrices<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
@@ -34,7 +34,7 @@ export function BowlingTable<TData, TValue>({
   return (
     <div className="rounded-md">
       <Table>
-        <TableHeader className="border border-black font-[DomCasualD] text-6xl text-red-500 ">
+        <TableHeader className="border border-black font-[DomCasualD] text-6xl text-red-500 bg-slate-600/15">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {

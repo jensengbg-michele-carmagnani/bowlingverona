@@ -6,19 +6,17 @@ import { ColumnDef } from "@tanstack/react-table";
 // You can use a Zod schema here if you want.
 export type BowlingPrices = {
   weekly: number[];
-
   weekend: number[];
 };
 
 export const bowlingPrices: BowlingPrices[] = [
   {
     weekly: [6, 25, 50],
-
     weekend: [7, 25, 50],
   },
 ];
 
-export const columns: ColumnDef<BowlingPrices>[] = [
+export const columnsBowling: ColumnDef<BowlingPrices>[] = [
   {
     accessorKey: "weekly",
     header: "Lunedi-Giovedí",
