@@ -12,7 +12,7 @@ const MenuFlyer = async () => {
       className={`relative bg-no-repeat bg-center bg-cover `}
       style={{
         backgroundImage: `url(${menuListImage?.src})`,
-        height: `${menuListImage?.height / 1.3}px`,
+        height: `${menuListImage?.height}px`,
       }}
     >
       <Image src={headermenuimage} alt="menu" className="w-full" />
