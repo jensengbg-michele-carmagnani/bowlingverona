@@ -1,23 +1,21 @@
 "use client";
-import vectorMobile from "@/public/assets/shape_image/About-mobile-vector.png";
+
 import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
 import birthdayImage from "@/public/assets/shape_image/birthday-image.png";
 import corporateImage from "@/public/assets/shape_image/corporate-image.png";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
-import useScreenWidth from "@/lib/useScreenWidth";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const InfoParty = () => {
-  const screenSize = useScreenWidth();
-  const isXs = screenSize === "xs";
   return (
     <div
-      className="relative bg-no-repeat bg-center bg-contain  h-[800px] cuppercase flex justify-center items-center mx-auto"
+      className="relative bg-no-repeat bg-center bg-cover  uppercase flex justify-center items-center mx-auto"
       style={{
-        backgroundImage: `url(${isXs ? vectorMobile?.src : vectorDesk?.src})`,
+        backgroundImage: `url(${vectorDesk?.src})`,
+        height: `${vectorDesk?.height}px`,
       }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2  gap-3">

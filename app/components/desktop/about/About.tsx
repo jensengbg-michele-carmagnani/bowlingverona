@@ -1,22 +1,20 @@
 "use client";
 
-import vectorMobile from "@/public/assets/shape_image/About-mobile-vector.png";
 import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 import Image from "next/image";
 import aboutImg from "@/public/assets/shape_image/aboutUs.png";
 import aboutMini from "@/public/assets/shape_image/about-mini.png";
-import useScreenWidth from "@/lib/useScreenWidth";
+
 import { Button } from "@/components/ui/button";
 
 const About: React.FC = () => {
-  const screenSize = useScreenWidth();
-  const isXs = screenSize === "xs";
   return (
     <div
-      className="relative bg-no-repeat bg-center bg-contain w-screen min-h-[800px] "
+      className="relative bg-no-repeat bg-center bg-cover"
       style={{
-        backgroundImage: `url(${isXs ? vectorMobile?.src : vectorDesk?.src})`,
+        backgroundImage: `url(${vectorDesk?.src})`,
+        height: `${vectorDesk?.height}px`,
       }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0  gap-5">
@@ -41,9 +39,9 @@ const About: React.FC = () => {
             <div className="h-[1px] w-[40px] bg-orange-400" />
             <div className="text-orange-400 text-base">about us</div>
           </div>
-          <div className="text-center md:text-left max-w-2xl scroll ">
+          <div className="text-center md:text-left max-w-2xl">
             <h2 className="text-5xl uppercase font-light">Our History</h2>
-            <p className="text-xl font-extralight md:font-light md:pr-10 px-2 md:max-h-80 md:overflow-y-auto">
+            <p className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-auto">
               Il Bowling Verona è stato fondato nel 1990 da Marco e da allora è
               rimasto un autentico business di famiglia, gestito con passione e
               dedizione. Fin dai suoi esordi, questo luogo si è affermato come
@@ -60,6 +58,7 @@ const About: React.FC = () => {
               evolversi, mantenendo sempre viva la sua atmosfera familiare e
               accogliente.
             </p>
+
             <div className="flex justify-center md:justify-start w-full">
               <Button
                 className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500"

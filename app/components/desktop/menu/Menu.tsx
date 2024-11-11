@@ -7,10 +7,10 @@ import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 
 const Menu = () => {
   return (
-    <div className="max-w-[90%] mx-auto my-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className=" mx-auto my-16 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
         <InfoCard
-          className="flex flex-col justify-center items-center min-h-96 px-2 text-center text-white md:px-0 "
+          className="flex flex-col justify-center items-center px-3 text-center text-white md:px-0 "
           title="Il nostro menu"
           descriptions={menuStatic}
           classDescription="text-xl font-[Rajdhani]"
