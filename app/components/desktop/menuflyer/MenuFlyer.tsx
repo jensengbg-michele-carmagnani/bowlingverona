@@ -4,19 +4,23 @@ import Image from "next/image";
 import { bowlingPrices } from "../../ui/tables/Column";
 import { BowlingTable } from "../../ui/tables/BowlingTable";
 import { columns } from "../../ui/tables/Column";
-import headerMenu from "@/public/assets/shape_image/header-menu.png";
+import headermenuimage from "@/public/assets/shape_image/header-menu.png";
 
 const MenuFlyer = async () => {
   return (
     <div
-      className={`relative bg-no-repeat bg-center bg-contain  `}
-      style={{ backgroundImage: `url(${menuListImage?.src})`, height: "100vh" }}
+      className={`relative bg-no-repeat bg-center bg-cover max-w-5/6 mx-auto`}
+      style={{
+        backgroundImage: `url(${menuListImage?.src})`,
+        height: "100vh",
+        width: "90%",
+      }}
     >
       <Image
-        src={headerMenu}
+        src={headermenuimage}
         alt="menu"
         style={{
-          width: "100%",
+          width: "90%",
           height: "auto",
         }}
       />

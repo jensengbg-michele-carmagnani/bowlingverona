@@ -7,7 +7,7 @@ import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 
 const Menu = () => {
   return (
-    <div className="max-w-8xl mx-auto mt-16">
+    <div className="max-w-[90%] mx-auto my-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <InfoCard
           className="flex flex-col justify-center items-center min-h-96 px-2 text-center text-white md:px-0 "

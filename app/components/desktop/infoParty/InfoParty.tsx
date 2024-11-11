@@ -15,7 +15,7 @@ const InfoParty = () => {
   const isXs = screenSize === "xs";
   return (
     <div
-      className="relative bg-no-repeat bg-center bg-contain w-screen h-[800px] cuppercase flex justify-center items-center mx-auto"
+      className="relative bg-no-repeat bg-center bg-contain  h-[800px] cuppercase flex justify-center items-center mx-auto"
       style={{
         backgroundImage: `url(${isXs ? vectorMobile?.src : vectorDesk?.src})`,
       }}
