@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "@/app/components/navbar/Navbar";
 import "./globals.css";
+import Footer from "./components/desktop/footer/Footer";
 
 const DomCasualD = localFont({
   src: [
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body className="w-2xl h-screen">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
