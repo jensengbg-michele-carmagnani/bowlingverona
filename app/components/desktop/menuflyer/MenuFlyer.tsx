@@ -1,22 +1,27 @@
+"use client";
 import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
 import Image from "next/image";
 import { bowlingPrices } from "../../ui/tables/ColumnBowling";
 import { TablePrices } from "../../ui/tables/Table";
 import { columnsBowling } from "../../ui/tables/ColumnBowling";
 import { columnsPools, poolsPrices } from "../../ui/tables/ColumnPools";
-import headermenuimage from "@/public/assets/shape_image/header-menu.png";
+import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
+import useScreenSize from "@/lib/useScreenWidth";
 
-const MenuFlyer = async () => {
+const MenuFlyer = () => {
+  const isXs = useScreenSize();
   return (
     <div className="md:mx-8">
       <div
         className={`relative bg-no-repeat bg-center bg-cover`}
         style={{
           backgroundImage: `url(${menuListImage?.src})`,
-          height: `${menuListImage?.height}px`,
+          height: `${
+            isXs ? menuListImage.height / 1.4 : menuListImage?.height
+          }px`,
         }}
       >
-        <Image src={headermenuimage} alt="menu" className="w-full" />
+        <Image src={headerMenuImg} alt="menu" className="w-full" />
         <div className="  md:w-5/6 mx-auto space-y-3">
           <div>
             <h2 className="text-center text-5xl w-full font-[DomCasualD] py-10 text-black text-shadow-outline uppercase">

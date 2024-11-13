@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 
 function useScreenSize() {
@@ -37,4 +35,3 @@ function getCurrentScreenSize() {
 }
 
 export default useScreenSize;
-
