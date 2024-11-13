@@ -8,7 +8,7 @@ import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 const Menu = () => {
   return (
     <div className=" mx-auto my-16 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4  px-2 md:px-4 ">
         <InfoCard
           className="flex flex-col justify-center items-center px-3 text-center text-white md:px-0 "
           title="Il nostro menu"

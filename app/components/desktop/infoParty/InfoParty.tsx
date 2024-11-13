@@ -18,7 +18,7 @@ const InfoParty = () => {
         height: `${vectorDesk?.height}px`,
       }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-3 px-2 md:px-4">
         <div className="relative">
           <Image src={birthdayImage} alt="Birthday" />
           <div className="absolute flex justify-around w-full items-center inset-x-0 bottom-9">

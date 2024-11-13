@@ -38,9 +38,9 @@ const Footer = () => {
             <Link
               key={link.name}
               href={link.url}
-              className="text-base md:text-xl text-center hover:text-orange-500 transition-colors hover:font-thin"
+              className="text-base md:text-2xl text-center hover:text-orange-500 transition-colors hover:font-thin"
             >
-              {link.name}
+              <p>{link.name}</p>
             </Link>
           ))}
         </div>

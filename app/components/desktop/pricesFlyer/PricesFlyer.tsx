@@ -8,30 +8,31 @@ import { columnsPools, poolsPrices } from "../../ui/tables/ColumnPools";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
 import useScreenSize from "@/lib/useScreenWidth";
 
-const MenuFlyer = () => {
-  const isXs = useScreenSize();
+const PricesFlyer = () => {
+  const screenSize = useScreenSize();
+  const isXs = screenSize === "xs";
+
+  const heightImg = isXs ? menuListImage?.height / 1.4 : menuListImage?.height;
+
   return (
     <div className="md:mx-8">
       <div
-        className={`relative bg-no-repeat bg-center bg-cover`}
+        className="relative bg-no-repeat bg-center bg-cover"
         style={{
           backgroundImage: `url(${menuListImage?.src})`,
-          height: `${
-            isXs ? menuListImage.height / 1.4 : menuListImage?.height
-          }px`,
+          height: `${heightImg}px`,
         }}
       >
         <Image src={headerMenuImg} alt="menu" className="w-full" />
-        <div className="  md:w-5/6 mx-auto space-y-3">
+        <div className="md:w-5/6 mx-auto space-y-3">
           <div>
             <h2 className="text-center text-5xl w-full font-[DomCasualD] py-10 text-black text-shadow-outline uppercase">
               Hourly rate lanes
             </h2>
           </div>
-
           <TablePrices data={bowlingPrices} columns={columnsBowling} />
         </div>
-        <div className=" w-[95%] md:w-5/6 mx-auto space-y-3">
+        <div className="w-[95%] md:w-5/6 mx-auto space-y-3">
           <div>
             <h2 className="text-center text-5xl w-full font-[DomCasualD] py-10 text-black text-shadow-outline uppercase">
               Pools
@@ -44,4 +45,4 @@ const MenuFlyer = () => {
   );
 };
 
-export default MenuFlyer;
+export default PricesFlyer;
