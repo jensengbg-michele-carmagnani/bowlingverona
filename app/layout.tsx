@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "@/app/components/navbar/Navbar";
-import "./globals.css";
 import Footer from "./components/desktop/footer/Footer";
-
+import "./globals.css";
 const DomCasualD = localFont({
   src: [
     {
@@ -28,6 +27,7 @@ const DomCasualD = localFont({
     },
   ],
 });
+
 const Rajdhani = localFont({
   src: [
     {
@@ -62,15 +62,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  breadcrumb,
   children,
 }: Readonly<{
+  breadcrumb: React.ReactNode;
   children: React.ReactNode;
 }>) {
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
       <body className="w-2xl h-screen">
         <Navbar />
+
+        {breadcrumb}
         {children}
+
         <Footer />
       </body>
     </html>

@@ -1,7 +1,7 @@
 "use cliente";
 import React from "react";
 import MobileMenu from "@/app/components/mobile/MobileMenu";
-import DesktopMenu from "../desktop/DesktopMenu";
+import DesktopMenu from "@/app/components/desktop/DesktopMenu";
 
 const Navbar = () => {
   return (

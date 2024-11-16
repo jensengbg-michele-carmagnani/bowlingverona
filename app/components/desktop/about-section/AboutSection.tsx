@@ -7,6 +7,7 @@ import aboutImg from "@/public/assets/shape_image/aboutUs.png";
 import aboutMini from "@/public/assets/shape_image/about-mini.png";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const About: React.FC = () => {
   return (
@@ -60,12 +61,14 @@ const About: React.FC = () => {
             </p>
 
             <div className="flex justify-center md:justify-start w-full">
-              <Button
-                className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500"
-                imgUrl={buttonIcon}
-              >
-                reservation
-              </Button>
+              <Link href={"/about"}>
+                <Button
+                  className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500 capitalize"
+                  imgUrl={buttonIcon}
+                >
+                  about
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
