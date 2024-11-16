@@ -7,8 +7,12 @@ import Logo from "@/public/assets/ICON/logo_mini.png";
 import Link from "next/link";
 import { menuItems } from "./mobileStatic"; // Adjust the import path as needed
 import menu_mobile_icon from "@/public/assets/ICON/menu_mobile_bars.svg";
+import { usePathname } from "next/navigation";
+import { isActiveLink } from "@/lib/isActiveLink";
+
 
 const MobileMenu = () => {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null); // Ref for the dropdown menu
 
@@ -62,15 +66,18 @@ const MobileMenu = () => {
       {isOpen && (
         <div className="w-[80%] absolute top-25 right-3 bg-[#2C2C2C] text-white py-2 rounded shadow-lg z-50">
           <ul className=" space-y-10 ">
-            {menuItems.map((item, index) => (
-              <a
-                href={item.href}
-                key={index}
-                className="block px-4 py-2 hover:bg-gray-700 text-3xl"
-              >
-                {item.name}
-              </a>
-            ))}
+            {menuItems.map((item, index) => {
+              const activeItems = isActiveLink(pathname, item.href);
+              return (
+                <Link
+                  href={item.href}
+                  key={index}
+                  className={`block px-4 py-2 hover:bg-gray-700 text-3xl ${activeItems ? 'text-orange-500' : ''}`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </ul>
         </div>
       )}
