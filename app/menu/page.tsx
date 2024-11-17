@@ -42,7 +42,7 @@ const Menu: React.FC = () => {
         <Image
           src={headerMenuImg.src}
           alt="menu"
-          className=""
+          className="w-full"
           width={headerMenuImg.width}
           height={0}
         />
