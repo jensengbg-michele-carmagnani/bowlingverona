@@ -17,7 +17,7 @@ const DesktopMenu: React.FC = () => {
     <div className="hidden md:flex justify-center items-center py-10 px-6 absolute top-0 left-0 z-40 w-screen">
       <nav className="flex justify-center items-center 2xl:gap-5">
         {/* left side */}
-        {MENUITEMS.slice(0, 3).map((item, index) => {
+        {MENUITEMS.slice(0, 3).map((item) => {
           const activeLink = isActiveLink(pathname, item.href);
           return (
             <Link

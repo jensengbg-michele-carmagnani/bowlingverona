@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
-import headerMenuMobileImg from "@/public/assets/shape_image/header-menu-mobile.png";
 import menuListImg from "@/public/assets/shape_image/menu-list-img.png";
 import menuListHeader from "@/public/assets/shape_image/menu-list-header.png";
 import MenuItem from "./MenuItem";
