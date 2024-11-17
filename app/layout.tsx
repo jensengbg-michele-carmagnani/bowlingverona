@@ -62,7 +62,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  breadcrumb,
   children,
 }: Readonly<{
   breadcrumb: React.ReactNode;
@@ -73,7 +72,6 @@ export default function RootLayout({
       <body className="w-2xl h-screen">
         <Navbar />
 
-        {breadcrumb}
         {children}
 
         <Footer />
