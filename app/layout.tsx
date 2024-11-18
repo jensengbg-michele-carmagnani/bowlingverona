@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navbar from "@/app/components/navbar/Navbar";
-import Footer from "./components/desktop/footer/Footer";
+import Navbar from "@/app/components/ui/navbar/Navbar";
+import Footer from "./components/home/footer/Footer";
 import "./globals.css";
 const DomCasualD = localFont({
   src: [

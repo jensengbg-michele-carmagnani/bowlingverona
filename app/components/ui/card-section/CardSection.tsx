@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 interface CardSectionProps {
   title: string;
   subtitle: string;
-  content: string;
+  content: ReactNode;
   linkHref?: string;
   linkText?: string;
   mainImageSrc: string;

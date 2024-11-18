@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/app/components/breadcrumb/breadcrumb";
+} from "@/app/components/home/breadcrumb/breadcrumb";
 import React from "react";
 import type { ReactElement } from "react";
 
@@ -15,7 +15,7 @@ export default async function BreadcrumbSlot({
   params: Promise<{ all?: string[] }>;
 }) {
   const { all } = await params;
-  
+
   const breadcrumbItems: ReactElement[] = [];
   let breadcrumbPage: ReactElement = <></>;
   for (let i = 0; i < (all?.length || 0); i++) {

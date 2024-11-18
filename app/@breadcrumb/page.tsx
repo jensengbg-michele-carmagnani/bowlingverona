@@ -3,7 +3,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-} from "@/app/components/breadcrumb/breadcrumb";
+} from "@/app/components/home/breadcrumb/breadcrumb";
 
 export default function BreadcrumbSlot() {
   return (

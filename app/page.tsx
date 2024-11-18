@@ -1,9 +1,9 @@
-import Hero from "./components/desktop/hero-section/HeroSection";
-import About from "./components/desktop/about-section/AboutSection";
-import InfoSection from "./components/desktop/info-section/Info";
-import InfoParty from "./components/desktop/infoparty-section/InfoPartySection";
-import Menu from "./components/desktop/menus-section/MenuSection";
-import MenuFlyer from "./components/desktop/pricesFlyer/PricesFlyer";
+import Hero from "./components/home/hero-section/HeroSection";
+import About from "./components/home/about-section/AboutSection";
+import InfoSection from "./components/home/info-section/Info";
+import InfoParty from "./components/home/infoparty-section/InfoPartySection";
+import Menu from "./components/home/menu-section/MenuSection";
+import MenuFlyer from "./components/pricesFlyer/PricesFlyer";
 
 type HomeProps = {
   breadcrumb: React.ReactNode;
