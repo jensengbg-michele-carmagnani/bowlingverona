@@ -68,9 +68,9 @@ const CardSection: React.FC<CardSectionProps> = ({
         </div>
 
         {/* Title and Description */}
-        <div className="text-center md:text-left max-w-2xl">
+        <div className="text-center md:text-left max-w-2xl ">
           <h2 className="text-5xl uppercase font-light">{title}</h2>
-          <p className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-auto font-[Rajdhani]">
+          <p className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-scroll overflow-x-hidden font-[Rajdhani]">
             {content}
           </p>
 

@@ -1,6 +1,6 @@
 const HeroSection: React.FC<{
   backgroundImage: string;
-  height?: number;
+  height?: string;
   title: string;
   subtitle: string;
 }> = ({ backgroundImage, height, title, subtitle }) => (
