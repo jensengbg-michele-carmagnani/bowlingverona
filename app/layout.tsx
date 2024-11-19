@@ -69,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
-      <body className="w-2xl h-screen">
+      <body className="w-2xl overflow-x-hidden  overflow-y-auto">
         <Navbar />
 
         {children}

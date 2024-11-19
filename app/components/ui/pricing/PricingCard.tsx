@@ -25,9 +25,9 @@ const PricingCard: FC<PricingCardProps> = ({
         <Image
           src={headerImage.src}
           alt=""
-          width={400}
+          width={450}
           height={headerImage?.height}
-          className="object-contain absolute top-2 left-1/2 -translate-x-1/2 bg-no-repeat z-10"
+          className="object-contain absolute top-2 left-1/2 -translate-x-1/2 bg-no-repeat z-10 max-w-[450px] h-[133px]"
           priority
         />
         <h1 className="relative z-10 ">

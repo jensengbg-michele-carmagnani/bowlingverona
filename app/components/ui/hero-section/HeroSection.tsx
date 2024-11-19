@@ -6,10 +6,10 @@ const HeroSection: React.FC<{
 }> = ({ backgroundImage, height, title, subtitle }) => (
   <section>
     <div
-      className="bg-no-repeat bg-center bg-cover h-full flex justify-center items-center"
+      className="bg-no-repeat bg-center bg-cover flex justify-center h-full items-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        height: height,
+        height: height ?? "500px",
       }}
     >
       <div className="text-center">

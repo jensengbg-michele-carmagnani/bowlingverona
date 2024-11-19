@@ -13,14 +13,10 @@ body {
 }
 .text-shadow-outline {
   color: black;
-  text-shadow:
-    1px 1px 0 orange,
-    -1px 1px 0 orange,
-    1px -1px 0 orange,
+  text-shadow: 1px 1px 0 orange, -1px 1px 0 orange, 1px -1px 0 orange,
     -1px -1px 0 orange;
   font-weight: bold;
 }
-
 
 @layer base {
   :root {
@@ -85,4 +81,28 @@ body {
   body {
     @apply bg-black text-white;
   }
+}
+/* Customize scrollbar */
+::-webkit-scrollbar {
+  width: 1px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f3f3; /* Background of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff6600; /* Orange color for the scrollbar */
+  border-radius: 5px; /* Rounded corners for the thumb */
+  border: 2px solid transparent; /* Adds space around thumb for better aesthetics */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e65c00; /* Darker orange when hovering */
+}
+
+/* Fallback for modern browsers using scrollbar pseudo-elements */
+.scrollbar-thumb {
+  scrollbar-color: #ff6600 #f3f3f3; /* thumb color and track color */
+  scrollbar-width: 1px; /* Makes scrollbar thinner */
 }

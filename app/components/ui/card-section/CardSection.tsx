@@ -17,6 +17,7 @@ interface CardSectionProps {
   miniImageHeight?: number;
   highlightColor?: string;
   buttonIcon?: string;
+  className?: string;
 }
 
 const CardSection: React.FC<CardSectionProps> = ({
@@ -55,12 +56,12 @@ const CardSection: React.FC<CardSectionProps> = ({
           alt={`${subtitle} main image`}
           width={mainImageWidth}
           height={mainImageHeight}
-          className="border rounded-sm md:transform md:translate-y-1/3"
+          className=" md:transform md:translate-y-1/3"
         />
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col items-center justify-center gap-5 transform translate-y-20 md:mt-16">
+      <div className="relative flex flex-col items-start justify-center gap-5 transform translate-y-20 md:mt-16">
         {/* Subtitle and Highlight Line */}
         <div className="flex gap-2 items-center uppercase self-center md:self-start">
           <div className={`h-[1px] w-[40px] bg-${highlightColor}`} />
@@ -70,7 +71,7 @@ const CardSection: React.FC<CardSectionProps> = ({
         {/* Title and Description */}
         <div className="text-center md:text-left max-w-2xl ">
           <h2 className="text-5xl uppercase font-light">{title}</h2>
-          <p className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-scroll overflow-x-hidden font-[Rajdhani]">
+          <p className="text-xl align-left font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-scroll overflow-x-hidden font-[Rajdhani]">
             {content}
           </p>
 

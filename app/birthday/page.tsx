@@ -16,7 +16,7 @@ const Birthday = () => {
   return (
     <div className="pt-28">
       <HeroSection
-        height={birthdayHeroImg.height.toString()}
+        height={`${birthdayHeroImg.height}px`}
         backgroundImage={birthdayHeroImg.src}
         title="Birthday Party"
         subtitle="Home / Birthday"
@@ -29,8 +29,8 @@ const Birthday = () => {
         }}
       >
         <CardSection
-          title="Birthday Card Title"
-          subtitle="Birthday Card Subtitle"
+          title="Birthday "
+          subtitle="Birthday Party"
           content={` Vuoi rendere il tuo compleanno davvero speciale? Vieni a festeggiare con noi e preparati per una giornata di puro divertimento! 🎳
     Ti offriamo una festa all'insegna del gioco, dell'allegria e del buon cibo, perfetta per tutte le età.
     Scegli una delle nostre tornate speciali e lasciati coccolare dal nostro staff: penseremo a tutto noi, dalla preparazione delle piste alle proposte culinarie,
@@ -44,8 +44,8 @@ const Birthday = () => {
           mainImageHeight={400}
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-9 relative ">
-        <div className="w-full relative max-w-[470px]">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-9 relative py-20 ">
+        <div className="relative md:max-w-[470px] max-w-[380px]">
           <PricingCard
             className="border-red-600 mx-auto"
             title="Ragazzi sotto i 14 anni"
