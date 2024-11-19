@@ -6,14 +6,30 @@ import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
 import menuListImg from "@/public/assets/shape_image/menu-list-img.png";
 import menuListHeader from "@/public/assets/shape_image/menu-list-header.png";
 import MenuItem from "./MenuItem";
-import useScreenSize from "@/lib/useScreenWidth";
-import HeroSection from "../components/ui/hero-section/HeroSection";
 import {
   alcoliciECocktailItems,
   caffetteriaItems,
   cibiVariItems,
   softDrinkItems,
 } from "./menuStatic";
+import useScreenSize from "@/lib/useScreenWidth";
+
+const HeroSection: React.FC<{ backgroundImage: string; height?: string; title: string; subtitle: string }> = ({ backgroundImage, height, title, subtitle }) => (
+  <section>
+    <div
+      className="bg-no-repeat bg-center bg-cover h-full flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        height: height,
+      }}
+    >
+      <div className="text-center">
+        <h1 className="text-2xl capitalize">{title}</h1>
+        <p className="text-2xl capitalize">{subtitle}</p>
+      </div>
+    </div>
+  </section>
+);
 
 const Menu: React.FC = () => {
   const screenSize = useScreenSize();

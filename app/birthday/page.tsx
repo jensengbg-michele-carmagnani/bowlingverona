@@ -4,7 +4,13 @@ import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
 import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
 import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
-import ReactMarkDown from "react-markdown";
+import PricingCard from "../components/ui/pricing/PricingCard";
+import pricingHeaderRed from "../../public/assets/shape_image/Pricing-headerRed-img.png";
+import pricingHeaderBlue from "../../public/assets/shape_image/Pricing-headerBlue-img.png";
+import pricingHeaderOrange from "../../public/assets/shape_image/Pricing-headerOrang-img.png";
+import footerImg from "../../public/assets/ICON/Bowling-bolls-icon.png";
+
+import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 
 const Birthday = () => {
   return (
@@ -16,7 +22,7 @@ const Birthday = () => {
         subtitle="Home / Birthday"
       />
       <div
-        className=""
+        className="bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${vectorDesk.src})`,
           height: `${vectorDesk.height}px`,
@@ -37,6 +43,42 @@ const Birthday = () => {
           mainImageWidth={600}
           mainImageHeight={400}
         />
+      </div>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-9 relative ">
+        <div className="w-full relative max-w-[470px]">
+          <PricingCard
+            className="border-red-600 mx-auto"
+            title="Ragazzi sotto i 14 anni"
+            subtitle="min 8/10 persone"
+            label="Primary"
+            headerImage={pricingHeaderRed}
+            footerImage={footerImg}
+            price={"€ 22"}
+            menuItems={MENUITEMSBIRTHDAY}
+          />
+        </div>
+        <div className="w-full relative max-w-[470px]">
+          <PricingCard
+            className="border-blue-600 mx-auto"
+            title="Ragazzi sopra i 14 inclusi"
+            label="Secondary"
+            headerImage={pricingHeaderBlue}
+            footerImage={footerImg}
+            price={"€ 25"}
+            menuItems={MENUITEMSBIRTHDAY}
+          />
+        </div>
+        <div className="w-full relative max-w-[470px]">
+          <PricingCard
+            className="border-orange-600 mx-auto"
+            title="Adulti"
+            label="Tertiary"
+            headerImage={pricingHeaderOrange}
+            footerImage={footerImg}
+            price={"€ 25"}
+            menuItems={MENUITEMSBIRTHDAY}
+          />
+        </div>
       </div>
     </div>
   );

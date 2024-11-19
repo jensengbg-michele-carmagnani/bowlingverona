@@ -3,7 +3,7 @@ import About from "./components/home/about-section/AboutSection";
 import InfoSection from "./components/home/info-section/Info";
 import InfoParty from "./components/home/infoparty-section/InfoPartySection";
 import Menu from "./components/home/menu-section/MenuSection";
-import MenuFlyer from "./components/pricesFlyer/PricesFlyer";
+import MenuFlyer from "./components/prices-fyer/PricesFlyer";
 
 type HomeProps = {
   breadcrumb: React.ReactNode;
