@@ -14,7 +14,7 @@ import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 
 const Birthday = () => {
   return (
-    <div className="pt-28">
+    <div className="">
       <HeroSection
         height={`${birthdayHeroImg.height}px`}
         backgroundImage={birthdayHeroImg.src}
