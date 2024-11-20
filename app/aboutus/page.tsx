@@ -6,7 +6,7 @@ import aboutusImg from "@/public/assets/shape_image/aboutus-img.png";
 
 const AboutUs = () => {
   return (
-    <section className="pt-52">
+    <section className="">
       <div
         className="relative bg-no-repeat bg-center bg-cover flex justify-center items-center "
         style={{

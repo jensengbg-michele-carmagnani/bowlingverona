@@ -106,3 +106,6 @@ body {
   scrollbar-color: #ff6600 #f3f3f3; /* thumb color and track color */
   scrollbar-width: 1px; /* Makes scrollbar thinner */
 }
+input[type="time"]::-webkit-calendar-picker-indicator{
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}

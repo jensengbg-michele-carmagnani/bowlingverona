@@ -11,6 +11,7 @@ import pricingHeaderOrange from "../../public/assets/shape_image/Pricing-headerO
 import footerImg from "../../public/assets/ICON/Bowling-bolls-icon.png";
 
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import ReservationForm from "../components/ui/reservation/ReservationForm";
 
 const Birthday = () => {
   return (
@@ -79,6 +80,9 @@ const Birthday = () => {
             menuItems={MENUITEMSBIRTHDAY}
           />
         </div>
+      </div>
+      <div className="">
+        <ReservationForm />
       </div>
     </div>
   );
