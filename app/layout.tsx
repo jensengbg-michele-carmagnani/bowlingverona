@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import Navbar from "@/app/components/ui/navbar/Navbar";
 import Footer from "./components/home/footer/Footer";
 import "./globals.css";
+import Head from "next/head";
+
 const DomCasualD = localFont({
   src: [
     {
@@ -59,6 +61,25 @@ export const metadata: Metadata = {
     "Scopri il divertimento definitivo al Bowling Verona! Perfetto per famiglie, amici ed eventi. Unisciti alle nostre leghe o organizza la tua prossima festa con noi. Prenota il tuo lane oggi!",
   keywords:
     "Bowling Verona, piste da bowling, divertimento in famiglia, leghe di bowling, feste di bowling, intrattenimento a Verona",
+  icons: {
+    icon: [
+      {
+        url: "favicon/favicon.ico",
+        sizes: "any",
+        type: "image/ico",
+      },
+      {
+        url: "favicon/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "favicon/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -70,6 +91,29 @@ export default function RootLayout({
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
       <body className="w-2xl overflow-x-hidden  overflow-y-auto">
+        <Head>
+          <title>Bowling Verona</title>
+          <link
+            rel="icon"
+            href="/public/favicon/favicon.ico"
+            sizes="any"
+            type="image/ico"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/public/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/public/favicon/favicon-16x16.png"
+          />
+
+          <link rel="manifest" href="/site.webmanifest" />
+        </Head>
         <Navbar />
 
         {children}

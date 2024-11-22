@@ -35,6 +35,10 @@ export const InputField: React.FC<InputFieldProps> = ({
               className={`bg-transparent border-none focus:border-amber-500 w-full ${
                 !field.value && "text-muted-foreground"
               }`}
+              onChange={(e) => {
+                const value = e.target.value;
+                field.onChange(type === "number" ? Number(value) : value);
+              }}
             />
           </FormControl>
           <FormMessage />
