@@ -92,7 +92,6 @@ export default function RootLayout({
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
       <body className="w-2xl overflow-x-hidden  overflow-y-auto">
-        <SpeedInsights />
         <Head>
           <title>Bowling Verona</title>
           <link
@@ -117,9 +116,8 @@ export default function RootLayout({
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <Navbar />
-
         {children}
-
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
