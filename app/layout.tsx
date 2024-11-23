@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "@/app/components/ui/navbar/Navbar";
 import Footer from "./components/home/footer/Footer";
-import "./globals.css";
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
 
 const DomCasualD = localFont({
   src: [
@@ -91,6 +92,7 @@ export default function RootLayout({
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
       <body className="w-2xl overflow-x-hidden  overflow-y-auto">
+        <SpeedInsights />
         <Head>
           <title>Bowling Verona</title>
           <link
