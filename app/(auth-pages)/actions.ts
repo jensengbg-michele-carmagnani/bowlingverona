@@ -18,7 +18,6 @@ export const signUpAction = async (formData: FormData) => {
       "Email and password are required"
     );
   }
-
   const { error } = await supabase.auth.signUp({
     email,
     password,
@@ -44,19 +43,16 @@ export const signInAction = async (formData: FormData) => {
   const password = formData.get("password") as string;
   const supabase = await createClient();
   const origin = (await headers()).get("origin");
-  console.log(origin);
   const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
-  console.log(origin);
-
   if (error) {
     return encodedRedirect("error", "/sign-in", error.message);
   }
 
-  return redirect(`${origin}`); // Replace with the appropriate URL
+  return redirect(`${origin}/user`); // Replace with the appropriate URL
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {
