@@ -2,8 +2,8 @@ import Image from "next/image";
 import logo from "@/public/assets/ICON/logo_mini.png";
 import Link from "next/link";
 import { footerLinks } from "./staticFooter";
-import FacebookIcon from "@/app/(home)/icons/FacebookIcon";
-import InstaIcon from "@/app/(home)/icons/InstagramIcon";
+import FacebookIcon from "@/app/icons/FacebookIcon";
+import InstaIcon from "@/app/icons/InstagramIcon";
 import footerImage from "@/public/assets/shape_image/footer-image.png";
 import { MapPinIcon } from "lucide-react";
 

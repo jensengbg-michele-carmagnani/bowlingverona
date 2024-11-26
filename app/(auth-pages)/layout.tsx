@@ -8,8 +8,10 @@ export default async function Layout({
   return (
     <html className="rajdhani dom-casual" lang="en">
       <body>
-        <div className="max-w-2xl h-screen mx-auto text-black ">
-          <div className="bg-slate-400 p-10 rounded-md">{children}</div>
+        <div className="max-w-2xl mx-auto text-black h-screen  ">
+          <div className=" flex justify-center items-center h-3/4 w-full">
+            {children}
+          </div>
         </div>
       </body>
     </html>
