@@ -5,7 +5,7 @@ import { footerLinks } from "./staticFooter";
 import FacebookIcon from "@/app/icons/FacebookIcon";
 import InstaIcon from "@/app/icons/InstagramIcon";
 import footerImage from "@/public/assets/shape_image/footer-image.png";
-import { MapPinIcon } from "lucide-react";
+import { MapPinIcon, PhoneCallIcon } from "lucide-react";
 
 const Footer = () => {
   const footerLinksData = footerLinks || []; // Ensure footerLinks is defined
@@ -44,14 +44,25 @@ const Footer = () => {
             </Link>
           ))}
         </div>
+
         <div className="uppercase py-7 text-xs space-y-3">
-          <p className="text-center">Active Since 1990</p>
-          <span className="text-center font-thin capitalize hover:text-orange-500 transition duration-75 flex justify-center">
-            <Link href={"https://bit.ly/3Atlssu"} target="_blank">
-              <MapPinIcon size={20} className="inline-block" /> viale della
-              fiera 10/a Verona (Italy)
+          <div className=" space-y-4 text-base">
+            <Link href={"tel:045581724"}>
+              <p className="w-full text-center flex justify-center items-center hover:text-orange-500 transition duration-75">
+                <PhoneCallIcon size={20} className=" inline-block mr-5" />
+                <span className=" capitalize  ">045-581724</span>
+              </p>
             </Link>
-          </span>
+            <Link href={"https://bit.ly/3Atlssu"} target="_blank">
+              <p className="w-full text-center flex justify-center items-center hover:text-orange-500 transition duration-75">
+                <MapPinIcon size={20} className=" inline-block mr-5" />
+                <span className="capitalize ">
+                  Viale della fiera 10/a Verona (Italy)
+                </span>
+              </p>
+            </Link>
+          </div>
+          <p className="text-center text-pretty">Active Since 1990</p>
         </div>
       </div>
     </div>
