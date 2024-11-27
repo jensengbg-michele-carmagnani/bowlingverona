@@ -1,8 +1,9 @@
 "use client";
 
 import { createClient } from "@/utils/supabase/client";
-
 import { useEffect, useState } from "react";
+
+// Define the type of the user identity data.
 interface UserIdentity {
   identity_id: string;
   id: string;
@@ -17,14 +18,10 @@ interface UserIdentity {
   last_sign_in_at: string;
   created_at: string;
   updated_at: string;
-  email: string;
+  email: string; // <-- Required property for UserIdentity
 }
 
-// interface AppMetadata {
-//   provider: string;
-//   providers: string[];
-// }
-
+// Define the User type that will hold information about the user.
 interface User {
   id: string;
   aud: string;
@@ -56,6 +53,7 @@ export default function Page() {
   const extractUser = async () => {
     const { data } = await supabase.auth.getUser();
     console.log(data);
+
     if (data.user) {
       setUser({
         id: data.user.id || "",
@@ -68,11 +66,15 @@ export default function Page() {
         confirmed_at: data.user.confirmed_at || null,
         last_sign_in_at: data.user.last_sign_in_at || null,
         user_metadata: data.user.user_metadata || {},
-        identities:
-          (data.user.identities ?? []).map((identity: any) => ({
-            ...identity,
-            email: identity.identity_data.email,
-          })) || [],
+        identities: (data.user.identities ?? []).map((identity) => {
+          // Cast the identity to match the UserIdentity interface
+          const userIdentity = identity as UserIdentity;
+
+          return {
+            ...userIdentity,
+            email: userIdentity.identity_data?.email || "",
+          };
+        }),
         created_at: data.user.created_at || "",
         updated_at: data.user.updated_at || "",
         is_anonymous: data.user.is_anonymous || false,
@@ -90,11 +92,10 @@ export default function Page() {
     };
     fetchNotes();
     extractUser();
-  }, []);
+  }, []); // Empty dependency array, runs once when the component mounts
 
   return (
-    <div>
-      {" "}
+    <div className="bg-green-600 rounded-md p-10">
       <pre>{JSON.stringify(notes, null, 2)}</pre>
       <pre>{JSON.stringify(user?.email, null, 2)}</pre>
       <button disabled={isPending}>Submit</button>

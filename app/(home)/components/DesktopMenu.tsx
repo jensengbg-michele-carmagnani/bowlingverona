@@ -18,14 +18,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { User } from "@/typing";
-import { useRouter } from "next/navigation";
 
 const DesktopMenu: React.FC = () => {
   const [user, setUser] = React.useState<User | null>(null);
 
   const pathname = usePathname();
   const supabase = createClient();
-  const router = useRouter();
 
   React.useEffect(() => {
     const fetchUser = async () => {
