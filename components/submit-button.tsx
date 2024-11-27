@@ -13,7 +13,7 @@ export function SubmitButton({
   pendingText = "Submitting...",
   ...props
 }: Props) {
-  const { pending, data } = useFormStatus();
+  const { pending } = useFormStatus();
 
   return (
     <Button

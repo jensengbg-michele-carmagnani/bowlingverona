@@ -48,12 +48,14 @@ export const signInAction = async (formData: FormData) => {
     email,
     password,
   });
+  console.log("error", error);
 
   if (error) {
     return encodedRedirect("error", "/sign-in", error.message);
   }
+  console.log("redirection");
 
-  return redirect("/user");
+  return redirect("/protected/user");
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {
