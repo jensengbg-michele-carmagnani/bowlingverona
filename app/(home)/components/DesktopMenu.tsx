@@ -10,12 +10,45 @@ import { MENUITEMS } from "./desktopMenuLinks";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { isActiveLink } from "@/lib/isActiveLink";
+import { createClient } from "@/utils/supabase/client";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { User } from "@/typing";
+import { useRouter } from "next/navigation";
 
 const DesktopMenu: React.FC = () => {
+  const [user, setUser] = React.useState<User | null>(null);
+
   const pathname = usePathname();
+  const supabase = createClient();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const fetchUser = async () => {
+      const { data } = await supabase.auth.getUser();
+      const user = data.user && (data.user as unknown as User);
+      setUser(user);
+    };
+    fetchUser();
+  }, [supabase]);
+
+  const signOut = async () => {
+    const supabase = createClient();
+    const { error } = await supabase.auth.signOut();
+    setUser(null);
+
+    if (error) {
+      console.error(error.message);
+    }
+  };
+
   return (
     <div className="hidden md:flex justify-center items-center py-10 px-6 absolute top-0 left-0 z-40 w-screen">
-      <nav className="flex justify-center items-center 2xl:gap-5">
+      <nav className="flex justify-center items-center 2xl:gap-5 relative">
         {/* left side */}
         {MENUITEMS.slice(0, 3).map((item) => {
           const activeLink = isActiveLink(pathname, item.href);
@@ -62,6 +95,23 @@ const DesktopMenu: React.FC = () => {
             </Link>
           );
         })}
+        <div className="absolute top-[30%] -right-[10%]">
+          {user && (
+            <Popover>
+              <PopoverTrigger>
+                <Avatar className="border border-collapse hover:scale-95 cursor-pointer ">
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+              </PopoverTrigger>
+              <PopoverContent>
+                <Button size={"sm"} onClick={signOut}>
+                  Sign Out
+                </Button>
+              </PopoverContent>
+            </Popover>
+          )}
+        </div>
       </nav>
     </div>
   );

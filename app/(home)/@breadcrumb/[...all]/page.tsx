@@ -21,7 +21,7 @@ export default async function BreadcrumbSlot({
   for (let i = 0; i < (all?.length || 0); i++) {
     const route = (all ?? [])[i];
     const href = `/${(all ?? [])[0]}/${route}`;
-    console.log("route", route);
+
     if (i === (all?.length ?? 0) - 1) {
       breadcrumbPage = (
         <BreadcrumbItem>

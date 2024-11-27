@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MenuItemProps } from "./types";
 
 export const PriceHeader: FC<MenuItemProps> = ({ icon, text, alt }) => {
-  console.log(icon);
+
   return (
     <div>
       <div className="flex gap-2 mt-2.5 uppercase">

@@ -1,4 +1,4 @@
-import { forgotPasswordAction } from "@/app/(auth-pages)/actions";
+import { forgotPasswordAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
 import { SubmitButton } from "@/components/submit-button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ export default async function ForgotPassword(props: {
 }) {
   const searchParams = await props.searchParams;
   return (
-    <>
+    <div className="bg-stone-300 p-10 rounded-md mx-2 md:mx-0 w-full ">
       <form className="flex-1 flex flex-col w-full gap-2 text-foreground [&>input]:mb-6 min-w-64 max-w-64 mx-auto">
         <div>
           <h1 className="text-2xl font-medium">Reset Password</h1>
@@ -32,6 +32,6 @@ export default async function ForgotPassword(props: {
         </div>
       </form>
       <SmtpMessage />
-    </>
+    </div>
   );
 }
