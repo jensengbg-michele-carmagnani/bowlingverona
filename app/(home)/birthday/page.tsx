@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/ui/hero-section/HeroSection";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
+import CakeCarousel from "../components/home/birthday-section/CakeCarousel";
 import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
 import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
 import PricingCard from "@/app/(home)/components/ui/pricing/PricingCard";
@@ -83,6 +84,9 @@ const Birthday = () => {
       </div>
       <div className="">
         <ReservationForm />
+      </div>
+      <div className="mt-10 bg-neutral-900 p-10 ">
+        <CakeCarousel />
       </div>
     </div>
   );
