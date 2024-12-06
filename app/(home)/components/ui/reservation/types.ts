@@ -8,6 +8,7 @@ export const reservationSchema = z.object({
   time: z.string().min(1, { message: "Time is required" }),
   date: z.date({ required_error: "Date is required" }),
   guests: z.number().min(8, { message: "Number of guests is required" }),
+  cake: z.string().min(1, { message: "Cake is required" }),
 });
 
 export type ReservationFormData = z.infer<typeof reservationSchema>;
@@ -18,6 +19,7 @@ export interface InputFieldProps {
   required?: boolean;
   error?: string;
   type?: string;
+  devider?: boolean;
 }
 
 export interface DatePickerProps {

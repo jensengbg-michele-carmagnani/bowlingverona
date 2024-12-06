@@ -2,32 +2,28 @@ import React from "react";
 import HeroSection from "../components/ui/hero-section/HeroSection";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
-import CakeCarousel from "../components/home/birthday-section/CakeCarousel";
-import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
-import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
 import PricingCard from "@/app/(home)/components/ui/pricing/PricingCard";
-import pricingHeaderRed from "@/public/assets/shape_image/Pricing-headerRed-img.png";
-import pricingHeaderBlue from "@/public/assets/shape_image/Pricing-headerBlue-img.png";
-import pricingHeaderOrange from "@/public/assets/shape_image/Pricing-headerOrang-img.png";
-import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";
-
-import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import { listBucketObjects } from "@/app/(home)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
+import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import { findAndCreateLink } from "@/utils/imageFinder";
 
-const Birthday = () => {
+const Birthday = async () => {
+  const BthPics = await listBucketObjects("picture_website", "Birthday/");
+  
   return (
     <div className="">
       <HeroSection
         height={`${birthdayHeroImg.height}px`}
-        backgroundImage={birthdayHeroImg.src}
+        backgroundImage={BthPics ? findAndCreateLink(BthPics, "hero") : ""}
         title="Birthday Party"
         subtitle="Home / Birthday"
       />
       <div
         className="bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${vectorDesk.src})`,
-          height: `${vectorDesk.height}px`,
+          backgroundImage: `url(${BthPics ? findAndCreateLink(BthPics, "desk") : ""})`,
+          height: `${900}px`,
         }}
       >
         <CardSection
@@ -41,7 +37,9 @@ const Birthday = () => {
     ✨ Non perdere l’occasione di festeggiare con noi e fare strike di emozioni! ✨
     Scopri i nostri pacchetti su misura e prenota ora per riservare il tuo pomeriggio speciale.
     Che aspetti? Contattaci subito per fissare la data del tuo compleanno da ricordare!`}
-          mainImageSrc={birthdayCard.src}
+          mainImageSrc={
+            BthPics ? findAndCreateLink(BthPics, "birthday-cake") || "/#" : "/#"
+          }
           mainImageWidth={600}
           mainImageHeight={400}
         />
@@ -53,8 +51,14 @@ const Birthday = () => {
             title="Ragazzi sotto i 14 anni"
             subtitle="min 8/10 persone"
             label="Primary"
-            headerImage={pricingHeaderRed}
-            footerImage={footerImg}
+            headerImage={
+              BthPics ? findAndCreateLink(BthPics, "headerRed") || "/#" : "/#"
+            }
+            footerImage={
+              BthPics
+                ? findAndCreateLink(BthPics, "Bowling-bolls-icon") || "/#"
+                : "/#"
+            }
             price={"€ 22"}
             menuItems={MENUITEMSBIRTHDAY}
           />
@@ -64,8 +68,14 @@ const Birthday = () => {
             className="border-blue-600 mx-auto"
             title="Ragazzi sopra i 14 inclusi"
             label="Secondary"
-            headerImage={pricingHeaderBlue}
-            footerImage={footerImg}
+            headerImage={
+              BthPics ? findAndCreateLink(BthPics, "headerBlue") || "/#" : "/#"
+            }
+            footerImage={
+              BthPics
+                ? findAndCreateLink(BthPics, "Bowling-bolls-icon") || "/#"
+                : "/#"
+            }
             price={"€ 25"}
             menuItems={MENUITEMSBIRTHDAY}
           />
@@ -75,8 +85,14 @@ const Birthday = () => {
             className="border-orange-600 mx-auto"
             title="Adulti"
             label="Tertiary"
-            headerImage={pricingHeaderOrange}
-            footerImage={footerImg}
+            headerImage={
+              BthPics ? findAndCreateLink(BthPics, "headerOrang") || "/#" : "/#"
+            }
+            footerImage={
+              BthPics
+                ? findAndCreateLink(BthPics, "Bowling-bolls-icon") || "/#"
+                : "/#"
+            }
             price={"€ 25"}
             menuItems={MENUITEMSBIRTHDAY}
           />
@@ -84,9 +100,6 @@ const Birthday = () => {
       </div>
       <div className="">
         <ReservationForm />
-      </div>
-      <div className="mt-10 bg-neutral-900 p-10 ">
-        <CakeCarousel />
       </div>
     </div>
   );

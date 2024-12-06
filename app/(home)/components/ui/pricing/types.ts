@@ -18,8 +18,8 @@ export interface PricingCardProps {
   title: string;
   subtitle?: string;
   label?: string;
-  headerImage: StaticImageData;
-  footerImage: StaticImageData;
+  headerImage: string;
+  footerImage: string;
   price: string;
   className?: string;
   menuItems: Array<{

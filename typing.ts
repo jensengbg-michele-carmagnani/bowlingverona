@@ -15,11 +15,6 @@ interface UserIdentity {
   email: string;
 }
 
-// interface AppMetadata {
-//   provider: string;
-//   providers: string[];
-// }
-
 export interface User {
   id: string;
   aud: string;

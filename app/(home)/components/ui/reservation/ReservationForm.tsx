@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,8 +9,10 @@ import { DatePicker } from "./DatePicker";
 import { reservationSchema, ReservationFormData } from "./types";
 import { Button } from "@/components/ui/button";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+import CakeCarousel from "../../home/birthday-section/CakeCarousel";
 
 const ReservationForm: React.FC = () => {
+  console;
   const form = useForm<ReservationFormData>({
     resolver: zodResolver(reservationSchema),
     defaultValues: {
@@ -19,6 +22,7 @@ const ReservationForm: React.FC = () => {
       phone: "",
       time: "",
       guests: 8,
+      cake: "",
     },
   });
 
@@ -73,6 +77,10 @@ const ReservationForm: React.FC = () => {
               type="number"
               required
             />
+          </div>
+          <div className="mt-10 w-full ">
+            <InputField label="Cake" name="cake" required devider={false} />
+            <CakeCarousel />
           </div>
 
           <Button
