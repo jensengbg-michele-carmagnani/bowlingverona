@@ -12,7 +12,6 @@ import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 import CakeCarousel from "../../home/birthday-section/CakeCarousel";
 
 const ReservationForm: React.FC = () => {
-  console;
   const form = useForm<ReservationFormData>({
     resolver: zodResolver(reservationSchema),
     defaultValues: {
@@ -37,15 +36,14 @@ const ReservationForm: React.FC = () => {
         className="max-w-6xl mx-auto "
       >
         <section className="flex flex-col px-11 py-12 w-full bg-neutral-900 max-md:px-5 max-md:max-w-full rounded-lg">
-          <header className="flex flex-wrap gap-5 justify-between max-w-full mx-auto">
-            <div className="flex flex-col gap-7 items-center  text-lg text-center text-amber-500 uppercase whitespace-nowrap tracking-[2px]">
-              <div className="flex justify-center items-center gap-3 w-full">
+          <header className="flex flex-wrap gap-5 mx-auto">
+            <div className="flex flex-col gap-7 text-lg text-center text-amber-500 uppercase whitespace-nowrap tracking-[4px]">
+              <div className="flex justify-center items-center gap-3 w-full self-center">
                 <div className="shrink-0 self-stretch my-auto h-px border border-amber-500 border-solid w-[58px]" />
                 <div className="self-stretch basis-auto">reservation</div>
                 <div className="shrink-0 self-stretch my-auto h-px border border-amber-500 border-solid w-[58px]" />
-                <div className="flex flex-col pl-8 mt-3 max-md:pl-5"></div>
               </div>
-              <h1 className="self-start text-4xl text-white uppercase tracking-[2px]">
+              <h1 className="self-center text-4xl text-white uppercase tracking-[2px]">
                 reservation
               </h1>
             </div>
@@ -79,7 +77,6 @@ const ReservationForm: React.FC = () => {
             />
           </div>
           <div className="mt-10 w-full ">
-            <InputField label="Cake" name="cake" required devider={false} />
             <CakeCarousel />
           </div>
 

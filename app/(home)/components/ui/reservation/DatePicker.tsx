@@ -50,7 +50,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
                   {field.value ? (
                     format(field.value, "MM/dd/yyyy")
                   ) : (
-                    <span className="flex gap-1.5 text-base text-white">
+                    <span className="flex gap-1.5 text-base  hover:text-gray-900">
                       <span className="grow">mm</span>
                       <span className="font-bold">/</span>
                       <span>dd</span>

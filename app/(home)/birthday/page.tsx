@@ -3,14 +3,21 @@ import HeroSection from "../components/ui/hero-section/HeroSection";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
 import PricingCard from "@/app/(home)/components/ui/pricing/PricingCard";
-import { listBucketObjects } from "@/app/(home)/home_actions";
+import { listBucketObjects, S3Object } from "@/app/(home)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 import { findAndCreateLink } from "@/utils/imageFinder";
 
 const Birthday = async () => {
-  const BthPics = await listBucketObjects("picture_website", "Birthday/");
-  
+  const BthPics = (await listBucketObjects(
+    "picture_website",
+    "Birthday/"
+  )) as S3Object[];
+  const BthIcons = (await listBucketObjects(
+    "picture_website",
+    "Icons/"
+  )) as S3Object[];
+
   return (
     <div className="">
       <HeroSection
@@ -55,9 +62,10 @@ const Birthday = async () => {
               BthPics ? findAndCreateLink(BthPics, "headerRed") || "/#" : "/#"
             }
             footerImage={
-              BthPics
-                ? findAndCreateLink(BthPics, "Bowling-bolls-icon") || "/#"
-                : "/#"
+              (BthPics &&
+                BthIcons &&
+                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
+              "/#"
             }
             price={"€ 22"}
             menuItems={MENUITEMSBIRTHDAY}
@@ -72,9 +80,10 @@ const Birthday = async () => {
               BthPics ? findAndCreateLink(BthPics, "headerBlue") || "/#" : "/#"
             }
             footerImage={
-              BthPics
-                ? findAndCreateLink(BthPics, "Bowling-bolls-icon") || "/#"
-                : "/#"
+              (BthPics &&
+                BthIcons &&
+                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
+              "/#"
             }
             price={"€ 25"}
             menuItems={MENUITEMSBIRTHDAY}
@@ -89,9 +98,10 @@ const Birthday = async () => {
               BthPics ? findAndCreateLink(BthPics, "headerOrang") || "/#" : "/#"
             }
             footerImage={
-              BthPics
-                ? findAndCreateLink(BthPics, "Bowling-bolls-icon") || "/#"
-                : "/#"
+              (BthPics &&
+                BthIcons &&
+                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
+              "/#"
             }
             price={"€ 25"}
             menuItems={MENUITEMSBIRTHDAY}
