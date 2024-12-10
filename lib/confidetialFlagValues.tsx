@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FlagValues } from "@vercel/flags/react";
 import { encrypt } from "@vercel/flags";
 
