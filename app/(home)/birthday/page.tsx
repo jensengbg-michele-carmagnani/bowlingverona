@@ -9,11 +9,13 @@ import pricingHeaderRed from "@/public/assets/shape_image/Pricing-headerRed-img.
 import pricingHeaderBlue from "@/public/assets/shape_image/Pricing-headerBlue-img.png";
 import pricingHeaderOrange from "@/public/assets/shape_image/Pricing-headerOrang-img.png";
 import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";
-
+import { showReservationForm } from "@/flag/showReservationForm";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
 
-const Birthday = () => {
+const Birthday = async () => {
+  const showForm = await showReservationForm();
+
   return (
     <div className="">
       <HeroSection
@@ -81,9 +83,7 @@ const Birthday = () => {
           />
         </div>
       </div>
-      <div className="">
-        <ReservationForm />
-      </div>
+      <div className="">{showForm && <ReservationForm />}</div>
     </div>
   );
 };
