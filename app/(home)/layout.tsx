@@ -4,7 +4,11 @@ import Navbar from "@/app/(home)/components/ui/navbar/Navbar";
 import Footer from "./components/home/footer/Footer";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
+import { showReservationForm } from "@/flag/showReservationForm";
+
 import "@/app/globals.css";
+import { Suspense } from "react";
 
 const DomCasualD = localFont({
   src: [
@@ -89,9 +93,16 @@ export default function RootLayout({
   breadcrumb: React.ReactNode;
   children: React.ReactNode;
 }>) {
+  const values = {
+    "show-reservation-form": showReservationForm(),
+  };
   return (
     <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
       <body className="w-2xl overflow-x-hidden  overflow-y-auto">
+        <Suspense fallback={null}>
+          <ConfidentialFlagValues values={values} />
+        </Suspense>
+
         <Head>
           <title>Bowling Verona</title>
           <link
