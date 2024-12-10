@@ -5,7 +5,7 @@ import Link from "next/link";
 import { footerLinks } from "./staticFooter";
 import footerImage from "@/public/assets/shape_image/footer-image.png";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { useAnimationInView } from "@/lib/animation";
 
