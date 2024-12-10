@@ -68,20 +68,21 @@ const DesktopMenu: React.FC = () => {
         {/* right side */}
         {MENUITEMS.slice(3).map((item, index) => {
           const activeLink = isActiveLink(pathname, item.href);
+          const disabled =
+            item.href === "/reservation" || item.href === "/corporate";
+
           return (
             <Link
               key={item.label}
               href={item.href}
               className={`${
                 activeLink ? "text-orange-400" : ""
-              } cursor-pointer`}
+              } ${disabled && "cursor-not-allowed"}`}
             >
               <Button
-                disabled={
-                  (item.href === "/reservation", item.href === "/corporate")
-                }
+                disabled={disabled}
                 className={
-                  item.href === "/reservation"
+                  item.href === "/reservation" && !disabled
                     ? "text-black hover:text-white hover:transform hover:scale-105 transition-all duration-500"
                     : ""
                 }
