@@ -80,7 +80,9 @@ const DesktopMenu: React.FC = () => {
               } ${disabled && "cursor-not-allowed"}`}
             >
               <Button
-                disabled={disabled}
+                disabled={
+                  (item.href === "/reservation", item.href === "/corporate")
+                }
                 className={
                   item.href === "/reservation" && !disabled
                     ? "text-black hover:text-white hover:transform hover:scale-105 transition-all duration-500"

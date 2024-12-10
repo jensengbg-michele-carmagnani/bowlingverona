@@ -8,8 +8,11 @@ import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useAnimationInView } from "@/lib/animation";
+import { motion } from "framer-motion";
 
 const InfoParty = () => {
+  const { itemRef, isInView, itemAnimation } = useAnimationInView();
   return (
     <div
       className="relative bg-no-repeat bg-center bg-cover  uppercase flex justify-center items-center mx-auto"
@@ -18,7 +21,14 @@ const InfoParty = () => {
         height: `${vectorDesk?.height}px`,
       }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-3 px-2 md:px-4">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2  gap-3 px-2 md:px-4"
+        ref={itemRef}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={itemAnimation}
+        custom={0}
+      >
         <div className="relative">
           <Image src={birthdayImage} alt="Birthday" />
           <div className="absolute flex justify-around w-full items-center inset-x-0 bottom-9">
@@ -47,7 +57,7 @@ const InfoParty = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

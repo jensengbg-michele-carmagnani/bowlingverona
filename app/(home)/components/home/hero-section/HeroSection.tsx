@@ -1,5 +1,7 @@
 "use client";
+import { useAnimationInView } from "@/lib/animation";
 import heroImage from "@/public/assets/shape_image/Rectangle1.png";
+import { motion } from "framer-motion";
 
 type heroProps = {
   backgroundImage?: string;
@@ -7,8 +9,16 @@ type heroProps = {
 };
 
 const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
+  const { itemRef, isInView, itemAnimation } = useAnimationInView();
   return (
-    <div className="relative h-[874px] w-full">
+    <motion.div
+      className="relative h-[874px] w-full"
+      ref={itemRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={itemAnimation}
+      custom={0}
+    >
       {backgroundVideo ? (
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -41,7 +51,8 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
           </div>
         </div>
       )}
-    </div>
-  );};
+    </motion.div>
+  );
+};
 
 export default Hero;

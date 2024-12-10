@@ -5,13 +5,20 @@ import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 import Image from "next/image";
 import aboutImg from "@/public/assets/shape_image/aboutUs.png";
 import aboutMini from "@/public/assets/shape_image/about-mini.png";
-
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useAnimationInView } from "@/lib/animation";
 
 const About: React.FC = () => {
+  const { itemRef, isInView, itemAnimation } = useAnimationInView();
   return (
-    <div
+    <motion.div
+      ref={itemRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={itemAnimation}
+      custom={0}
       className="relative bg-no-repeat bg-center bg-cover"
       style={{
         backgroundImage: `url(${vectorDesk?.src})`,
@@ -73,7 +80,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

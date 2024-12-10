@@ -1,11 +1,22 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { MapPin, PhoneCall, InfoIcon } from "lucide-react";
 import InfoCard from "../../ui/InfoCard";
+import { motion } from "framer-motion";
+import { useAnimationInView } from "@/lib/animation";
 
 const InfoSection: React.FC = () => {
+  const { itemRef, isInView, itemAnimation } = useAnimationInView();
   return (
-    <div className="py-28 md:p-0">
+    <motion.div
+      className="py-28 md:p-0"
+      ref={itemRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={itemAnimation}
+      custom={0}
+    >
       <div className="grid grid-cols-2 md:gap-10 md:grid-cols-4 px-6 md:px-0 mx-auto md:py-24 gap-5">
         <InfoCard
           borderPosition="right"
@@ -41,7 +52,7 @@ const InfoSection: React.FC = () => {
           descriptions={[{ text: "bowlingvr@gmail.com" }]}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

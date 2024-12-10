@@ -7,15 +7,24 @@ import { columnsBowling } from "../ui/tables/ColumnBowling";
 import { columnsPools, poolsPrices } from "../ui/tables/ColumnPools";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
 import useScreenSize from "@/lib/useScreenWidth";
+import { motion } from "framer-motion";
+import { useAnimationInView } from "@/lib/animation";
 
 const PricesFlyer = () => {
   const screenSize = useScreenSize();
   const isXs = screenSize === "xs";
-
+  const { itemRef, isInView, itemAnimation } = useAnimationInView();
   const heightImg = isXs ? menuListImage?.height / 1.4 : menuListImage?.height;
 
   return (
-    <div className="md:mx-8">
+    <motion.div
+      className="md:mx-8"
+      ref={itemRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={itemAnimation}
+      custom={0}
+    >
       <div
         className="relative bg-no-repeat bg-center bg-cover"
         style={{
@@ -41,7 +50,7 @@ const PricesFlyer = () => {
           <TablePrices data={poolsPrices} columns={columnsPools} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
