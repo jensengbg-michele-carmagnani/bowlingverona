@@ -1,35 +1,34 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import localFont from "next/font/local";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import Navbar from "@/app/(home)/components/ui/navbar/Navbar";
 import Footer from "./components/home/footer/Footer";
-import Head from "next/head";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
 import { showReservationForm } from "@/flag/showReservationForm";
-
 import "@/app/globals.css";
-import { Suspense } from "react";
 
 const DomCasualD = localFont({
   src: [
     {
       path: "./fonts/DomCasual/DomCasualD.woff2",
-      weight: "100 900",
+      weight: "400",
       style: "normal",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-Bold.woff2",
-      weight: "100 900",
-      style: "bold",
+      weight: "700",
+      style: "normal",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-BoldItalic.woff2",
-      weight: "100 900",
+      weight: "700",
       style: "italic",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-Italic.woff2",
-      weight: "100 900",
+      weight: "400",
       style: "italic",
     },
   ],
@@ -38,24 +37,24 @@ const DomCasualD = localFont({
 const Rajdhani = localFont({
   src: [
     {
-      path: "./fonts/rajdhani_wolff2/Rajdhani-Bold.woff2",
-      weight: "100 900",
-      style: "bold",
-    },
-    {
-      path: "./fonts//rajdhani_wolff2/Rajdhani-Light.woff2",
-      weight: "100 900",
-      style: "light",
+      path: "./fonts/rajdhani_wolff2/Rajdhani-Light.woff2",
+      weight: "300",
+      style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Regular.woff2",
-      weight: "100 900",
+      weight: "400",
       style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-SemiBold.woff2",
-      weight: "100 900",
-      style: "semibold",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/rajdhani_wolff2/Rajdhani-Bold.woff2",
+      weight: "700",
+      style: "normal",
     },
   ],
 });
@@ -68,64 +67,29 @@ export const metadata: Metadata = {
     "Bowling Verona, piste da bowling, divertimento in famiglia, leghe di bowling, feste di bowling, intrattenimento a Verona",
   icons: {
     icon: [
-      {
-        url: "favicon/favicon.ico",
-        sizes: "any",
-        type: "image/ico",
-      },
-      {
-        url: "favicon/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "favicon/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  breadcrumb: React.ReactNode;
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+  breadcrumb?: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   const values = {
     "show-reservation-form": showReservationForm(),
   };
+
   return (
-    <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
-      <body className="w-2xl overflow-x-hidden  overflow-y-auto">
+    <html lang="it" className={`${Rajdhani.className} ${DomCasualD.className}`}>
+      <body className="w-2xl overflow-x-hidden relative">
         <Suspense fallback={null}>
           <ConfidentialFlagValues values={values} />
         </Suspense>
-
-        <Head>
-          <title>Bowling Verona</title>
-          <link
-            rel="icon"
-            href="/public/favicon/favicon.ico"
-            sizes="any"
-            type="image/ico"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/public/favicon/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/public/favicon/favicon-16x16.png"
-          />
-
-          <link rel="manifest" href="/site.webmanifest" />
-        </Head>
         <Navbar />
         {children}
         <SpeedInsights />

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Logo from "@/public/assets/ICON/bowlingIcon.png";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 
-import { MENUITEMS } from "./desktopMenuLinks";
+import { MENUITEMS } from "./staticLinks";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { isActiveLink } from "@/lib/isActiveLink";
@@ -77,6 +77,9 @@ const DesktopMenu: React.FC = () => {
               } cursor-pointer`}
             >
               <Button
+                disabled={
+                  (item.href === "/reservation", item.href === "/corporate")
+                }
                 className={
                   item.href === "/reservation"
                     ? "text-black hover:text-white hover:transform hover:scale-105 transition-all duration-500"
