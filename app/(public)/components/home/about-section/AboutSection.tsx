@@ -43,28 +43,24 @@ const About: React.FC = () => {
           />
         </div>
         <div className="relative flex flex-col items-center justify-center   gap-5 transform translate-y-20 md:mt-16 ">
-          <div className="flex gap-2 items-center uppercase self-center md:self-start">
-            <div className="h-[1px] w-[40px] bg-orange-400" />
-            <div className="text-orange-400 text-base">about us</div>
-          </div>
           <div className="text-center md:text-left max-w-2xl">
-            <h2 className="text-5xl uppercase font-light">Our History</h2>
+            <div className="flex gap-2 items-center uppercase self-center md:self-start">
+              <div className="h-[1px] w-[40px] bg-orange-400" />
+              <h2 className="text-orange-400 text-base">about us</h2>
+            </div>
+            <h2 className="text-5xl uppercase font-light">
+              Cosa fare al Bowling Verona!
+            </h2>
             <p className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-auto">
-              Il Bowling Verona è stato fondato nel 1990 da Marco e da allora è
-              rimasto un autentico business di famiglia, gestito con passione e
-              dedizione. Fin dai suoi esordi, questo luogo si è affermato come
-              un punto di riferimento per gli appassionati di bowling e per chi
-              cerca un ambiente accogliente e divertente per trascorrere momenti
-              piacevoli. Con 14 piste da bowling, il Bowling Verona offre ampie
-              possibilità di gioco per gruppi di amici, famiglie e anche per
-              tornei più competitivi. Oltre al bowling, la struttura dispone di
-              13 tavoli da biliardo. Per completare l&apos;offerta di
-              intrattenimento, il Bowling Verona mette a disposizione anche un
-              angolo dedicato ai videogames, pensato per tutte le età e per chi
-              vuole fare una pausa diversa tra una partita e l&apos;altra. Anno
-              dopo anno, il Bowling Verona ha continuato a crescere e ad
-              evolversi, mantenendo sempre viva la sua atmosfera familiare e
-              accogliente.
+              **Passa una Serata con gli Amici:** Sfida i tuoi amici a una
+              partita di bowling, gioca a biliardo o prova l'area videogames per
+              un'esperienza unica. - **Prenota il Tuo Compleanno:** Festeggia il
+              tuo giorno speciale con giochi, risate e un’atmosfera accogliente
+              pensata per grandi e piccini. - **Organizza la Tua Serata
+              Aziendale:** Un'idea perfetta per team building e cene aziendali,
+              con tante attività per divertirsi e rilassarsi insieme. Il Bowling
+              Verona ti offre tutto il necessario per un’esperienza di
+              intrattenimento completa e indimenticabile. Prenota ora!
             </p>
 
             <div className="flex justify-center md:justify-start w-full">

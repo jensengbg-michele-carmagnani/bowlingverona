@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import localFont from "next/font/local";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import Navbar from "@/app/(home)/components/ui/navbar/Navbar";
+import Navbar from "@/app/(public)/components/ui/navbar/Navbar";
 import Footer from "./components/home/footer/Footer";
 import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
 import { showReservationForm } from "@/flag/showReservationForm";

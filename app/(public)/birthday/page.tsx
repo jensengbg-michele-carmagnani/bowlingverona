@@ -4,7 +4,7 @@ import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
 import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
 import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
-import PricingCard from "@/app/(home)/components/ui/pricing/PricingCard";
+import PricingCard from "@/app/(public)/components/ui/pricing/PricingCard";
 import pricingHeaderRed from "@/public/assets/shape_image/Pricing-headerRed-img.png";
 import pricingHeaderBlue from "@/public/assets/shape_image/Pricing-headerBlue-img.png";
 import pricingHeaderOrange from "@/public/assets/shape_image/Pricing-headerOrang-img.png";

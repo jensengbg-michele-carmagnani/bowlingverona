@@ -5,19 +5,35 @@ import Link from "next/link";
 import { footerLinks } from "./staticFooter";
 import footerImage from "@/public/assets/shape_image/footer-image.png";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { useAnimationInView } from "@/lib/animation";
+import { useRef } from "react";
 
 const Footer = () => {
   const footerLinksData = footerLinks || []; // Ensure footerLinks is defined
   const imageSrc = footerImage?.src || ""; // Default to empty string if undefined
   const imageHeight = footerImage?.height || 0; // Default to 0 if undefined
-  const { itemRef, isInView, itemAnimation } = useAnimationInView();
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+
+  const itemAnimation = {
+    hidden: { y: 50, opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 24,
+        delay: i * 0.5,
+      },
+    }),
+  };
 
   return (
     <motion.div
-      ref={itemRef}
+      ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={itemAnimation}

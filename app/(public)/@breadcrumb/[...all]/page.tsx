@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/app/(home)/components/home/breadcrumb/breadcrumb";
+} from "@/app/(public)/components/home/breadcrumb/breadcrumb";
 import React from "react";
 import type { ReactElement } from "react";
 
