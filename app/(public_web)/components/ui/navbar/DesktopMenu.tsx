@@ -1,23 +1,23 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import Logo from "@/public/assets/ICON/bowlingIcon.png";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-import { MENUITEMS } from "./staticLinks";
-import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
-import { isActiveLink } from "@/lib/isActiveLink";
-import { createClient } from "@/utils/supabase/client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { isActiveLink } from "@/lib/isActiveLink";
 import { User } from "@/typing";
+import { createClient } from "@/utils/supabase/client";
+import { usePathname } from "next/navigation";
+import { MENUITEMS } from "./staticLinks";
 
 const DesktopMenu: React.FC = () => {
   const [user, setUser] = React.useState<User | null>(null);
@@ -68,8 +68,7 @@ const DesktopMenu: React.FC = () => {
         {/* right side */}
         {MENUITEMS.slice(3).map((item, index) => {
           const activeLink = isActiveLink(pathname, item.href);
-          const disabled =
-            item.href === "/reservation" || item.href === "/corporate";
+          const disabled = item.href === "/#" || item.href === "/#";
 
           return (
             <Link
@@ -80,9 +79,6 @@ const DesktopMenu: React.FC = () => {
               } ${disabled && "cursor-not-allowed"}`}
             >
               <Button
-                disabled={
-                  (item.href === "/reservation", item.href === "/corporate")
-                }
                 className={
                   item.href === "/reservation" && !disabled
                     ? "text-black hover:text-white hover:transform hover:scale-105 transition-all duration-500"

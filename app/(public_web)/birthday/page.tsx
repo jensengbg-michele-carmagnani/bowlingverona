@@ -1,15 +1,14 @@
-import React from "react";
-import HeroSection from "../components/ui/hero-section/HeroSection";
-import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
-import CardSection from "../components/ui/card-section/CardSection";
-import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
+import PricingCard from "@/app/(public_web)/components/ui/pricing/PricingCard";
+import { showReservationForm } from "@/flag/showReservationForm";
+import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";
 import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
-import PricingCard from "@/app/(public)/components/ui/pricing/PricingCard";
-import pricingHeaderRed from "@/public/assets/shape_image/Pricing-headerRed-img.png";
+import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import pricingHeaderBlue from "@/public/assets/shape_image/Pricing-headerBlue-img.png";
 import pricingHeaderOrange from "@/public/assets/shape_image/Pricing-headerOrang-img.png";
-import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";
-import { showReservationForm } from "@/flag/showReservationForm";
+import pricingHeaderRed from "@/public/assets/shape_image/Pricing-headerRed-img.png";
+import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
+import CardSection from "../components/ui/card-section/CardSection";
+import HeroSection from "../components/ui/hero-section/HeroSection";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
 

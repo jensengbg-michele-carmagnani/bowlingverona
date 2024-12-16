@@ -5,9 +5,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/app/(public)/components/home/breadcrumb/breadcrumb";
-import React from "react";
+} from "@/app/(public_web)/components/home/breadcrumb/breadcrumb";
 import type { ReactElement } from "react";
+import React from "react";
 
 export default async function BreadcrumbSlot({
   params,

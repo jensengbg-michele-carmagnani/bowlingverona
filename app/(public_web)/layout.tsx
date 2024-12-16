@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
-import localFont from "next/font/local";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { Suspense } from "react";
 
-import Navbar from "@/app/(public)/components/ui/navbar/Navbar";
-import Footer from "./components/home/footer/Footer";
-import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
-import { showReservationForm } from "@/flag/showReservationForm";
+import Navbar from "@/app/(public_web)/components/ui/navbar/Navbar";
 import "@/app/globals.css";
+import { showReservationForm } from "@/flag/showReservationForm";
+import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
+import Footer from "./components/home/footer/Footer";
 
 const DomCasualD = localFont({
   src: [

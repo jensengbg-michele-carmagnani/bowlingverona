@@ -1,5 +1,3 @@
-
-
 export interface MenuItem {
   label: string;
   href: string;
@@ -11,6 +9,6 @@ export const MENUITEMS: MenuItem[] = [
   { label: "About Us", href: "/aboutus", disabled: false },
   { label: "Menu", href: "/menu", disabled: false },
   { label: "Birthday", href: "/birthday", disabled: false },
-  { label: "Corporate", href: "/corporate", disabled: true },
-  { label: "Reservation", href: "/reservation", disabled: true },
+  { label: "Corporate", href: "/corporate", disabled: false },
+  { label: "Reservation", href: "/reservation", disabled: false },
 ];
