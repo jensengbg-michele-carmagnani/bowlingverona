@@ -1,12 +1,11 @@
-"use client"
-import React from "react";
-import InfoCard from "../../ui/InfoCard";
-import Image from "next/image";
-import menuSandwich from "@/public/assets/shape_image/menu-sandwichjpg.jpg";
-import { menuStatic } from "./menu-static";
-import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+"use client";
 import { useAnimationInView } from "@/lib/animation";
+import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+import menuSandwich from "@/public/assets/shape_image/menu-sandwichjpg.jpg";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import InfoCard from "../../ui/InfoCard";
+import { menuStatic } from "./menu-static";
 
 const Menu = () => {
   const { itemRef, isInView, itemAnimation } = useAnimationInView();
@@ -36,7 +35,7 @@ const Menu = () => {
           <Image
             src={menuSandwich}
             alt="Sample Image"
-            className="object-cover h-full w-full rounded-sm"
+            className="object-cover h-full w-full rounded-md border-slate-600 shadow-[4px_0_10px_rgba(100,100,100,0.3)]"
           />
         </div>
       </div>

@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = async ({}: Readonly<HomeProps>) => {
         <InfoSection />
         <InfoParty />
         <Menu />
-        <MenuFlyer />
+
       </div>
     </main>
   );
