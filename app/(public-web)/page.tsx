@@ -1,8 +1,8 @@
-import Hero from "./components/home/hero-section/HeroSection";
-import About from "./components/home/about-section/AboutSection";
-import InfoSection from "./components/home/info-section/Info";
-import InfoParty from "./components/home/infoparty-section/InfoPartySection";
-import Menu from "./components/home/menu-section/MenuSection";
+import Hero from "./components/landing/hero-section/HeroSection";
+import About from "./components/landing/about-section/AboutSection";
+import InfoSection from "./components/landing/info-section/Info";
+import InfoParty from "./components/landing/infoparty-section/InfoPartySection";
+import Menu from "./components/landing/menu-section/MenuSection";
 import MenuFlyer from "./components/prices-fyer/PricesFlyer";
 
 type HomeProps = {

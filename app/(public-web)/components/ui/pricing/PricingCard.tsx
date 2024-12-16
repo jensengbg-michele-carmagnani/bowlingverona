@@ -24,8 +24,9 @@ const PricingCard: FC<PricingCardProps> = ({
           alt=""
           width={450}
           height={500}
-          className="object-contain absolute top-2 left-1/2 -translate-x-1/2 bg-no-repeat z-10 max-w-[450px] h-[133px]"
+          className=" absolute top-2 left-1/2 -translate-x-1/2 bg-no-repeat z-10 max-w-[450px] h-[133px]"
           priority
+          style={{ width: "auto", height: "auto" }}
         />
         <h1 className="relative z-10 ">
           <span className="text-white uppercase">{title[0]}</span>
@@ -52,7 +53,8 @@ const PricingCard: FC<PricingCardProps> = ({
           alt="bowling img"
           width={140}
           height={94}
-          className="object-contain mt-2.5 ml-auto"
+          className="object-fit mt-2.5 ml-auto"
+          style={{ width: "auto", height: "auto" }}
         />
       </section>
     </article>

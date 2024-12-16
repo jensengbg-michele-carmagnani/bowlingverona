@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { listBucketObjects, S3Object } from "@/app/(home)/home_actions";
+import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
   Carousel,
@@ -21,7 +21,7 @@ const CakeCarousel = () => {
       // Fetch pictures from the S3 bucket
       const BthPics = (await listBucketObjects(
         "picture_website",
-        "Birthday/"
+        "birthday/"
       )) as S3Object[];
       if (BthPics) {
         // Filter pictures whose keys contain "_cake" and create links for them

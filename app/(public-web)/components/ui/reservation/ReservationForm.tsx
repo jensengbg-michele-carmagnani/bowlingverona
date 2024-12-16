@@ -9,7 +9,7 @@ import { DatePicker } from "./DatePicker";
 import { reservationSchema, ReservationFormData } from "./types";
 import { Button } from "@/components/ui/button";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
-import CakeCarousel from "../../home/birthday-section/CakeCarousel";
+import CakeCarousel from "../../landing/birthday-section/CakeCarousel";
 
 const ReservationForm: React.FC = () => {
   const form = useForm<ReservationFormData>({

@@ -1,4 +1,4 @@
-import { S3Object } from "@/app/(home)/home_actions";
+import { S3Object } from "@/app/(public-web)/home_actions";
 
 const supabaseBaseUrl =
   "https://aercpcuebwexytenapqq.supabase.co/storage/v1/object/public"; // Replace with your Supabase base URL
@@ -20,7 +20,6 @@ export const findAndCreateLink = (
   const encodedKey = encodeURIComponent(foundObject.Key); // Encode the key for safe URL usage
   const imgObj = {
     src: `${supabaseBaseUrl}/${bucketName}/${encodedKey}`,
-    
   };
   return `${supabaseBaseUrl}/${bucketName}/${encodedKey}`;
 };

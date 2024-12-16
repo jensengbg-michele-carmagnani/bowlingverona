@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navbar from "@/app/(home)/components/ui/navbar/Navbar";
-import Footer from "./components/home/footer/Footer";
+import Navbar from "@/app/(public-web)/components/ui/navbar/Navbar";
+import Footer from "./components/landing/footer/Footer";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@/app/globals.css";

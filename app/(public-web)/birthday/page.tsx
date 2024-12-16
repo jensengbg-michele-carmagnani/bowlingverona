@@ -2,20 +2,23 @@ import React from "react";
 import HeroSection from "../components/ui/hero-section/HeroSection";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
-import PricingCard from "@/app/(home)/components/ui/pricing/PricingCard";
-import { listBucketObjects, S3Object } from "@/app/(home)/home_actions";
+import PricingCard from "@/app/(public-web)/components/ui/pricing/PricingCard";
+import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 import { findAndCreateLink } from "@/utils/imageFinder";
+import S3Config, { PrefixKeys } from "@/config/s3config";
 
 const Birthday = async () => {
+  const { BUCKET_NAME, PREFIXES } = S3Config;
+
   const BthPics = (await listBucketObjects(
-    "picture_website",
-    "Birthday/"
+    BUCKET_NAME,
+    PREFIXES.BIRTHDAY
   )) as S3Object[];
   const BthIcons = (await listBucketObjects(
-    "picture_website",
-    "Icons/"
+    BUCKET_NAME,
+    PREFIXES.ICONS
   )) as S3Object[];
 
   return (
