@@ -1,14 +1,14 @@
 "use client";
 
-import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
-import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
-import Image from "next/image";
-import aboutImg from "@/public/assets/shape_image/aboutUs.png";
-import aboutMini from "@/public/assets/shape_image/about-mini.png";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { useAnimationInView } from "@/lib/animation";
+import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
+import aboutMini from "@/public/assets/shape_image/about-mini.png";
+import aboutImg from "@/public/assets/shape_image/aboutUs.png";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const About: React.FC = () => {
   const { itemRef, isInView, itemAnimation } = useAnimationInView();
@@ -51,17 +51,25 @@ const About: React.FC = () => {
             <h2 className="text-5xl uppercase font-light">
               Cosa fare al Bowling Verona!
             </h2>
-            <p className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-auto">
-              **Passa una Serata con gli Amici:** Sfida i tuoi amici a una
-              partita di bowling, gioca a biliardo o prova l'area videogames per
-              un'esperienza unica. - **Prenota il Tuo Compleanno:** Festeggia il
-              tuo giorno speciale con giochi, risate e un’atmosfera accogliente
-              pensata per grandi e piccini. - **Organizza la Tua Serata
-              Aziendale:** Un'idea perfetta per team building e cene aziendali,
-              con tante attività per divertirsi e rilassarsi insieme. Il Bowling
-              Verona ti offre tutto il necessario per un’esperienza di
-              intrattenimento completa e indimenticabile. Prenota ora!
-            </p>
+            <article className="text-xl font-extralight md:font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-auto">
+              <p>
+                <strong>Passa una Serata con gli Amici:</strong> Sfida i tuoi
+                amici a una partita di bowling, gioca a biliardo o prova
+                l&apos;area videogames per un&apos;esperienza unica.
+              </p>
+              <p>
+                <strong>Prenota il Tuo Compleanno:</strong> Festeggia il tuo
+                giorno speciale con giochi, risate e un’atmosfera accogliente
+                pensata per grandi e piccini.
+              </p>
+              <p>
+                <strong>Organizza la Tua Serata Aziendale:</strong> Un&apos;idea
+                perfetta per team building e cene aziendali, con tante attività
+                per divertirsi e rilassarsi insieme. Il Bowling Verona ti offre
+                tutto il necessario per un&apos;esperienza di intrattenimento
+                completa e indimenticabile. Prenota ora!
+              </p>
+            </article>
 
             <div className="flex justify-center md:justify-start w-full">
               <Link href={"/about"}>
