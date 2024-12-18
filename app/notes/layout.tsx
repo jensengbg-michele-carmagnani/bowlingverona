@@ -10,7 +10,6 @@ export default async function Layout({
     <html className="rajdhani dom-casual" lang="en">
       <body>
         <div className="w-full max-w-5xl  text-sm py-2">
-          <HeaderAuth />
         </div>
         <div className="max-w-2xl h-screen mx-auto text-black ">
           <div className="bg-slate-400 p-10 rounded-md">{children}</div>
@@ -19,3 +18,4 @@ export default async function Layout({
     </html>
   );
 }
+

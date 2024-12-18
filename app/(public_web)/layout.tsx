@@ -1,12 +1,12 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Suspense } from "react";
-
 import Navbar from "@/app/(public_web)/components/ui/navbar/Navbar";
 import "@/app/globals.css";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import Script from "next/script";
+import { Suspense } from "react";
 import Footer from "./components/home/footer/Footer";
 
 const DomCasualD = localFont({
@@ -86,6 +86,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="it" className={`${Rajdhani.className} ${DomCasualD.className}`}>
+      <Script
+        id="Cookiebot"
+        src="https://consent.cookiebot.com/uc.js"
+        data-cbid="47dbaf39-577a-45e6-9ea1-d36a3746754b"
+        type="text/javascript"
+      />
       <body className="w-2xl overflow-x-hidden relative">
         <Suspense fallback={null}>
           <ConfidentialFlagValues values={values} />
