@@ -1,18 +1,17 @@
 "use client";
-import Image from "next/image";
 import logo from "@/public/assets/ICON/logo_mini.png";
-import Link from "next/link";
-import { footerLinks } from "./staticFooter";
 import footerImage from "@/public/assets/shape_image/footer-image.png";
-import { MapPinIcon, PhoneCallIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { MapPinIcon, PhoneCallIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { footerLinks } from "./staticFooter";
 
 const Footer = () => {
   const footerLinksData = footerLinks || []; // Ensure footerLinks is defined
   const imageSrc = footerImage?.src || ""; // Default to empty string if undefined
-  const imageHeight = footerImage?.height || 0; // Default to 0 if undefined
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
@@ -60,7 +59,7 @@ const Footer = () => {
         style={{ backgroundImage: `url(${imageSrc})` }}
       >
         <div
-          className={`text-slate-300 grid grid-cols-5 font-[Rajdhani] font-extralight text-xl uppercase h-${imageHeight}`}
+          className={`text-slate-300 flex justify-between font-[Rajdhani] font-extralight text-xl uppercase px-5`}
         >
           {footerLinksData.map((link) => (
             <Link

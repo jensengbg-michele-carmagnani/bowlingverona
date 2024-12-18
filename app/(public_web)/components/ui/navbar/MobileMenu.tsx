@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import Logo from "@/public/assets/ICON/logo_mini.png";
-import Link from "next/link";
-import { MENUITEMS } from "./menuStatic";
-import menu_mobile_icon from "@/public/assets/ICON/menu_mobile_bars.svg";
-import { usePathname } from "next/navigation";
 import { isActiveLink } from "@/lib/isActiveLink";
-import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/public/assets/ICON/logo_mini.png";
+import menu_mobile_icon from "@/public/assets/ICON/menu_mobile_bars.svg";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { MENUITEMS } from "./menuStatic";
 import MobileFooter from "./MobileFooter";
 
 const MobileMenu = () => {
@@ -96,7 +96,10 @@ const MobileMenu = () => {
   };
 
   return (
-    <div className="sm:visible md:hidden fixed inset-0 z-40 p-8" ref={menuRef}>
+    <div
+      className="sm:visible md:hidden fixed w-full top-0 z-40 p-8 "
+      ref={menuRef}
+    >
       {/* Menu button */}
       <nav className="flex justify-between items-center ">
         {/* Icon */}
