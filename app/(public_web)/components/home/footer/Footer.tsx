@@ -37,7 +37,7 @@ const Footer = () => {
       animate={isInView ? "visible" : "hidden"}
       variants={itemAnimation}
       custom={0}
-      className="space-y-10"
+      className="space-y-10 relative  "
     >
       <div className="flex justify-center items-center mt-16  bg-[#2c2c2c] py-5 space-x-10">
         <Link href="https://www.instagram.com/bowlingverona/">

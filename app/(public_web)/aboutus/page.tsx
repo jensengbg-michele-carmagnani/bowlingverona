@@ -1,8 +1,8 @@
-import aboutUs from "@/public/assets/shape_image/about-us.png";
-import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
-import CardSection from "../components/ui/card-section/CardSection";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
+import aboutUs from "@/public/assets/shape_image/about-us.png";
 import aboutusImg from "@/public/assets/shape_image/aboutus-img.png";
+import CardSection from "../components/ui/card-section/CardSection";
 
 const AboutUs = () => {
   return (
@@ -19,7 +19,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div
-        className="relative bg-no-repeat bg-center px-10"
+        className="relative bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${vectorDesk.src})`,
           height: `${vectorDesk?.height}px`,
