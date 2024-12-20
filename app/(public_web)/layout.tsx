@@ -10,6 +10,7 @@ import { Suspense } from "react";
 import Footer from "./components/home/footer/Footer";
 
 const DomCasualD = localFont({
+  display: "swap",
   src: [
     {
       path: "./fonts/DomCasual/DomCasualD.woff2",
@@ -35,6 +36,7 @@ const DomCasualD = localFont({
 });
 
 const Rajdhani = localFont({
+  display: "swap",
   src: [
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Light.woff2",
@@ -123,12 +125,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
             image: "https://www.bowlingveron.com/og-image.jpg", // Replace with your Open Graph image
             telephone: "+39 045 581724",
             openingHours: [
-              "Mo-Su 10:00-23:00", // Adjust your actual opening hours
+              "Monday-Thursday 20:30-1:00",
+              "Saturday-Sunday 16:30-1:00",
             ],
             url: "https://www.bowlingveron.com",
             sameAs: [
-              "https://www.instagram.com/bowlingverona",
-              "https://www.facebook.com/BowlingFieraVerona",
+              "https://www.instagram.com/bowlingverona/",
+              "https://www.facebook.com/bowlingveronafiera/",
             ],
             priceRange: "$$", // Adjust the price range to reflect your services
           }),
@@ -136,7 +139,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       />
 
       <body className="w-2xl overflow-x-hidden relative">
-        <Suspense fallback={<div>...loading</div>}>
+        <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
         </Suspense>
         <Navbar />
