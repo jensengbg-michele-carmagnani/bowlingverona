@@ -1,14 +1,8 @@
 "use client";
-import { getSEOTags } from "@/lib/seo";
 import comingSoon from "@/public/assets/shape_image/cominc-soon.png";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-
-export const metadata = getSEOTags({
-  title: "Corporate - Bowling Verona",
-  canonicalUrlRelative :"/corporate",
-});
 
 const Corporate = () => {
   const ref = useRef(null);
