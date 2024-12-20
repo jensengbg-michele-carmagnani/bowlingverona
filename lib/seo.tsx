@@ -96,6 +96,7 @@ export const getSEOTags = ({
 export const renderSchemaTags = () => {
   return (
     <Script
+      id="local-business-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
