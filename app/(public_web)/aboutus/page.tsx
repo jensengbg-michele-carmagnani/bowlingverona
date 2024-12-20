@@ -3,6 +3,11 @@ import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
 import aboutUs from "@/public/assets/shape_image/about-us.png";
 import aboutusImg from "@/public/assets/shape_image/aboutus-img.png";
 import CardSection from "../components/ui/card-section/CardSection";
+import { getSEOTags } from "@/lib/seo";
+export const metadata = getSEOTags({
+  title: "About Us - Bowling Verona",
+  canonicalUrlRelative :"/aboutus",
+});
 
 const AboutUs = () => {
   return (

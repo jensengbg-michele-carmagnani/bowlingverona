@@ -11,7 +11,12 @@ import CardSection from "../components/ui/card-section/CardSection";
 import HeroSection from "../components/ui/hero-section/HeroSection";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
+import { getSEOTags } from "@/lib/seo";
 
+export const metadata = getSEOTags({
+  title: "Compleanni - Bowling Verona",
+  canonicalUrlRelative :"/birthday",
+});
 const Birthday = async () => {
   const showForm = await showReservationForm();
 

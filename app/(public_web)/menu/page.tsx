@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import { getSEOTags } from "@/lib/seo";
+import useScreenSize from "@/lib/useScreenWidth";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
-import menuListImg from "@/public/assets/shape_image/menu-list-img.png";
 import menuListHeader from "@/public/assets/shape_image/menu-list-header.png";
+import menuListImg from "@/public/assets/shape_image/menu-list-img.png";
+import Image from "next/image";
+import React from "react";
 import MenuItem from "./MenuItem";
 import {
   alcoliciECocktailItems,
@@ -12,9 +14,18 @@ import {
   cibiVariItems,
   softDrinkItems,
 } from "./menuStatic";
-import useScreenSize from "@/lib/useScreenWidth";
 
-const HeroSection: React.FC<{ backgroundImage: string; height?: string; title: string; subtitle: string }> = ({ backgroundImage, height, title, subtitle }) => (
+export const metadata = getSEOTags({
+  title: "Menu - Bowling Verona",
+  canonicalUrlRelative: "/menu",
+});
+
+const HeroSection: React.FC<{
+  backgroundImage: string;
+  height?: string;
+  title: string;
+  subtitle: string;
+}> = ({ backgroundImage, height, title, subtitle }) => (
   <section>
     <div
       className="bg-no-repeat bg-center bg-cover h-full flex justify-center items-center"
