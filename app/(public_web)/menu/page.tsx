@@ -1,6 +1,4 @@
-"use client";
-
-import { getSEOTags } from "@/lib/seo";
+"use client"
 import useScreenSize from "@/lib/useScreenWidth";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
 import menuListHeader from "@/public/assets/shape_image/menu-list-header.png";
@@ -15,10 +13,7 @@ import {
   softDrinkItems,
 } from "./menuStatic";
 
-export const metadata = getSEOTags({
-  title: "Menu - Bowling Verona",
-  canonicalUrlRelative: "/menu",
-});
+
 
 const HeroSection: React.FC<{
   backgroundImage: string;

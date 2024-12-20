@@ -1,14 +1,14 @@
 "use client";
-import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
-import Image from "next/image";
-import { bowlingPrices } from "../ui/tables/ColumnBowling";
-import { TablePrices } from "../ui/tables/Table";
-import { columnsBowling } from "../ui/tables/ColumnBowling";
-import { columnsPools, poolsPrices } from "../ui/tables/ColumnPools";
-import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
-import useScreenSize from "@/lib/useScreenWidth";
-import { motion } from "framer-motion";
+
 import { useAnimationInView } from "@/lib/animation";
+import useScreenSize from "@/lib/useScreenWidth";
+import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
+import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { bowlingPrices, columnsBowling } from "../ui/tables/ColumnBowling";
+import { columnsPools, poolsPrices } from "../ui/tables/ColumnPools";
+import { TablePrices } from "../ui/tables/Table";
 
 const PricesFlyer = () => {
   const screenSize = useScreenSize();
