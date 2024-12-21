@@ -6,12 +6,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
 
+import { getSEOTags } from "@/lib/seo";
 import Head from "next/head";
 import Script from "next/script";
 import Footer from "./components/home/footer/Footer";
-import { getSEOTags } from "@/lib/seo"
 
-export const metadata = getSEOTags()
+export const metadata = getSEOTags();
 
 const DomCasualD = localFont({
   display: "swap",
@@ -79,6 +79,25 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <Head>
         <link rel="canonical" href="https://www.bowlingverona.com" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Script
         id="structured-data"
