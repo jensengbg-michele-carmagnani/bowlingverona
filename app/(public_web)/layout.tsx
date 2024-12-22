@@ -86,6 +86,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href="/favicon/apple-touch-icon.png"
         />
         <link
+          rel="android-chrome"
+          sizes="192x192"
+          href="/favicon/android-chrome-192-192.png"
+        />
+        <link
+          rel="android-chrome"
+          sizes="192x192"
+          href="/favicon/android-chrome-512x512.png"
+        />
+        <link
           rel="icon"
           type="image/png"
           sizes="32x32"
