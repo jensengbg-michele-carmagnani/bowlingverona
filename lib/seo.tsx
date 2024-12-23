@@ -32,7 +32,17 @@ export const getSEOTags = ({
       "Bowling Verona è la destinazione ideale per il divertimento in famiglia con 14 piste da bowling, un'area giochi e un punto ristoro. Prenota ora!",
     // some keywords separated by commas. By default, it will be your app name
     keywords: keywords || [
-      "Bowling",
+      "Bowling Verona",
+      "laser game verona",
+      "bowling vicono a me",
+      "sala giochi",
+      "biliardo verona",
+      "bowling verona fiera",
+      "bowling borgo roma",
+      "bar con biliardo",
+      "bar con biliardo vicino a me",
+      "bowling zai",
+      "bowling santa lucia",
       "Verona",
       "Divertimento in famiglia",
       "Eventi",
