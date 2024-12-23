@@ -29,7 +29,7 @@ export const getSEOTags = ({
     // up to 160 characters (how does your app help the user?)
     description:
       description ||
-      "Bowling Verona è la destinazione ideale per il divertimento in famiglia con 14 piste da bowling, un'area giochi e un punto ristoro. Prenota ora!",
+      "Bowling Verona è la destinazione ideale per il divertimento in famiglia con 14 piste da bowling e 13 biliardi, un'area giochi e un punto ristoro!",
     // some keywords separated by commas. By default, it will be your app name
     keywords: keywords || [
       "Bowling Verona",
