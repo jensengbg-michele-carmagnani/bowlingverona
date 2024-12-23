@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 const config = {
-  domainName: "bowlingverona.com",
+  domainName: "www.bowlingverona.com",
 };
 
 export default config;
