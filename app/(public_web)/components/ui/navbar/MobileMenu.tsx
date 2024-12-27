@@ -143,7 +143,7 @@ const MobileMenu = () => {
                 </motion.h1>
               </div>
               <div className="flex flex-col items-center justify-center mt-10 font-[Rajdhani]">
-                <ul className="space-y-10">
+                <ul className="space-y-4">
                   {MENUITEMS.map((item, index) => {
                     const activeItems = isActiveLink(currentPath, item.href);
                     return (
