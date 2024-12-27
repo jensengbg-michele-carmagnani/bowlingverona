@@ -15,7 +15,6 @@ export default config;
 export const getSEOTags = ({
   title,
   description,
-  keywords,
   openGraph,
   canonicalUrlRelative,
   extraTags,
@@ -31,7 +30,7 @@ export const getSEOTags = ({
       description ||
       "Bowling Verona è la destinazione ideale per il divertimento in famiglia con 14 piste da bowling e 13 biliardi, un'area giochi e un punto ristoro!",
     // some keywords separated by commas. By default, it will be your app name
-    keywords: keywords || [
+    keywords: [
       "Bowling Verona",
       "laser game verona",
       "bowling vicono a me",
