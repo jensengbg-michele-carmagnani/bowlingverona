@@ -1,5 +1,5 @@
-"use client"
-import useScreenSize from "@/lib/useScreenWidth";
+"use client";
+import useScreenSize from "@/hooks/useScreenWidth";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
 import menuListHeader from "@/public/assets/shape_image/menu-list-header.png";
 import menuListImg from "@/public/assets/shape_image/menu-list-img.png";
@@ -12,8 +12,6 @@ import {
   cibiVariItems,
   softDrinkItems,
 } from "./menuStatic";
-
-
 
 const HeroSection: React.FC<{
   backgroundImage: string;

@@ -4,7 +4,7 @@ import Logo from "@/public/assets/ICON/bowlingIcon.png";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -13,18 +13,48 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { isActiveLink } from "@/lib/isActiveLink";
 import { User } from "@/typing";
 import { createClient } from "@/utils/supabase/client";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { MENUITEMS } from "./staticLinks";
 
 const DesktopMenu: React.FC = () => {
   const [user, setUser] = React.useState<User | null>(null);
+  const [isNavBg, setIsNavBg] = React.useState<boolean>(false);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
 
+  // Current pathname
   const pathname = usePathname();
   const supabase = createClient();
 
+  /* Scroll direction hook */
+  const scrollDirection = useScrollDirection();
+
+  // Nav background transparency handler
+  const bgNavTransparencyHandler = () => {
+    if (scrollDirection === "down") {
+      setIsNavBg(true);
+    } else {
+      setIsNavBg(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", bgNavTransparencyHandler);
+    return () => {
+      document.removeEventListener("scroll", bgNavTransparencyHandler);
+    };
+  });
+  // Nav background transparency state
+  const state = isNavBg ? "true" : "false";
+
+  /**
+   * Fetches the authenticated user from Supabase and sets the user state.
+   * This effect runs once when the component mounts.
+   */
   React.useEffect(() => {
     const fetchUser = async () => {
       const { data } = await supabase.auth.getUser();
@@ -34,6 +64,11 @@ const DesktopMenu: React.FC = () => {
     fetchUser();
   }, [supabase]);
 
+  /**
+   * Signs out the current user using Supabase authentication.
+   * Sets the user state to null upon successful sign out.
+   * Logs an error message if sign out fails.
+   */
   const signOut = async () => {
     const supabase = createClient();
     const { error } = await supabase.auth.signOut();
@@ -44,9 +79,29 @@ const DesktopMenu: React.FC = () => {
     }
   };
 
+  // Nav Animation Variants
+  const navVariants = {
+    true: {
+      x: "0vw",
+      opacity: 0,
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+    },
+    false: {
+      x: "0vw",
+      backgroundColor: "rgba(128, 128, 128, 0.1)", // Slight gray background
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+    },
+  };
+
   return (
     <div className="hidden md:flex justify-center items-center py-10 px-6 absolute top-0 left-0 z-40 w-screen">
-      <nav className="flex justify-center items-center 2xl:gap-5 relative">
+      <motion.nav
+        ref={scrollRef}
+        initial={{ x: "100vw" }}
+        animate={state}
+        variants={navVariants}
+        className="flex justify-center items-center 2xl:gap-5 relative"
+      >
         {/* left side */}
         {MENUITEMS.slice(0, 3).map((item) => {
           const activeLink = isActiveLink(pathname, item.href);
@@ -112,7 +167,7 @@ const DesktopMenu: React.FC = () => {
             </Popover>
           )}
         </div>
-      </nav>
+      </motion.nav>
     </div>
   );
 };

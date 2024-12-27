@@ -1,7 +1,7 @@
 "use client";
 
+import useScreenSize from "@/hooks/useScreenWidth";
 import { useAnimationInView } from "@/lib/animation";
-import useScreenSize from "@/lib/useScreenWidth";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
 import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
 import { motion } from "framer-motion";
