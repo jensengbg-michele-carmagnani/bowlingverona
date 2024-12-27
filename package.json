@@ -44,7 +44,8 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^20.17.8",
+    "@types/node": "^20.17.10",
+    "@types/prop-types": "^15.7.14",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-cookiebot": "^1.0.5",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
