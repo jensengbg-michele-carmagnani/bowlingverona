@@ -1,8 +1,7 @@
-import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
+import Link from "next/link";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const MobileFooter = () => {
   const itemAnimation = {
@@ -27,7 +26,7 @@ const MobileFooter = () => {
   };
   return (
     <div>
-      <div className="flex justify-center items-center mt-16 space-x-5">
+      <div className="flex justify-center items-center mt-10 space-x-5">
         <Link href="https://www.instagram.com/bowlingverona/">
           <motion.span
             variants={itemAnimation}
