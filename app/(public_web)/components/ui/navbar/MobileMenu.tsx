@@ -142,7 +142,7 @@ const MobileMenu = () => {
                   <span className="text-orange-400">bowling verona</span>
                 </motion.h1>
               </div>
-              <div className="flex flex-col items-center justify-center mt-10 font-[Rajdhani]">
+              <div className="flex flex-col items-center justify-center mt-3 font-[Rajdhani]">
                 <ul className="space-y-4">
                   {MENUITEMS.map((item, index) => {
                     const activeItems = isActiveLink(currentPath, item.href);
@@ -157,9 +157,10 @@ const MobileMenu = () => {
                             }
                             handleLinkClick();
                           }}
-                          className={`block px-4 py-2 hover:bg-gray-700 text-3xl 
+                          className={`block px-4 py-2 text-3xl font-semibold focus:outline-none hover:bg-none active:bg-none
                             ${activeItems ? "text-orange-500" : ""}
                             ${item.disabled ? "opacity-50 cursor-not-allowed hover:bg-transparent" : ""}`}
+                          aria-disabled={item.disabled ? "true" : "false"}
                         >
                           <span>{item.label}</span>
                         </Link>
