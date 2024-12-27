@@ -1,7 +1,6 @@
-"use client"
-import React from "react";
-import ReactCookieBot from "react-cookiebot";
+"use client";
 import PropTypes from "prop-types";
+import ReactCookieBot from "react-cookiebot";
 
 const domainGroupId = process.env.NEXT_PUBLIC_COOKIE_BOT_DOMAIN_GROUP;
 
