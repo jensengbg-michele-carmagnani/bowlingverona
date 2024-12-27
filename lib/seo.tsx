@@ -28,7 +28,7 @@ export const getSEOTags = ({
     // up to 160 characters (how does your app help the user?)
     description:
       description ||
-      "Bowling Verona è la destinazione ideale per il divertimento in famiglia con 14 piste da bowling e 13 biliardi, un'area giochi e un punto ristoro!",
+      "Bowling Verona è il punto di riferimento per il divertimento a Verona, con 14 piste da bowling professionali e 13 biliardi, area giochi, biliardo, e spazi dedicati a feste private ed eventi aziendali. Ideale per famiglie, gruppi di amici e team building. Offriamo un'atmosfera accogliente, giochi moderni e tanto divertimento. Prenota ora per vivere un'esperienza indimenticabile!",
     // some keywords separated by commas. By default, it will be your app name
     keywords: [
       "Bowling Verona",
@@ -58,7 +58,7 @@ export const getSEOTags = ({
       title: openGraph?.title || "Bowling Verona",
       description:
         openGraph?.description ||
-        "Goditi 14 piste da bowling, eventi e divertimento per famiglie a Verona. Prenota la tua pista oggi!",
+        "Bowling Verona è il punto di riferimento per il divertimento a Verona, con 14 piste da bowling professionali, area giochi, biliardo, e spazi dedicati a feste private ed eventi aziendali. Ideale per famiglie, gruppi di amici e team building. Offriamo un'atmosfera accogliente, giochi moderni e tanto divertimento. Prenota ora per vivere un'esperienza indimenticabile!",
       url: openGraph?.url || `https://${config.domainName}/`,
       siteName: openGraph?.title || "Bowling Verona",
       // If you add an opengraph-image.(jpg|jpeg|png|gif) image to the /app folder, you don't need the code below
@@ -96,7 +96,7 @@ export const getSEOTags = ({
       title: openGraph?.title || "Bowling Verona",
       description:
         openGraph?.description ||
-        "Scopri l'esperienza di bowling perfetta a Verona: 14 piste, eventi e tanto divertimento per tutti!",
+        "Bowling Verona è il punto di riferimento per il divertimento a Verona, con 14 piste da bowling professionali, area giochi, biliardo, e spazi dedicati a feste private ed eventi aziendali. Ideale per famiglie, gruppi di amici e team building. Offriamo un'atmosfera accogliente, giochi moderni e tanto divertimento. Prenota ora per vivere un'esperienza indimenticabile!",
       profile: `https://www.instagram.com/bowlingverona/`,
     },
 
