@@ -55,7 +55,7 @@ const InfoParty = () => {
               className="shadow-xl rounded-md"
             />
             <div className="absolute flex justify-around w-full items-center inset-x-0 bottom-9">
-              <h2 className="text-2xl md:text-4xl">birthday party</h2>
+              <h2 className="text-2xl md:text-4xl">corporate party</h2>
               <Button
                 className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500 min-w-10  font-[Rajdhani] upperca"
                 imgUrl={buttonIcon}
