@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import { MapPin, PhoneCall, InfoIcon } from "lucide-react";
-import InfoCard from "../../ui/InfoCard";
-import { motion } from "framer-motion";
 import { useAnimationInView } from "@/lib/animation";
+import { motion } from "framer-motion";
+import { InfoIcon, MapPin, PhoneCall } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+import InfoCard from "../../ui/InfoCard";
 
 const InfoSection: React.FC = () => {
   const { itemRef, isInView, itemAnimation } = useAnimationInView();
@@ -22,7 +22,7 @@ const InfoSection: React.FC = () => {
           borderPosition="right"
           icon={PhoneCall}
           title={"phone"}
-          descriptions={[{ text: "+39 045-581724" }]}
+          descriptions={[{ text: "", highlight: "+39 045-581724" }]}
         />
         <Link
           href={"https://bit.ly/3Atlssu"}
@@ -33,14 +33,14 @@ const InfoSection: React.FC = () => {
             borderPosition="right"
             icon={MapPin}
             title={"location"}
-            descriptions={[{ text: "Viale della Fiera 10/a" }]}
+            descriptions={[{ text: "", highlight: "Viale della Fiera 10/a" }]}
           />
         </Link>
         <InfoCard
           borderPosition="right"
           title={"Opening hours"}
           descriptions={[
-            { text: "Lun-Ven 20:30pm 1:00am" },
+            { text: "Lun-Ven", highlight: "20:30pm 1:00am" },
             { text: "Sab ", highlight: "16:30pm 1:00am" },
             { text: "Dom ", highlight: "16:30pm 1:00am" },
           ]}
@@ -49,7 +49,7 @@ const InfoSection: React.FC = () => {
           borderPosition="none"
           icon={InfoIcon}
           title={"contacts"}
-          descriptions={[{ text: "bowlingvr@gmail.com" }]}
+          descriptions={[{ text: "", highlight: "bowlingvr@gmail.com" }]}
         />
       </div>
     </motion.div>
