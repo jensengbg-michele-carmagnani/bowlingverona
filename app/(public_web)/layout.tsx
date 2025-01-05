@@ -12,7 +12,6 @@ import Script from "next/script";
 import Footer from "./components/home/footer/Footer";
 
 export const metadata = getSEOTags();
-console.log(metadata);
 
 const DomCasualD = localFont({
   display: "swap",

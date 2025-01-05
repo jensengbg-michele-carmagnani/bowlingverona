@@ -1,5 +1,6 @@
 import PricingCard from "@/app/(public_web)/components/ui/pricing/PricingCard";
 import { showReservationForm } from "@/flag/showReservationForm";
+import { getSEOTags } from "@/lib/seo";
 import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";
 import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
@@ -11,11 +12,10 @@ import CardSection from "../components/ui/card-section/CardSection";
 import HeroSection from "../components/ui/hero-section/HeroSection";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
-import { getSEOTags } from "@/lib/seo";
 
 export const metadata = getSEOTags({
   title: "Compleanni - Bowling Verona",
-  canonicalUrlRelative :"/birthday",
+  canonicalUrlRelative: "/birthday",
 });
 const Birthday = async () => {
   const showForm = await showReservationForm();
@@ -51,8 +51,8 @@ const Birthday = async () => {
           mainImageHeight={400}
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-9 relative py-20 ">
-        <div className="relative md:max-w-[470px] max-w-[380px]">
+      <div className="flex flex-col md:flex-row  gap-7 relative py-20 flex-wrap justify-center items-center">
+        <div className="w-full relative md:max-w-[470px] max-w-[380px]">
           <PricingCard
             className="border-red-600 mx-auto"
             title="Ragazzi sotto i 14 anni"
@@ -64,7 +64,7 @@ const Birthday = async () => {
             menuItems={MENUITEMSBIRTHDAY}
           />
         </div>
-        <div className="w-full relative max-w-[470px]">
+        <div className="w-full relative md:max-w-[470px] max-w-[380px] ">
           <PricingCard
             className="border-blue-600 mx-auto"
             title="Ragazzi sopra i 14 inclusi"
@@ -75,7 +75,7 @@ const Birthday = async () => {
             menuItems={MENUITEMSBIRTHDAY}
           />
         </div>
-        <div className="w-full relative max-w-[470px]">
+        <div className="w-full relative md:max-w-[470px] max-w-[380px] ">
           <PricingCard
             className="border-orange-600 mx-auto"
             title="Adulti"
