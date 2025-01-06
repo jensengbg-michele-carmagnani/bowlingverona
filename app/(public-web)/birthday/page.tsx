@@ -1,4 +1,4 @@
-import PricingCard from "@/app/(public_web)/components/ui/pricing/PricingCard";
+import PricingCard from "@/app/(public-web)/components/ui/pricing/PricingCard";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { getSEOTags } from "@/lib/seo";
 import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";

@@ -1,4 +1,4 @@
-import Navbar from "@/app/(public_web)/components/ui/navbar/Navbar";
+import Navbar from "@/app/(public-web)/components/ui/navbar/Navbar";
 import "@/app/globals.css";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";

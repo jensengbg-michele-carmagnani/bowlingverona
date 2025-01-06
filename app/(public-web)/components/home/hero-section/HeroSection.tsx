@@ -2,7 +2,7 @@
 import { useAnimationInView } from "@/lib/animation";
 import heroImage from "@/public/assets/shape_image/Rectangle1.png";
 import { motion } from "framer-motion";
-
+import NextBreadcrumb from "../../ui/breadcrumb/BreadCrumb";
 
 type heroProps = {
   backgroundImage?: string;
@@ -10,13 +10,11 @@ type heroProps = {
 };
 
 const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
-
   const { itemRef, isInView, itemAnimation } = useAnimationInView();
   return (
     <>
-      
       <motion.div
-        className="relative h-[874px] w-full"
+        className="relative h-[874px] w-full "
         ref={itemRef}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
@@ -33,13 +31,20 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
           />
         ) : (
           <div
-            className="w-screen h-full"
+            className="w-screen h-full relative"
             style={{
               backgroundImage: `url(${heroImage.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
+            <NextBreadcrumb
+              homeElement={"Home"}
+              separator={<span> / </span>}
+              containerClasses="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white"
+              listClasses="inline-block"
+              activeClasses="text-orange-400"
+            />
             <div className="flex flex-col justify-center items-center  space-y-7 px-2 md:px-0 h-full">
               <h1 className="text-5xl text-center uppercase font-[DomCasualD] font-light">
                 <span className="text-orange-400">bowling verona:</span> where
