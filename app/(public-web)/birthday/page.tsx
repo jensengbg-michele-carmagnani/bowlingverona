@@ -25,8 +25,8 @@ const Birthday = async () => {
       <HeroSection
         height={`${birthdayHeroImg.height}px`}
         backgroundImage={birthdayHeroImg.src}
-        title="Birthday Party"
-        subtitle="Home / Birthday"
+        title=""
+        subtitle=""
       />
       <div
         className="bg-cover bg-center bg-no-repeat"

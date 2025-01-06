@@ -12,40 +12,19 @@ import {
   cibiVariItems,
   softDrinkItems,
 } from "./menuStatic";
-
-const HeroSection: React.FC<{
-  backgroundImage: string;
-  height?: string;
-  title: string;
-  subtitle: string;
-}> = ({ backgroundImage, height, title, subtitle }) => (
-  <section>
-    <div
-      className="bg-no-repeat bg-center bg-cover h-full flex justify-center items-center"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        height: height,
-      }}
-    >
-      <div className="text-center">
-        <h1 className="text-2xl capitalize">{title}</h1>
-        <p className="text-2xl capitalize">{subtitle}</p>
-      </div>
-    </div>
-  </section>
-);
+import HeroSection from "@/app/(public-web)/components/ui/hero-section/HeroSection";
 
 const Menu: React.FC = () => {
   const screenSize = useScreenSize();
   const isXs = screenSize === "xs";
 
   return (
-    <div className="">
+    <div className="relative">
       <HeroSection
         backgroundImage={menuListHeader?.src}
         height={`${menuListHeader?.height}px`}
-        title="Meenu"
-        subtitle="Home / Menu"
+        title=""
+        subtitle=""
       />
 
       <div

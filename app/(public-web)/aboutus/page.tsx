@@ -1,10 +1,10 @@
-import NextBreadcrumb from "@/app/(public-web)/components/ui/breadcrumb/BreadCrumb";
+import CardSection from "@/app/(public-web)/components/ui/card-section/CardSection";
+import HeroSection from "@/app/(public-web)/components/ui/hero-section/HeroSection";
 import { getSEOTags } from "@/lib/seo";
 import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
 import vectorDesk from "@/public/assets/shape_image/About-desk-vector.png";
 import aboutUs from "@/public/assets/shape_image/about-us.png";
 import aboutusImg from "@/public/assets/shape_image/aboutus-img.png";
-import CardSection from "../components/ui/card-section/CardSection";
 
 export const metadata = getSEOTags({
   title: "About Us - Bowling Verona",
@@ -14,21 +14,13 @@ export const metadata = getSEOTags({
 const AboutUs = () => {
   return (
     <section className="">
-      <div
-        className="relative bg-no-repeat bg-center bg-cover flex justify-center items-center "
-        style={{
-          backgroundImage: `url(${aboutUs?.src})`,
-          height: `${aboutUs?.height}px`,
-        }}
-      >
-        <NextBreadcrumb
-          homeElement={"Home"}
-          separator={<span> / </span>}
-          containerClasses="capitalize absolute bottom-20 left-1/2 transform -translate-x-1/2 w-full font-[Rajdhani] font-light text-2xl w-full flex justify-center items-center"
-          listClasses="text-center transform hover:animate-pulse"
-          activeClasses="text-orange-400 cursor-none"
-        />
-      </div>
+      <HeroSection
+        height={`${aboutUs.height}px`}
+        backgroundImage={aboutUs.src}
+        title=""
+        subtitle=""
+      />
+
       <div
         className="relative bg-no-repeat bg-center"
         style={{

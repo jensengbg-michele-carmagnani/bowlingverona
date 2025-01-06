@@ -17,8 +17,9 @@ const InfoSection: React.FC = () => {
       variants={itemAnimation}
       custom={0}
     >
-      <div className="grid grid-cols-2 md:gap-10 md:grid-cols-4 px-6 md:px-0 mx-auto md:py-24 gap-5">
+      <div className="grid grid-cols-2 md:gap-10 md:grid-cols-4 px-6 md:px-0 mx-auto md:py-24 gap-5 ">
         <InfoCard
+          classTitle="text-left w-full"
           borderPosition="right"
           icon={PhoneCall}
           title={"phone"}
@@ -30,6 +31,7 @@ const InfoSection: React.FC = () => {
           target="_blank"
         >
           <InfoCard
+            classTitle="text-left w-full"
             borderPosition="right"
             icon={MapPin}
             title={"location"}
@@ -37,6 +39,7 @@ const InfoSection: React.FC = () => {
           />
         </Link>
         <InfoCard
+          classTitle="text-left w-full"
           borderPosition="right"
           title={"Opening hours"}
           descriptions={[
@@ -46,6 +49,7 @@ const InfoSection: React.FC = () => {
           ]}
         />
         <InfoCard
+          classTitle="text-left w-full"
           borderPosition="none"
           icon={InfoIcon}
           title={"contacts"}

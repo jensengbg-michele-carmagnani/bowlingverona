@@ -47,7 +47,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
         `md:p-10 gap-3 space-y-2 w-full md:min-h-52  ${borderClasses[borderPosition]} ${className}`
       )}
     >
-      <div className="flex gap-3">
+      <div className="flex gap-3 w-full items-center">
         <div>{Icon && <Icon size={20} />}</div>
         <h2 className={cn(`uppercase text-xl text-slate-50 ${classTitle}`)}>
           {title}

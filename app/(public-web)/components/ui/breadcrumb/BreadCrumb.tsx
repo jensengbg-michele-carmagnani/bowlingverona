@@ -25,9 +25,6 @@ const NextBreadcrumb = ({
     () => paths.split("/").filter((path) => path),
     [paths]
   );
-  console.log("paths", paths);
-  console.log("pathsN", pathNames);
-
   return (
     <nav aria-label="Breadcrumb" className={containerClasses}>
       <ul className="flex items-center space-x-2">

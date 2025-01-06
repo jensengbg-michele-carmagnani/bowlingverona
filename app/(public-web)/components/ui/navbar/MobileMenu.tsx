@@ -134,12 +134,16 @@ const MobileMenu = () => {
             variants={menuAnimation}
           >
             <div className="fixed top-0 left-0 w-full h-screen bg-[#2C2C2C] text-white py-2 shadow-lg z-auto">
-              <div className="p-10">
+              <div className="py-8">
                 <motion.h1
                   variants={itemAnimation}
-                  className="text-4xl text-center uppercase font-[DomCasualD] font-light"
+                  className="text-4xl uppercase font-[DomCasualD] font-light text-orange-400 inline-block w-full text-center"
                 >
-                  <span className="text-orange-400">bowling verona</span>
+                  bowling
+                  <span className="inline-block px-4 align-bottom">
+                    <Image src={Logo} alt="logo" width={50} height={50} />
+                  </span>
+                  verona
                 </motion.h1>
               </div>
               <div className="flex flex-col items-center justify-center mt-3 font-[Rajdhani]">
@@ -157,7 +161,7 @@ const MobileMenu = () => {
                             }
                             handleLinkClick();
                           }}
-                          className={`block px-4 py-2 text-3xl font-semibold focus:outline-none hover:bg-none active:bg-none
+                          className={`block px-4 py-2 text-3xl font-light focus:outline-none hover:bg-none active:bg-none
                             ${activeItems ? "text-orange-500" : ""}
                             ${item.disabled ? "opacity-50 cursor-not-allowed hover:bg-transparent" : ""}`}
                           aria-disabled={item.disabled ? "true" : "false"}

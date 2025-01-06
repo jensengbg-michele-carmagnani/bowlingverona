@@ -31,7 +31,7 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
           />
         ) : (
           <div
-            className="w-screen h-full relative"
+            className="w-screen h-full relative "
             style={{
               backgroundImage: `url(${heroImage.src})`,
               backgroundSize: "cover",
@@ -41,9 +41,9 @@ const Hero: React.FC<heroProps> = ({ backgroundVideo }) => {
             <NextBreadcrumb
               homeElement={"Home"}
               separator={<span> / </span>}
-              containerClasses="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white"
-              listClasses="inline-block"
-              activeClasses="text-orange-400"
+              containerClasses="capitalize absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full font-[Rajdhani] font-light text-4xl w-full flex justify-center items-center"
+              listClasses="text-center transform hover:animate-pulse"
+              activeClasses="text-orange-400 cursor-none"
             />
             <div className="flex flex-col justify-center items-center  space-y-7 px-2 md:px-0 h-full">
               <h1 className="text-5xl text-center uppercase font-[DomCasualD] font-light">
