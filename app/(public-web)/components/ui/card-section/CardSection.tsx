@@ -32,7 +32,6 @@ const CardSection: React.FC<CardSectionProps> = ({
   mainImageWidth,
   miniImageHeight,
   miniImageWidth,
-
   highlightColor = "orange-400",
   buttonIcon,
 }) => {

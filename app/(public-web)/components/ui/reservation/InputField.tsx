@@ -16,6 +16,7 @@ export const InputField: React.FC<InputFieldProps> = ({
   name,
   required,
   type = "text",
+  devider = true,
 }) => {
   return (
     <FormField
@@ -42,7 +43,7 @@ export const InputField: React.FC<InputFieldProps> = ({
             />
           </FormControl>
           <FormMessage />
-          <Divider width="w-full" />
+          {devider && <Divider width="w-full" />}
         </FormItem>
       )}
     />

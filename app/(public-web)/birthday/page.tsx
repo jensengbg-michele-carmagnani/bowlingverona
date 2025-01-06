@@ -1,17 +1,33 @@
 import PricingCard from "@/app/(public-web)/components/ui/pricing/PricingCard";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { getSEOTags } from "@/lib/seo";
-import footerImg from "@/public/assets/ICON/Bowling-bolls-icon.png";
-import birthdayCard from "@/public/assets/shape_image/birthday-cake.png";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
-import pricingHeaderBlue from "@/public/assets/shape_image/Pricing-headerBlue-img.png";
-import pricingHeaderOrange from "@/public/assets/shape_image/Pricing-headerOrang-img.png";
-import pricingHeaderRed from "@/public/assets/shape_image/Pricing-headerRed-img.png";
-import vectorDesk from "@/public/assets/shape_image/vector-about-descktop.png";
-import CardSection from "../components/ui/card-section/CardSection";
-import HeroSection from "../components/ui/hero-section/HeroSection";
-import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import CardSection from "@/app/(public-web)/components/ui/card-section/CardSection";
+import HeroSection from "@/app/(public-web)/components/ui/hero-section/HeroSection";
+import { MENUITEMSBIRTHDAY } from "@/app/(public-web)/components/ui/pricing/MENUITEMSBIRTHDAY";
+
+import React from "react";
+
+
+
+
+import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
+
+import { findAndCreateLink } from "@/utils/imageFinder";
+import S3Config from "@/config/s3config";
+
+const Birthday = async () => {
+  const { BUCKET_NAME, PREFIXES } = S3Config;
+
+  const BthPics = (await listBucketObjects(
+    BUCKET_NAME,
+    PREFIXES.BIRTHDAY
+  )) as S3Object[];
+  const BthIcons = (await listBucketObjects(
+    BUCKET_NAME,
+    PREFIXES.ICONS
+  )) as S3Object[];
 
 export const metadata = getSEOTags({
   title: "Compleanni - Bowling Verona",
@@ -24,15 +40,15 @@ const Birthday = async () => {
     <div className="">
       <HeroSection
         height={`${birthdayHeroImg.height}px`}
-        backgroundImage={birthdayHeroImg.src}
-        title=""
-        subtitle=""
+        backgroundImage={BthPics ? findAndCreateLink(BthPics, "hero") || "" : ""}
+        title="Birthday Party"
+        subtitle="Home / Birthday"
       />
       <div
         className="bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${vectorDesk.src})`,
-          height: `${vectorDesk.height}px`,
+          backgroundImage: `url(${BthPics ? findAndCreateLink(BthPics, "desk") : ""})`,
+          height: `${900}px`,
         }}
       >
         <CardSection
@@ -46,7 +62,9 @@ const Birthday = async () => {
     ✨ Non perdere l’occasione di festeggiare con noi e fare strike di emozioni! ✨
     Scopri i nostri pacchetti su misura e prenota ora per riservare il tuo pomeriggio speciale.
     Che aspetti? Contattaci subito per fissare la data del tuo compleanno da ricordare!`}
-          mainImageSrc={birthdayCard.src}
+          mainImageSrc={
+            BthPics ? findAndCreateLink(BthPics, "birthday-cake") || "/#" : "/#"
+          }
           mainImageWidth={600}
           mainImageHeight={400}
         />
@@ -58,8 +76,15 @@ const Birthday = async () => {
             title="Ragazzi sotto i 14 anni"
             subtitle="min 8/10 persone"
             label="Primary"
-            headerImage={pricingHeaderRed}
-            footerImage={footerImg}
+            headerImage={
+              BthPics ? findAndCreateLink(BthPics, "headerRed") || "/#" : "/#"
+            }
+            footerImage={
+              (BthPics &&
+                BthIcons &&
+                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
+              "/#"
+            }
             price={"€ 22"}
             menuItems={MENUITEMSBIRTHDAY}
           />
@@ -69,8 +94,15 @@ const Birthday = async () => {
             className="border-blue-600 mx-auto"
             title="Ragazzi sopra i 14 inclusi"
             label="Secondary"
-            headerImage={pricingHeaderBlue}
-            footerImage={footerImg}
+            headerImage={
+              BthPics ? findAndCreateLink(BthPics, "headerBlue") || "/#" : "/#"
+            }
+            footerImage={
+              (BthPics &&
+                BthIcons &&
+                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
+              "/#"
+            }
             price={"€ 25"}
             menuItems={MENUITEMSBIRTHDAY}
           />
@@ -80,8 +112,15 @@ const Birthday = async () => {
             className="border-orange-600 mx-auto"
             title="Adulti"
             label="Tertiary"
-            headerImage={pricingHeaderOrange}
-            footerImage={footerImg}
+            headerImage={
+              BthPics ? findAndCreateLink(BthPics, "headerOrang") || "/#" : "/#"
+            }
+            footerImage={
+              (BthPics &&
+                BthIcons &&
+                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
+              "/#"
+            }
             price={"€ 25"}
             menuItems={MENUITEMSBIRTHDAY}
           />
