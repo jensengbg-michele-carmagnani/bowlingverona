@@ -8,9 +8,6 @@ import { MENUITEMSBIRTHDAY } from "@/app/(public-web)/components/ui/pricing/MENU
 
 import React from "react";
 
-
-
-
 import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
 
@@ -29,11 +26,6 @@ const Birthday = async () => {
     PREFIXES.ICONS
   )) as S3Object[];
 
-export const metadata = getSEOTags({
-  title: "Compleanni - Bowling Verona",
-  canonicalUrlRelative: "/birthday",
-});
-const Birthday = async () => {
   const showForm = await showReservationForm();
 
   return (

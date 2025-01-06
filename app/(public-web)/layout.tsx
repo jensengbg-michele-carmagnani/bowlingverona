@@ -15,8 +15,7 @@ export const metadata = getSEOTags();
 
 const DomCasualD = localFont({
   display: "swap",
-  
-   src: [
+  src: [
     {
       path: "./fonts/DomCasual/DomCasualD.woff2",
       weight: "100 900",
@@ -45,23 +44,23 @@ const Rajdhani = localFont({
   src: [
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Bold.woff2",
-      weight: "100 900",
-      style: "bold",
+      weight: "bold",
+      style: "normal",
     },
     {
-      path: "./fonts//rajdhani_wolff2/Rajdhani-Light.woff2",
-      weight: "100 900",
-      style: "light",
+      path: "./fonts/rajdhani_wolff2/Rajdhani-Light.woff2",
+      weight: "300",
+      style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Regular.woff2",
-      weight: "100 900",
+      weight: "400",
       style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-SemiBold.woff2",
-      weight: "100 900",
-      style: "semibold",
+      weight: "600",
+      style: "normal",
     },
   ],
 });
