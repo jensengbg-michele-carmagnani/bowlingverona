@@ -92,7 +92,7 @@ export default function Page() {
     };
     fetchNotes();
     extractUser();
-  }, []); // Empty dependency array, runs once when the component mounts
+  }, [supabase]); // Add supabase as a dependency
 
   return (
     <div className="bg-green-600 rounded-md p-10">

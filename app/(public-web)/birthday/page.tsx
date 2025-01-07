@@ -1,18 +1,17 @@
+import CardSection from "@/app/(public-web)/components/ui/card-section/CardSection";
+import HeroSection from "@/app/(public-web)/components/ui/hero-section/HeroSection";
+import { MENUITEMSBIRTHDAY } from "@/app/(public-web)/components/ui/pricing/MENUITEMSBIRTHDAY";
 import PricingCard from "@/app/(public-web)/components/ui/pricing/PricingCard";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { getSEOTags } from "@/lib/seo";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
-import CardSection from "@/app/(public-web)/components/ui/card-section/CardSection";
-import HeroSection from "@/app/(public-web)/components/ui/hero-section/HeroSection";
-import { MENUITEMSBIRTHDAY } from "@/app/(public-web)/components/ui/pricing/MENUITEMSBIRTHDAY";
-
-import React from "react";
 
 import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
 
-import { findAndCreateLink } from "@/utils/imageFinder";
 import S3Config from "@/config/s3config";
+import { findAndCreateLink } from "@/utils/imageFinder";
+export const metadata = getSEOTags();
 
 const Birthday = async () => {
   const { BUCKET_NAME, PREFIXES } = S3Config;
@@ -32,7 +31,9 @@ const Birthday = async () => {
     <div className="">
       <HeroSection
         height={`${birthdayHeroImg.height}px`}
-        backgroundImage={BthPics ? findAndCreateLink(BthPics, "hero") || "" : ""}
+        backgroundImage={
+          BthPics ? findAndCreateLink(BthPics, "hero") || "" : ""
+        }
         title="Birthday Party"
         subtitle="Home / Birthday"
       />
