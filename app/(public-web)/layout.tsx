@@ -15,17 +15,17 @@ const DomCasualD = localFont({
     },
     {
       path: "./fonts/DomCasual/DomCasualD-Bold.woff2",
-      weight: "100 900",
-      style: "bold",
+      weight: "bold",
+      style: "normal",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-BoldItalic.woff2",
-      weight: "100 900",
+      weight: "bold",
       style: "italic",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-Italic.woff2",
-      weight: "100 900",
+      weight: "normal",
       style: "italic",
     },
   ],
@@ -35,23 +35,23 @@ const Rajdhani = localFont({
   src: [
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Bold.woff2",
-      weight: "100 900",
-      style: "bold",
+      weight: "bold",
+      style: "normal",
     },
     {
-      path: "./fonts//rajdhani_wolff2/Rajdhani-Light.woff2",
-      weight: "100 900",
-      style: "light",
+      path: "./fonts/rajdhani_wolff2/Rajdhani-Light.woff2",
+      weight: "300",
+      style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Regular.woff2",
-      weight: "100 900",
+      weight: "400",
       style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-SemiBold.woff2",
-      weight: "100 900",
-      style: "semibold",
+      weight: "600",
+      style: "normal",
     },
   ],
 });
@@ -90,8 +90,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={(Rajdhani.className, DomCasualD.className)} lang="en">
-      <body className="w-2xl overflow-x-hidden  overflow-y-auto">
+    <html className={`${Rajdhani.className} ${DomCasualD.className}`} lang="en">
+      <body className="w-2xl overflow-x-hidden overflow-y-auto">
         <Head>
           <title>Bowling Verona</title>
           <link
@@ -112,7 +112,6 @@ export default function RootLayout({
             sizes="16x16"
             href="/public/favicon/favicon-16x16.png"
           />
-
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <Navbar />

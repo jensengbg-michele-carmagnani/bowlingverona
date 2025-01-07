@@ -2,8 +2,8 @@ import { signOutAction } from "@/app/actions";
 
 import Link from "next/link";
 
-import { Button } from "./ui/button";
 import { createClient } from "@/utils/supabase/server";
+import { Button } from "./ui/button";
 
 export default async function AuthButton() {
   const supabase = await createClient();
@@ -14,8 +14,10 @@ export default async function AuthButton() {
   console.log("USER", user);
 
   return user ? (
-    <div className="w-full flex justify-end items-center gap-7 pr-10 ">
-      👋 Hey, {user.email}!
+    <div className="w-full flex justify-between items-center gap-7 ml-10 ">
+      <p>
+        👋 Hey, <span className="px-1">{user.email}!</span>
+      </p>
       <form action={signOutAction}>
         <Button
           type="submit"
@@ -27,7 +29,7 @@ export default async function AuthButton() {
       </form>
     </div>
   ) : (
-    <div className="flex justify-end gap-7 text-black pr-10">
+    <div className="flex justify-end self-end gap-7 text-black pr-10">
       <Button asChild size="sm" variant={"outline"}>
         <Link href="/sign-in">Sign in</Link>
       </Button>
