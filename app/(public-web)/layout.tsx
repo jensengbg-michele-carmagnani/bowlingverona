@@ -76,10 +76,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html
-        lang="it"
-        className={`${Rajdhani.className} ${DomCasualD.className}`}
-      >
+    <html lang="it" className={`${Rajdhani.className} ${DomCasualD.className}`}>
       <Head>
         <link rel="canonical" href="https://www.bowlingverona.com" />
         <link rel="icon" href="/favicon/favicon.ico" />
@@ -145,17 +142,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }),
         }}
       />
-      
-        <body className="w-2xl overflow-x-hidden relative">
-          <Suspense fallback={<div>loading...</div>}>
-            <ConfidentialFlagValues values={values} />
-            <Navbar />
-            {children}
-            <SpeedInsights />
-            <Footer />
-          </Suspense>
-        </body>
-      </html>
-    
+
+      <body className="w-2xl overflow-x-hidden relative">
+        <Suspense fallback={<div>loading...</div>}>
+          <ConfidentialFlagValues values={values} />
+          <Navbar />
+          {children}
+          <SpeedInsights />
+          <Footer />
+        </Suspense>
+      </body>
+    </html>
   );
 }
