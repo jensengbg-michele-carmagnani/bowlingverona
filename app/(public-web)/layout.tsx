@@ -15,7 +15,6 @@ export const metadata = getSEOTags();
 
 const DomCasualD = localFont({
   display: "swap",
-
   src: [
     {
       path: "./fonts/DomCasual/DomCasualD.woff2",
@@ -24,17 +23,17 @@ const DomCasualD = localFont({
     },
     {
       path: "./fonts/DomCasual/DomCasualD-Bold.woff2",
-      weight: "100 900",
-      style: "bold",
+      weight: "bold",
+      style: "normal",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-BoldItalic.woff2",
-      weight: "100 900",
+      weight: "bold",
       style: "italic",
     },
     {
       path: "./fonts/DomCasual/DomCasualD-Italic.woff2",
-      weight: "100 900",
+      weight: "normal",
       style: "italic",
     },
   ],
@@ -45,23 +44,23 @@ const Rajdhani = localFont({
   src: [
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Bold.woff2",
-      weight: "100 900",
+      weight: "bold",
       style: "normal",
     },
     {
-      path: "./fonts//rajdhani_wolff2/Rajdhani-Light.woff2",
-      weight: "100  900",
-      style: "light",
+      path: "./fonts/rajdhani_wolff2/Rajdhani-Light.woff2",
+      weight: "300",
+      style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Regular.woff2",
-      weight: "100 900",
-      style: "light",
+      weight: "400",
+      style: "normal",
     },
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-SemiBold.woff2",
-      weight: "100 900",
-      style: "semibold",
+      weight: "600",
+      style: "normal",
     },
   ],
 });
@@ -77,7 +76,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <>
+    <html
+        lang="it"
+        className={`${Rajdhani.className} ${DomCasualD.className}`}
+      >
       <Head>
         <link rel="canonical" href="https://www.bowlingverona.com" />
         <link rel="icon" href="/favicon/favicon.ico" />
@@ -143,10 +145,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }),
         }}
       />
-      <html
-        lang="it"
-        className={`${Rajdhani.className} ${DomCasualD.className}`}
-      >
+      
         <body className="w-2xl overflow-x-hidden relative">
           <Suspense fallback={<div>loading...</div>}>
             <ConfidentialFlagValues values={values} />
@@ -157,6 +156,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </Suspense>
         </body>
       </html>
-    </>
+    
   );
 }
