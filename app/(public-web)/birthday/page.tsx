@@ -12,7 +12,7 @@ import ReservationForm from "../components/ui/reservation/ReservationForm";
 import S3Config from "@/config/s3config";
 import { findAndCreateLink } from "@/utils/imageFinder";
 export const metadata = getSEOTags();
-
+console.log(metadata);
 const Birthday = async () => {
   const { BUCKET_NAME, PREFIXES } = S3Config;
 
