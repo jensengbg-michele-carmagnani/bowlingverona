@@ -72,7 +72,7 @@ const About: React.FC = () => {
             </article>
 
             <div className="flex justify-center md:justify-start w-full">
-              <Link href={"/about"}>
+              <Link href={"/aboutus"}>
                 <Button
                   className="text-black hover:text-white mt-5 hover:transform hover:scale-105 transition-all duration-500 capitalize"
                   imgUrl={buttonIcon}
