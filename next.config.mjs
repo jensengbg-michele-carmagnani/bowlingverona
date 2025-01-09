@@ -5,7 +5,13 @@ const nextConfig = {
     // ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["aercpcuebwexytenapqq.supabase.co"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "aercpcuebwexytenapqq.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
 };
 

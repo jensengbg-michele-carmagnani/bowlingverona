@@ -51,48 +51,59 @@ export default function Page() {
   const supabase = createClient();
 
   const extractUser = async () => {
-    const { data } = await supabase.auth.getUser();
-    console.log(data);
+    try {
+      const { data, error } = await supabase.auth.getUser();
+      if (error) throw error;
+      console.log(data);
 
-    if (data.user) {
-      setUser({
-        id: data.user.id || "",
-        aud: data.user.aud || "",
-        role: data.user.role || "",
-        email: data.user.email || "",
-        email_confirmed_at: data.user.email_confirmed_at || null,
-        invited_at: data.user.invited_at || null,
-        phone: data.user.phone || null,
-        confirmed_at: data.user.confirmed_at || null,
-        last_sign_in_at: data.user.last_sign_in_at || null,
-        user_metadata: data.user.user_metadata || {},
-        identities: (data.user.identities ?? []).map((identity) => {
-          // Cast the identity to match the UserIdentity interface
-          const userIdentity = identity as UserIdentity;
+      if (data.user) {
+        setUser({
+          id: data.user.id || "",
+          aud: data.user.aud || "",
+          role: data.user.role || "",
+          email: data.user.email || "",
+          email_confirmed_at: data.user.email_confirmed_at || null,
+          invited_at: data.user.invited_at || null,
+          phone: data.user.phone || null,
+          confirmed_at: data.user.confirmed_at || null,
+          last_sign_in_at: data.user.last_sign_in_at || null,
+          user_metadata: data.user.user_metadata || {},
+          identities: (data.user.identities ?? []).map((identity) => {
+            // Cast the identity to match the UserIdentity interface
+            const userIdentity = identity as UserIdentity;
 
-          return {
-            ...userIdentity,
-            email: userIdentity.identity_data?.email || "",
-          };
-        }),
-        created_at: data.user.created_at || "",
-        updated_at: data.user.updated_at || "",
-        is_anonymous: data.user.is_anonymous || false,
-      });
-    } else {
-      setUser(null);
+            return {
+              ...userIdentity,
+              email: userIdentity.identity_data?.email || "",
+            };
+          }),
+          created_at: data.user.created_at || "",
+          updated_at: data.user.updated_at || "",
+          is_anonymous: data.user.is_anonymous || false,
+        });
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
+      console.error("Error fetching user:", error);
+    } finally {
+      setIsPending(false);
     }
-    setIsPending(false);
   };
 
   useEffect(() => {
     const fetchNotes = async () => {
-      const { data } = await supabase.from("notes").select("*");
-      setNotes(data);
+      try {
+        const { data, error } = await supabase.from("notes").select("*");
+        if (error) throw error;
+        setNotes(data);
+      } catch (error) {
+        console.error("Error fetching notes:", error);
+      }
     };
     fetchNotes();
     extractUser();
-  }, []); // Empty dependency array, runs once when the component mounts
+  }, [supabase]); // Add supabase as a dependency
 
   return (
     <div className="bg-green-600 rounded-md p-10">

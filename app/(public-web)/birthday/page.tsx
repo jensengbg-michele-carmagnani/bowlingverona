@@ -20,6 +20,8 @@ const Birthday = async () => {
     PREFIXES.ICONS
   )) as S3Object[];
 
+  console.log("BTHPICS",BthPics)
+
   return (
     <div className="">
       <HeroSection
@@ -118,3 +120,4 @@ const Birthday = async () => {
 };
 
 export default Birthday;
+
