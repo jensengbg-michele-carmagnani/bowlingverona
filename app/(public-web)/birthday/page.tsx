@@ -1,13 +1,12 @@
-import React from "react";
-import HeroSection from "../components/ui/hero-section/HeroSection";
-import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
-import CardSection from "../components/ui/card-section/CardSection";
 import PricingCard from "@/app/(public-web)/components/ui/pricing/PricingCard";
 import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
-import ReservationForm from "../components/ui/reservation/ReservationForm";
-import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import S3Config from "@/config/s3config";
+import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
 import { findAndCreateLink } from "@/utils/imageFinder";
-import S3Config, { PrefixKeys } from "@/config/s3config";
+import CardSection from "../components/ui/card-section/CardSection";
+import HeroSection from "../components/ui/hero-section/HeroSection";
+import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import ReservationForm from "../components/ui/reservation/ReservationForm";
 
 const Birthday = async () => {
   const { BUCKET_NAME, PREFIXES } = S3Config;
