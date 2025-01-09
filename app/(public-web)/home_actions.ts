@@ -1,5 +1,5 @@
-import { ListObjectsCommand } from "@aws-sdk/client-s3";
 import { clientS3 } from "@/utils/supabase/clientS3";
+import { ListObjectsCommand } from "@aws-sdk/client-s3";
 
 export type S3Object = {
   Key: string; // The key (path) of the object in the bucket
@@ -14,6 +14,14 @@ export const listBucketObjects = async (
   folderPath: string
 ) => {
   try {
+    // Validate credentials
+    if (
+      !process.env.NEXT_PUBLIC_SUPABASE_ACCESS_KEY_ID ||
+      !process.env.NEXT_PUBLIC_SUPABASE_ACCESS_SECRET_KEY
+    ) {
+      throw new Error("S3 credentials are not set");
+    }
+
     const command = new ListObjectsCommand({
       Bucket: bucketName,
       Prefix: folderPath, // The folder path (e.g., "folder-name/")
@@ -32,5 +40,6 @@ export const listBucketObjects = async (
     })) as S3Object[];
   } catch (err) {
     console.error("Error listing bucket objects:", err);
+    return []; // Return an empty array in case of error
   }
 };
