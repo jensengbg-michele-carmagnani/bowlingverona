@@ -8,9 +8,10 @@ import ReservationForm from "../components/ui/reservation/ReservationForm";
 
 import S3Config from "@/config/s3config";
 import { findAndCreateLink } from "@/utils/imageFinder";
-import HeroSection from "../components/ui/hero-section/HeroSection";
 import CardSection from "../components/ui/card-section/CardSection";
+import HeroSection from "../components/ui/hero-section/HeroSection";
 import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+import FAQ from "../components/ui/Q&A/Q&A";
 export const metadata = getSEOTags();
 
 const Birthday = async () => {
@@ -120,6 +121,8 @@ const Birthday = async () => {
           />
         </div>
       </div>
+      <FAQ />
+
       <div className="">{showForm && <ReservationForm />}</div>
     </div>
   );
