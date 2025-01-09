@@ -1,0 +1,22 @@
+{
+  "name": "Bowling Verona",
+  "short_name": "Bowling",
+  "description": "Bowling Verona è la destinazione ideale per il divertimento in famiglia con 14 piste da bowling, un'area giochi e un punto ristoro.",
+  "icons": [
+    {
+      "src": "/favicon/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/favicon/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5722",
+  "lang": "it-IT"
+}

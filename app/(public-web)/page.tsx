@@ -1,25 +1,23 @@
-import Hero from "./components/landing/hero-section/HeroSection";
-import About from "./components/landing/about-section/AboutSection";
-import InfoSection from "./components/landing/info-section/Info";
-import InfoParty from "./components/landing/infoparty-section/InfoPartySection";
-import Menu from "./components/landing/menu-section/MenuSection";
-import MenuFlyer from "./components/prices-fyer/PricesFlyer";
+import AboutSection from "@/app/(public-web)/components/home/about-section/AboutSection";
+import Hero from "@/app/(public-web)/components/home/hero-section/HeroSection";
+import InfoSection from "@/app/(public-web)/components/home/info-section/Info";
+import InfoParty from "@/app/(public-web)/components/home/infoparty-section/InfoPartySection";
+import { getSEOTags, renderSchemaTags } from "@/lib/seo";
+import MenuSection from "./components/home/menu-section/MenuSection";
+import CookieBot from "./components/ui/cookie-bot/CookieBot";
 
-type HomeProps = {
-  breadcrumb: React.ReactNode;
-};
+export const metadata = getSEOTags();
 
-const Home: React.FC<HomeProps> = async ({}: Readonly<HomeProps>) => {
+const Home: React.FC = () => {
   return (
-    <main className=" mx-auto">
-      <div className="mx-auto ">
-        <Hero />
-        <About />
-        <InfoSection />
-        <InfoParty />
-        <Menu />
-        <MenuFlyer />
-      </div>
+    <main className="mx-auto">
+      <CookieBot />
+      <Hero />
+      <AboutSection />
+      <InfoSection />
+      <InfoParty />
+      <MenuSection />
+      {renderSchemaTags()}
     </main>
   );
 };

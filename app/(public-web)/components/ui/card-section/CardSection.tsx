@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import React, { ReactNode } from "react";
 
 interface CardSectionProps {
   title: string;
@@ -36,7 +36,7 @@ const CardSection: React.FC<CardSectionProps> = ({
   buttonIcon,
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani] px-7 md:px-0 pt-5 md:pt-0 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 font-[Rajdhani]  pt-5 md:pt-0 gap-5">
       {/* Image Section */}
       <div className="mx-auto relative">
         {/* Mini Image */}
@@ -60,7 +60,7 @@ const CardSection: React.FC<CardSectionProps> = ({
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col items-start justify-center gap-5 transform translate-y-20 md:mt-16">
+      <div className="relative flex flex-col items-start justify-center gap-5 transform translate-y-20 md:mt-16 w-full">
         {/* Subtitle and Highlight Line */}
         <div className="flex gap-2 items-center uppercase self-center md:self-start">
           <div className={`h-[1px] w-[40px] bg-${highlightColor}`} />
@@ -70,7 +70,7 @@ const CardSection: React.FC<CardSectionProps> = ({
         {/* Title and Description */}
         <div className="text-center md:text-left max-w-2xl ">
           <h2 className="text-5xl uppercase font-light">{title}</h2>
-          <p className="text-xl align-left font-light md:pr-10 md:px-2 md:max-h-80 max-h-64 overflow-y-scroll overflow-x-hidden font-[Rajdhani]">
+          <p className="text-xl align-left font-light md:pr-10 md:px-2 md:max-h-80 max-h-64   font-[Rajdhani]  overflow-y-scroll overflow-hidden px-2">
             {content}
           </p>
 

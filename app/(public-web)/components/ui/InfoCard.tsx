@@ -1,7 +1,7 @@
-import React from "react";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import React from "react";
 
 interface Description {
   text: string;
@@ -44,19 +44,23 @@ const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <div
       className={cn(
-        `md:p-10 gap-3 space-y-2 w-full md:min-h-52 rounded-md ${borderClasses[borderPosition]} ${className}`
+        `md:p-10 gap-3 space-y-2 w-full md:min-h-52  ${borderClasses[borderPosition]} ${className}`
       )}
     >
-      <div className="flex gap-3">
+      <div className="flex gap-3 w-full items-center">
         <div>{Icon && <Icon size={20} />}</div>
-        <h2 className={cn(`uppercase text-xl ${classTitle}`)}>{title}</h2>
+        <h2 className={cn(`uppercase text-xl text-slate-50 ${classTitle}`)}>
+          {title}
+        </h2>
       </div>
       <div className="flex justify-center flex-col space-y-2 font-[Rajani]">
         {descriptions.map((desc, index) => (
           <p key={index} className={cn(`leading-tight ${classDescription}`)}>
-            {desc.text}{" "}
+            {desc.text}
             {desc.highlight && (
-              <span className="text-orange-400">{desc.highlight}</span>
+              <span className="text-orange-400 w-full block">
+                {desc.highlight}
+              </span>
             )}
           </p>
         ))}

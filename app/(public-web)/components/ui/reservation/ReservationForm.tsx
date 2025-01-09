@@ -1,15 +1,15 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import CakeCarousel from "@/app/(public-web)/components/ui/carousel/CakeCrousel";
+import { Form } from "@/components/ui/form";
+import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
+import { zodResolver } from "@hookform/resolvers/zod";
 import * as React from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form } from "@/components/ui/form";
-import { InputField } from "./InputField";
 import { DatePicker } from "./DatePicker";
-import { reservationSchema, ReservationFormData } from "./types";
-import { Button } from "@/components/ui/button";
-import buttonIcon from "@/public/assets/ICON/Eclips_button_icon.svg";
-import CakeCarousel from "../../landing/birthday-section/CakeCarousel";
+import { InputField } from "./InputField";
+import { ReservationFormData, reservationSchema } from "./types";
 
 const ReservationForm: React.FC = () => {
   const form = useForm<ReservationFormData>({

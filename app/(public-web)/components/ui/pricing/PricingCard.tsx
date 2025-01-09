@@ -1,5 +1,6 @@
-import { FC } from "react";
+
 import Image from "next/image";
+import { FC } from "react";
 import { PriceHeader } from "./PriceHeader";
 import { PriceItem } from "./PriceItem";
 import { PricingCardProps } from "./types";
@@ -16,15 +17,15 @@ const PricingCard: FC<PricingCardProps> = ({
 }) => {
   return (
     <article
-      className={` pb-3.5 text-white rounded-3xl border border-solid bg-neutral-900 max-w-[415px]  font-[DomCasualD] ${className} `}
+      className={`pb-3.5 text-white rounded-3xl border border-solid bg-neutral-900 md:max-w-[415px] font-[DomCasualD] ${className} `}
     >
       <header className="flex flex-col px-16 py-8 w-full text-3xl text-center min-h-[133px]">
         <Image
           src={headerImage}
           alt=""
           width={450}
-          height={500}
-          className=" absolute top-2 left-1/2 -translate-x-1/2 bg-no-repeat z-10 max-w-[450px] h-[133px]"
+          height={133} // or any default height value
+          className="object-contain absolute top-2 left-1/2 -translate-x-1/2 bg-no-repeat z-10 max-w-[350px] md:max-w-[450px] h-[133px]"
           priority
           style={{ width: "auto", height: "auto" }}
         />
@@ -34,7 +35,6 @@ const PricingCard: FC<PricingCardProps> = ({
           {subtitle && <span className="text-white"> {subtitle}</span>}
         </h1>
       </header>
-
       <section className="flex flex-col items-start px-10 mt-6 w-full text-xl relative">
         <PriceItem label={label ?? ""} price={price ?? ""} />
 

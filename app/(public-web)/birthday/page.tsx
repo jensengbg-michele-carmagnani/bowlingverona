@@ -1,12 +1,17 @@
 import PricingCard from "@/app/(public-web)/components/ui/pricing/PricingCard";
-import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
-import S3Config from "@/config/s3config";
+import { showReservationForm } from "@/flag/showReservationForm";
+import { getSEOTags } from "@/lib/seo";
 import birthdayHeroImg from "@/public/assets/shape_image/birthday-hero-img.png";
-import { findAndCreateLink } from "@/utils/imageFinder";
-import CardSection from "../components/ui/card-section/CardSection";
-import HeroSection from "../components/ui/hero-section/HeroSection";
-import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+
+import { listBucketObjects, S3Object } from "@/app/(public-web)/home_actions";
 import ReservationForm from "../components/ui/reservation/ReservationForm";
+
+import S3Config from "@/config/s3config";
+import { findAndCreateLink } from "@/utils/imageFinder";
+import HeroSection from "../components/ui/hero-section/HeroSection";
+import CardSection from "../components/ui/card-section/CardSection";
+import { MENUITEMSBIRTHDAY } from "../components/ui/pricing/MENUITEMSBIRTHDAY";
+export const metadata = getSEOTags();
 
 const Birthday = async () => {
   const { BUCKET_NAME, PREFIXES } = S3Config;
@@ -20,13 +25,16 @@ const Birthday = async () => {
     PREFIXES.ICONS
   )) as S3Object[];
 
-  console.log("BTHPICS",BthPics)
+  const showForm = await showReservationForm();
+  console.log(findAndCreateLink(BthPics, "hero"));
 
   return (
     <div className="">
       <HeroSection
         height={`${birthdayHeroImg.height}px`}
-        backgroundImage={BthPics ? findAndCreateLink(BthPics, "hero") : ""}
+        backgroundImage={
+          BthPics ? findAndCreateLink(BthPics, "hero") || "" : ""
+        }
         title="Birthday Party"
         subtitle="Home / Birthday"
       />
@@ -55,8 +63,8 @@ const Birthday = async () => {
           mainImageHeight={400}
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-9 relative py-20 ">
-        <div className="relative md:max-w-[470px] max-w-[380px]">
+      <div className="flex flex-col md:flex-row  gap-7 relative py-20 flex-wrap justify-center items-center">
+        <div className="w-full relative md:max-w-[470px] max-w-[380px]">
           <PricingCard
             className="border-red-600 mx-auto"
             title="Ragazzi sotto i 14 anni"
@@ -75,7 +83,7 @@ const Birthday = async () => {
             menuItems={MENUITEMSBIRTHDAY}
           />
         </div>
-        <div className="w-full relative max-w-[470px]">
+        <div className="w-full relative md:max-w-[470px] max-w-[380px] ">
           <PricingCard
             className="border-blue-600 mx-auto"
             title="Ragazzi sopra i 14 inclusi"
@@ -93,7 +101,7 @@ const Birthday = async () => {
             menuItems={MENUITEMSBIRTHDAY}
           />
         </div>
-        <div className="w-full relative max-w-[470px]">
+        <div className="w-full relative md:max-w-[470px] max-w-[380px] ">
           <PricingCard
             className="border-orange-600 mx-auto"
             title="Adulti"
@@ -112,12 +120,9 @@ const Birthday = async () => {
           />
         </div>
       </div>
-      <div className="">
-        <ReservationForm />
-      </div>
+      <div className="">{showForm && <ReservationForm />}</div>
     </div>
   );
 };
 
 export default Birthday;
-

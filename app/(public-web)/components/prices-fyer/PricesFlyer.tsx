@@ -1,21 +1,30 @@
 "use client";
-import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
-import Image from "next/image";
-import { bowlingPrices } from "../ui/tables/ColumnBowling";
-import { TablePrices } from "../ui/tables/Table";
-import { columnsBowling } from "../ui/tables/ColumnBowling";
-import { columnsPools, poolsPrices } from "../ui/tables/ColumnPools";
+
+import useScreenSize from "@/hooks/useScreenWidth";
+import { useAnimationInView } from "@/lib/animation";
 import headerMenuImg from "@/public/assets/shape_image/header-menu.png";
-import useScreenSize from "@/lib/useScreenWidth";
+import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { bowlingPrices, columnsBowling } from "../ui/tables/ColumnBowling";
+import { columnsPools, poolsPrices } from "../ui/tables/ColumnPools";
+import { TablePrices } from "../ui/tables/Table";
 
 const PricesFlyer = () => {
   const screenSize = useScreenSize();
   const isXs = screenSize === "xs";
-
+  const { itemRef, isInView, itemAnimation } = useAnimationInView();
   const heightImg = isXs ? menuListImage?.height / 1.4 : menuListImage?.height;
 
   return (
-    <div className="md:mx-8">
+    <motion.div
+      className="md:mx-8"
+      ref={itemRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={itemAnimation}
+      custom={0}
+    >
       <div
         className="relative bg-no-repeat bg-center bg-cover"
         style={{
@@ -41,7 +50,7 @@ const PricesFlyer = () => {
           <TablePrices data={poolsPrices} columns={columnsPools} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

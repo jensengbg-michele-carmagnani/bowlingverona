@@ -1,12 +1,20 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import Navbar from "@/app/(public-web)/components/ui/navbar/Navbar";
-import Footer from "./components/landing/footer/Footer";
-import Head from "next/head";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@/app/globals.css";
+import { showReservationForm } from "@/flag/showReservationForm";
+import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import localFont from "next/font/local";
+import { Suspense } from "react";
+
+import { getSEOTags } from "@/lib/seo";
+import Head from "next/head";
+import Script from "next/script";
+import Footer from "./components/home/footer/Footer";
+
+export const metadata = getSEOTags();
 
 const DomCasualD = localFont({
+  display: "swap",
   src: [
     {
       path: "./fonts/DomCasual/DomCasualD.woff2",
@@ -32,6 +40,7 @@ const DomCasualD = localFont({
 });
 
 const Rajdhani = localFont({
+  display: "swap",
   src: [
     {
       path: "./fonts/rajdhani_wolff2/Rajdhani-Bold.woff2",
@@ -56,68 +65,92 @@ const Rajdhani = localFont({
   ],
 });
 
-export const metadata: Metadata = {
-  title: "Bowling Verona - Esperienza di Bowling Premium a Verona",
-  description:
-    "Scopri il divertimento definitivo al Bowling Verona! Perfetto per famiglie, amici ed eventi. Unisciti alle nostre leghe o organizza la tua prossima festa con noi. Prenota il tuo lane oggi!",
-  keywords:
-    "Bowling Verona, piste da bowling, divertimento in famiglia, leghe di bowling, feste di bowling, intrattenimento a Verona",
-  icons: {
-    icon: [
-      {
-        url: "favicon/favicon.ico",
-        sizes: "any",
-        type: "image/ico",
-      },
-      {
-        url: "favicon/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "favicon/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-    ],
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  breadcrumb: React.ReactNode;
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+  breadcrumb?: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  const values = {
+    "show-reservation-form": showReservationForm(),
+  };
+
   return (
-    <html className={`${Rajdhani.className} ${DomCasualD.className}`} lang="en">
-      <body className="w-2xl overflow-x-hidden overflow-y-auto">
-        <Head>
-          <title>Bowling Verona</title>
-          <link
-            rel="icon"
-            href="/public/favicon/favicon.ico"
-            sizes="any"
-            type="image/ico"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/public/favicon/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/public/favicon/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/site.webmanifest" />
-        </Head>
-        <Navbar />
-        {children}
-        <SpeedInsights />
-        <Footer />
+    <html lang="it" className={`${Rajdhani.className} ${DomCasualD.className}`}>
+      <Head>
+        <link rel="canonical" href="https://www.bowlingverona.com" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="android-chrome"
+          sizes="192x192"
+          href="/favicon/android-chrome-192-192.png"
+        />
+        <link
+          rel="android-chrome"
+          sizes="192x192"
+          href="/favicon/android-chrome-512x512.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Bowling Verona",
+            description:
+              "Bowling Verona è il punto di riferimento per il divertimento a Verona, con 14 piste da bowling professionali, area giochi, biliardo, e spazi dedicati a feste private ed eventi aziendali. Ideale per famiglie, gruppi di amici e team building. Offriamo un'atmosfera accogliente, giochi moderni e tanto divertimento. Prenota ora per vivere un'esperienza indimenticabile!",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Viale della Fiera 10/A",
+              addressLocality: "Verona",
+              addressRegion: "VR",
+              postalCode: "37135",
+              addressCountry: "IT",
+            },
+            image: "https://www.bowlingveron.com/og-image.png", // Replace with your Open Graph image
+            telephone: "+39 045 581724",
+            openingHours: [
+              "Monday-Thursday 20:30-1:00",
+              "Saturday-Sunday 16:30-1:00",
+            ],
+            url: "https://www.bowlingveron.com",
+            sameAs: [
+              "https://www.instagram.com/bowlingverona/",
+              "https://www.facebook.com/bowlingveronafiera/",
+            ],
+            priceRange: "$$", // Adjust the price range to reflect your services
+          }),
+        }}
+      />
+
+      <body className="w-2xl overflow-x-hidden relative">
+        <Suspense fallback={<div>loading...</div>}>
+          <ConfidentialFlagValues values={values} />
+          <Navbar />
+          {children}
+          <SpeedInsights />
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );

@@ -4,7 +4,8 @@ import { FormMessage, Message } from "@/components/form-message";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { SmtpMessage } from "../smtp-message";
+import { SmtpMessage } from "../smpt-message";
+
 
 export default async function Signup(props: {
   searchParams: Promise<Message>;

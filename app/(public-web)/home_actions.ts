@@ -15,7 +15,10 @@ export const listBucketObjects = async (
 ) => {
   try {
     // Validate credentials
-    if (!process.env.NEXT_PUBLIC_SUPABASE_ACCESS_KEY_ID || !process.env.NEXT_PUBLIC_SUPABASE_ACCESS_SECRET_KEY) {
+    if (
+      !process.env.NEXT_PUBLIC_SUPABASE_ACCESS_KEY_ID ||
+      !process.env.NEXT_PUBLIC_SUPABASE_ACCESS_SECRET_KEY
+    ) {
       throw new Error("S3 credentials are not set");
     }
 
