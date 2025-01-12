@@ -7,7 +7,6 @@ import menuListImage from "@/public/assets/shape_image/menu-bg-image.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { bowlingPrices, columnsBowling } from "../ui/tables/ColumnBowling";
-import { columnsPools, poolsPrices } from "../ui/tables/ColumnPools";
 import { TablePrices } from "../ui/tables/Table";
 
 const PricesFlyer = () => {
@@ -35,7 +34,7 @@ const PricesFlyer = () => {
         <Image src={headerMenuImg} alt="menu" className="w-full" />
         <div className="md:w-5/6 mx-auto space-y-3">
           <div>
-            <h2 className="text-center text-5xl w-full font-[DomCasualD] py-10 text-black text-shadow-outline uppercase">
+            <h2 className="text-center text-5xl w-full font-[DomCasualD] py-5 text-black text-shadow-outline uppercase">
               Hourly rate lanes
             </h2>
           </div>
@@ -47,7 +46,6 @@ const PricesFlyer = () => {
               Pools
             </h2>
           </div>
-          <TablePrices data={poolsPrices} columns={columnsPools} />
         </div>
       </div>
     </motion.div>

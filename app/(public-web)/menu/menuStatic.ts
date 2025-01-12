@@ -35,7 +35,7 @@ export const alcoliciECocktailItems: MenuItemProps = {
     { name: "Calice Vino bianco, custoza", price: "€2.50 (bottiglia €15)" },
     {
       name: "Calice Vino rosso, Valpolicella Classico",
-      price: "€3 (bottiglia €18)",
+      price: "€3",
     },
     {
       name: "Calice prosecco brut",
@@ -47,8 +47,12 @@ export const alcoliciECocktailItems: MenuItemProps = {
       price: "€3",
     },
     {
-      name: "Birre spina media",
-      price: " 0.4L (possibili variazioni in base al tipo di birra) 5€",
+      name: "Birre spina media pils",
+      price: " 0.4L 5€",
+    },
+    {
+      name: "Birre spina media non filtrata",
+      price: " 0.4L 6€",
     },
     { name: "Amari, grappe", price: "€4" },
     { name: "Spritz bianco", price: "€3.50" },
@@ -58,8 +62,35 @@ export const alcoliciECocktailItems: MenuItemProps = {
     { name: "Cocktail base", price: "€7" },
     {
       name: "Cocktail elaborati",
-      price:
-        "€8 (Long Island, margarita, Angelo azzurro, mojito, japanese ice tea)",
+      price: "€8 ",
+    },
+    {
+      name: "Long Island",
+      price: "€8 ",
+    },
+    {
+      name: "Margarita",
+      price: "€8 ",
+    },
+    {
+      name: "Angelo azzurro",
+      price: "€8 ",
+    },
+    {
+      name: "Mojito",
+      price: "€8 ",
+    },
+    {
+      name: "Japanese ice tea",
+      price: "€8 ",
+    },
+    {
+      name: "Cuba libre",
+      price: "€8 ",
+    },
+    {
+      name: "Caipirinha",
+      price: "€8 ",
     },
     {
       name: "Gin tonic base",
@@ -69,6 +100,8 @@ export const alcoliciECocktailItems: MenuItemProps = {
       name: "Gin tonic premium",
       price: "€10, ",
     },
+    { name: "Rum premium", price: "€8" },
+
     { name: "Rum premium", price: "€8" },
     { name: "Whisky premium", price: "€8 " },
   ],

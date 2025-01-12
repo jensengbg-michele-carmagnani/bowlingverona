@@ -11,7 +11,7 @@ export type BowlingPrices = {
 
 export const bowlingPrices: BowlingPrices[] = [
   {
-    weekly: [6, 25, 50],
+    weekly: [6, 20, 40],
     weekend: [7, 25, 50],
   },
 ];

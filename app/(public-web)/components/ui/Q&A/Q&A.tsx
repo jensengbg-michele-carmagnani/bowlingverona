@@ -20,13 +20,7 @@ const FAQ: React.FC = () => {
       answer: (
         <span>
           Puoi prenotare contattandoci dopo le 20:30 al numero{" "}
-          <Link
-            href="tel:+39045581724"
-            className="text-blue-500 hover:text-orange-400 underline transition-colors"
-          >
-            045581724
-          </Link>{" "}
-          oppure scrivendoci alla mail{" "}
+          <strong>045581724</strong> oppure scrivendoci alla mail{" "}
           <Link
             href="mailto:bowlingvr@gmail.com"
             className="text-blue-500 hover:text-orange-400 underline transition-colors"
@@ -58,8 +52,8 @@ const FAQ: React.FC = () => {
       question: "Se voglio una torta più grande del numero dei invitati?",
       answer: (
         <span>
-          E´ possibile ordinare una torta più grande del numero degli invitati
-          la differenza verrá calcolata a parte.
+          Possiamo preparare una torta personalizzata di qualsiasi dimensione.
+          Contattaci per discutere i dettagli.
         </span>
       ),
     },
@@ -72,34 +66,10 @@ const FAQ: React.FC = () => {
         </span>
       ),
     },
-    {
-      question: "Posso portare dolci, torte o bevande?",
-      answer: (
-        <span>
-          Non è possibile portare dolci e torte, ma puoi scegliere la torta sul
-          sito di{" "}
-          <Link
-            href="https://www.cassandrini.it/le-nostre-torte/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:text-orange-400 underline transition-colors"
-          >
-            https://www.cassandrini.it/le-nostre-torte
-          </Link>{" "}
-          .
-          <br /> Non é possibile portare alcolici quali vini, superalcolici o
-          birre ma se avete delle richieste specifice vi possiamo accontentare.
-        </span>
-      ),
-    },
-    {
-      question: "Posso portare decorazioni per il compleanno?",
-      answer: <span>E´possibile portare palloncini e decorazioni.</span>,
-    },
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-6 font-[Rajdhani]">
+    <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold text-center mb-4">Domande Frequenti</h1>
       <div className="space-y-4">
         {questions.map((item, index) => (
@@ -109,9 +79,7 @@ const FAQ: React.FC = () => {
               onClick={() => toggleQuestion(index)}
               className="w-full text-left flex justify-between items-center py-2"
             >
-              <span className="text-xl uppercase text-orange-400/90 hover:text-orange-300 transition-colors">
-                {item.question}
-              </span>
+              <span className="text-lg font-medium">{item.question}</span>
               <svg
                 className={`h-5 w-5 transform transition-transform ${
                   activeIndex === index ? "rotate-180" : ""
@@ -136,9 +104,7 @@ const FAQ: React.FC = () => {
                 activeIndex === index ? "max-h-screen" : "max-h-0"
               }`}
             >
-              <p className="mt-2 text-slate-300 text-left text-lg">
-                {item.answer}
-              </p>
+              <p className="mt-2 text-gray-600">{item.answer}</p>
             </div>
           </div>
         ))}

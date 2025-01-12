@@ -10,10 +10,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .text-stroke {
+    color: #f87171; /* Tailwind's red-500 color */
+    -webkit-text-stroke: 1px white; /* Creates the white border */
+    -webkit-text-fill-color: #f87171; /* Fills the text with the color */
+  }
 }
 .text-shadow-outline {
   color: black;
-  text-shadow: 1px 1px 0 orange, -1px 1px 0 orange, 1px -1px 0 orange,
+  text-shadow:
+    1px 1px 0 orange,
+    -1px 1px 0 orange,
+    1px -1px 0 orange,
     -1px -1px 0 orange;
   font-weight: bold;
 }
@@ -106,6 +114,7 @@ body {
   scrollbar-color: #ff6600 #f3f3f3; /* thumb color and track color */
   scrollbar-width: 1px; /* Makes scrollbar thinner */
 }
-input[type="time"]::-webkit-calendar-picker-indicator{
-  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg)
+    brightness(95%) contrast(80%);
 }
