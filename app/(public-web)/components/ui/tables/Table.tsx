@@ -34,7 +34,7 @@ export function TablePrices<TData, TValue>({
   return (
     <div className="rounded-md  ">
       <Table className="min-w-full">
-        <TableHeader className="border border-black font-[DomCasualD] text-3xl  md:text-6xl text-red-500 bg-slate-600/15  ">
+        <TableHeader className=" font-[DomCasualD] text-3xl  md:text-6xl text-red-500 bg-slate-600/15  ">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
@@ -62,7 +62,7 @@ export function TablePrices<TData, TValue>({
                 {row.getVisibleCells().map((cell) => (
                   <TableCell
                     key={cell.id}
-                    className="border border-black text-black text-xl md:text-2xl font-[DomCasualD] text-center "
+                    className=" text-black text-xl md:text-2xl font-[DomCasualD] text-center "
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
