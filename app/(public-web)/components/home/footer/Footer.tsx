@@ -59,7 +59,7 @@ const Footer = () => {
         style={{ backgroundImage: `url(${imageSrc})` }}
       >
         <div
-          className={`text-slate-300 flex justify-between font-[Rajdhani] font-extralight text-xl uppercase px-5`}
+          className={`text-slate-300 flex justify-between font-[Rajdhani] font-extralight text-xl uppercase px-5 max-w-6xl mx-auto pb-10`}
         >
           {footerLinksData.map((link) => (
             <Link
@@ -72,8 +72,8 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="uppercase py-7 text-xs space-y-3">
-          <div className=" flex justify-center items-center">
+        <div className=" py-7 text-xs space-y-3">
+          <div className=" flex justify-center items-center text-lg pb-10">
             <Link href={"tel:045581724"}>
               <p className="w-full text-center flex justify-center items-center hover:text-orange-500 transition duration-75">
                 <PhoneCallIcon size={20} className=" inline-block mr-2" />
@@ -92,7 +92,15 @@ const Footer = () => {
               </p>
             </Link>
           </div>
-          <p className="text-center text-pretty">Active Since 1990</p>
+          <div className="text-[#9F9399] uppercase">
+            <p className="text-center text-pretty">Active Since 1990</p>
+            <p className="text-center text-pretty">
+              Copyright 2025 @ Bowling Verona
+            </p>
+            <p className="text-center text-pretty">
+              BowlingVerona SNC - P.IVA 03291170235 C.F. 03291170235
+            </p>
+          </div>
         </div>
       </div>
     </motion.div>
