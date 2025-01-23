@@ -110,12 +110,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      {/* <!-- Google tag (gtag.js) --> */}
-
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-NTTK3WRR1S"
-      ></Script>
       <Script>
         {`
           window.dataLayer = window.dataLayer || [];
