@@ -110,14 +110,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-NTTK3WRR1S');
-        `}
-      </Script>
       <Script
         id="structured-data"
         type="application/ld+json"
