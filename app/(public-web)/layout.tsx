@@ -70,6 +70,12 @@ interface RootLayoutProps {
   breadcrumb?: React.ReactNode;
 }
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 export default function RootLayout({ children }: RootLayoutProps) {
   const values = {
     "show-reservation-form": showReservationForm(),
@@ -109,6 +115,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NTTK3WRR1S"
+      ></Script>
+      <Script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NTTK3WRR1S');
+        `}
+      </Script>
       <Script
         id="structured-data"
         type="application/ld+json"
