@@ -2,6 +2,7 @@ import Navbar from "@/app/(public-web)/components/ui/navbar/Navbar";
 import "@/app/globals.css";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
@@ -70,12 +71,6 @@ interface RootLayoutProps {
   breadcrumb?: React.ReactNode;
 }
 
-declare global {
-  interface Window {
-    dataLayer: any[];
-  }
-}
-
 export default function RootLayout({ children }: RootLayoutProps) {
   const values = {
     "show-reservation-form": showReservationForm(),
@@ -116,6 +111,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       {/* <!-- Google tag (gtag.js) --> */}
+
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-NTTK3WRR1S"
@@ -161,7 +157,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }),
         }}
       />
-
+      <GoogleTagManager gtmId="G-NTTK3WRR1S" />
       <body className="w-2xl overflow-x-hidden relative">
         <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
