@@ -143,7 +143,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }),
         }}
       />
-      <GoogleTagManager gtmId="G-LZGJSKMGC2" />
+      <GoogleTagManager gtmId="G-G-0T9BNWQB7S" />
       <body className="w-2xl overflow-x-hidden relative">
         <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
