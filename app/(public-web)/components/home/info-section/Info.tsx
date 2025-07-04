@@ -43,9 +43,9 @@ const InfoSection: React.FC = () => {
           borderPosition="right"
           title={"Opening hours"}
           descriptions={[
-            { text: "Lun-Ven", highlight: "20:30pm 1:00am" },
-            { text: "Sab ", highlight: "16:30pm 1:00am" },
-            { text: "Dom ", highlight: "16:30pm 1:00am" },
+            { text: "Lun-Dom", highlight: "20:30pm 1:00am" },
+            // { text: "Sab ", highlight: "16:30pm 1:00am" },
+            // { text: "Dom ", highlight: "16:30pm 1:00am" },
           ]}
         />
         <InfoCard
