@@ -11,12 +11,13 @@ const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => (
   <Dialog.Root open={open} onOpenChange={onOpenChange}>
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-20 z-50" />
-      <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 shadow-lg focus:outline-none">
+      <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-2 shadow-lg focus:outline-none">
         <Image
-          src="/assets/shape_image/bowling_closed.png" // <-- NOTA: path relativo alla cartella public
+          src="/assets/shape_image/bowling_closed.png"
           alt="Chiusura Bowling Verona"
-          width={500}
-          height={600}
+          width={768}
+          height={920}
+          className="w-full h-auto object-cover"
         />
         <Dialog.Close asChild>
           <button
