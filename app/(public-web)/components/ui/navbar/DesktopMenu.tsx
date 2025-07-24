@@ -101,6 +101,7 @@ const DesktopMenu: React.FC = () => {
         animate={state}
         variants={navVariants}
         className="flex justify-center items-center 2xl:gap-5 relative"
+        suppressHydrationWarning={true}
       >
         {/* left side */}
         {MENUITEMS.slice(0, 3).map((item) => {

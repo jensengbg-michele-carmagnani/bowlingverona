@@ -144,7 +144,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         }}
       />
       <GoogleTagManager gtmId="G-G-0T9BNWQB7S" />
-      <body className="w-2xl overflow-x-hidden relative">
+      <body className="w-2xl overflow-x-hidden relative" suppressHydrationWarning={true}>
         <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
           <Navbar />

@@ -55,14 +55,14 @@ const InfoCard: React.FC<InfoCardProps> = ({
       </div>
       <div className="flex justify-center flex-col space-y-2 font-[Rajani]">
         {descriptions.map((desc, index) => (
-          <p key={index} className={cn(`leading-tight ${classDescription}`)}>
-            {desc.text}
+          <div key={index} className={cn(`leading-tight ${classDescription}`)}>
+            <span>{desc.text}</span>
             {desc.highlight && (
               <span className="text-orange-400 w-full block">
                 {desc.highlight}
               </span>
             )}
-          </p>
+          </div>
         ))}
       </div>
       {/* Render the ActionButton if provided */}
