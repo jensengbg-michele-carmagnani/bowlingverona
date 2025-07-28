@@ -155,9 +155,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className="w-2xl overflow-x-hidden relative"
         suppressHydrationWarning={true}
       >
-        <div id="CybotCookiebotDialog" className="fixed inset-0 z-[2147483647]">
-          <CookieBot />
-        </div>
+        <CookieBot />
 
         <Analytics />
         <ModalClientWrapper />
