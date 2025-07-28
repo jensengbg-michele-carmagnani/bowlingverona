@@ -12,8 +12,8 @@ import { getSEOTags } from "@/lib/seo";
 import Head from "next/head";
 import Script from "next/script";
 import Footer from "./components/home/footer/Footer";
-import ModalClientWrapper from "./components/ui/modal/ModalClientWrapper";
 import CookieBot from "./components/ui/cookie-bot/CookieBot";
+import ModalClientWrapper from "./components/ui/modal/ModalClientWrapper";
 
 export const metadata = getSEOTags();
 
@@ -155,7 +155,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className="w-2xl overflow-x-hidden relative"
         suppressHydrationWarning={true}
       >
-        <CookieBot />
+        <div id="CybotCookiebotDialog" className="fixed inset-0 z-[2147483647]">
+          <CookieBot />
+        </div>
+
         <Analytics />
         <ModalClientWrapper />
         <Suspense fallback={<div>loading...</div>}>
