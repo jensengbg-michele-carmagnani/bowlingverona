@@ -11,8 +11,8 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => (
   <Dialog.Root open={open} onOpenChange={onOpenChange}>
     <Dialog.Portal>
-      <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-20 z-10" />
-      <Dialog.Content className="fixed left-1/2 top-1/2 w-[100vw] h-auto max-w-[100vw] max-h-[90vh] sm:w-auto sm:max-w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-none sm:rounded-lg shadow-lg focus:outline-none z-50 overflow-hidden">
+      <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-20 z-40" />
+      <Dialog.Content className="fixed left-1/2 top-1/2 w-[100vw] h-auto max-w-[100vw] max-h-[90vh] sm:w-auto sm:max-w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-none sm:rounded-lg shadow-lg focus:outline-none z-[60] overflow-hidden">
         <VisuallyHidden.Root>
           <Dialog.Title>Bowling Verona Closure Notice</Dialog.Title>
         </VisuallyHidden.Root>
