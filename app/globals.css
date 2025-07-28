@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#CybotCookiebotDialog {
+#CybotCookiebotDialog,
+#CybotCookiebotDialogBody,
+#CybotCookiebotDialogRegion {
   z-index: 2147483647 !important;
   position: fixed !important;
 }
