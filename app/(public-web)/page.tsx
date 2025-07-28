@@ -5,16 +5,12 @@ import InfoParty from "@/app/(public-web)/components/home/infoparty-section/Info
 import { getSEOTags, renderSchemaTags } from "@/lib/seo";
 import React from "react";
 import MenuSection from "./components/home/menu-section/MenuSection";
-import CookieBot from "./components/ui/cookie-bot/CookieBot";
-import ModalClientWrapper from "./components/ui/modal/ModalClientWrapper";
 
 export const metadata = getSEOTags();
 
 const Home: React.FC = () => {
   return (
     <main className="mx-auto" suppressHydrationWarning={true}>
-      <ModalClientWrapper />
-      <CookieBot />
       <Hero />
       <AboutSection />
       <InfoSection />

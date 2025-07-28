@@ -12,6 +12,8 @@ import { getSEOTags } from "@/lib/seo";
 import Head from "next/head";
 import Script from "next/script";
 import Footer from "./components/home/footer/Footer";
+import ModalClientWrapper from "./components/ui/modal/ModalClientWrapper";
+import CookieBot from "./components/ui/cookie-bot/CookieBot";
 
 export const metadata = getSEOTags();
 
@@ -153,7 +155,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className="w-2xl overflow-x-hidden relative"
         suppressHydrationWarning={true}
       >
+        <CookieBot />
         <Analytics />
+        <ModalClientWrapper />
         <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
           <Navbar />
