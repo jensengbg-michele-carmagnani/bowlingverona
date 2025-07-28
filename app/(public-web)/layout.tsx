@@ -79,6 +79,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="it" className={`${Rajdhani.className} ${DomCasualD.className}`}>
       <Head>
+        <meta
+          name="format-detection"
+          content="telephone=no, date=no, email=no, address=no"
+        />
         <link rel="canonical" href="https://www.bowlingverona.com" />
         <link rel="icon" href="/favicon/favicon.ico" />
         <link

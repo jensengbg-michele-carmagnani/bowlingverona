@@ -26,7 +26,7 @@ const NextBreadcrumb = ({
     [paths]
   );
   return (
-    <nav aria-label="Breadcrumb" className={containerClasses}>
+    <nav aria-label="Breadcrumb" className={containerClasses} suppressHydrationWarning={true}>
       <ul className="flex items-center space-x-2">
         <li className={listClasses}>
           <Link href="/">{homeElement}</Link>

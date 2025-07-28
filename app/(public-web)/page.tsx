@@ -12,7 +12,7 @@ export const metadata = getSEOTags();
 
 const Home: React.FC = () => {
   return (
-    <main className="mx-auto">
+    <main className="mx-auto" suppressHydrationWarning={true}>
       <ModalClientWrapper />
       <CookieBot />
       <Hero />
