@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { showReservationForm } from "@/flag/showReservationForm";
 import { ConfidentialFlagValues } from "@/lib/confidetialFlagValues";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
@@ -148,7 +149,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         }}
       />
       <GoogleTagManager gtmId="G-G-0T9BNWQB7S" />
-      <body className="w-2xl overflow-x-hidden relative" suppressHydrationWarning={true}>
+      <body
+        className="w-2xl overflow-x-hidden relative"
+        suppressHydrationWarning={true}
+      >
+        <Analytics />
         <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
           <Navbar />
