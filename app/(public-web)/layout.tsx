@@ -116,7 +116,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href="/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LZGJSKMGC2"
+        />
       </Head>
+
+      {/* Add the gtag configuration script after Head but before GoogleTagManager */}
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LZGJSKMGC2');
+          `,
+        }}
+      />
       <Script
         id="structured-data"
         type="application/ld+json"
