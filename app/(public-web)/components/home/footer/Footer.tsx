@@ -73,24 +73,30 @@ const Footer = () => {
         </div>
 
         <div className=" py-7 text-xs space-y-3">
-          <div className=" flex justify-center items-center text-lg pb-10">
-            <Link href={"tel:045581724"}>
-              <p className="w-full text-center flex justify-center items-center hover:text-orange-500 transition duration-75">
-                <PhoneCallIcon size={20} className=" inline-block mr-2" />
-                <span className=" capitalize">045-581724</span>
-              </p>
-            </Link>
-            <span className="mx-2 text-orange-500 translate-y-[-2px] text-xl">
-              |
-            </span>
-            <Link href={"https://bit.ly/3Atlssu"} target="_blank">
-              <p className="w-full text-center flex justify-center items-center hover:text-orange-500 transition duration-75">
-                <MapPinIcon size={20} className=" inline-block mr-2" />
-                <span className="capitalize ">
-                  Viale della fiera 10/a Verona (Italy)
-                </span>
-              </p>
-            </Link>
+          <div className="flex flex-col md:flex-row justify-center items-center text-lg pb-10 max-w-3xl mx-auto">
+            <div className="w-full">
+              <Link href={"tel:045581724"}>
+                <p className="w-full flex md:justify-end justify-center items-center hover:text-orange-500 transition duration-75">
+                  <PhoneCallIcon size={20} className=" inline-block mr-2" />
+                  <span className=" capitalize">045-581724</span>
+                </p>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <span className="mx-2 text-orange-500 translate-y-[-2px] text-xl w-full text-center px-5">
+                |
+              </span>
+            </div>
+            <div className="w-full">
+              <Link href={"https://bit.ly/3Atlssu"} target="_blank">
+                <p className="w-full flex md:justify-start justify-center items-center hover:text-orange-500 transition duration-75">
+                  <MapPinIcon size={20} className=" inline-block mr-2" />
+                  <span className="capitalize ">
+                    Viale della fiera 10/a Verona (Italy)
+                  </span>
+                </p>
+              </Link>
+            </div>
           </div>
           <div className="text-[#9F9399] uppercase">
             <p className="text-center text-pretty">Active Since 1990</p>
