@@ -116,11 +116,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href="/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-
+        
         {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-LZGJSKMGC2"
+        />
+        
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PWCW7Z96');`,
+          }}
         />
       </Head>
 
@@ -171,12 +182,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
         }}
       />
       <GoogleTagManager gtmId="G-G-0T9BNWQB7S" />
+      
       <body
         className="w-2xl overflow-x-hidden relative"
         suppressHydrationWarning={true}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PWCW7Z96"
+            height="0" 
+            width="0" 
+            style={{display: 'none', visibility: 'hidden'}}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        
         <CookieBot />
-
         <Analytics />
         <ModalClientWrapper />
         <Suspense fallback={<div>loading...</div>}>
