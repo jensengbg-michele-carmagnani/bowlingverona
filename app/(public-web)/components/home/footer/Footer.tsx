@@ -5,16 +5,22 @@ import { motion, useInView } from "framer-motion";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { footerLinks } from "./staticFooter";
 
 const Footer = () => {
   const footerLinksData = footerLinks || []; // Ensure footerLinks is defined
   const imageSrc = footerImage?.src || ""; // Default to empty string if undefined
-
+  
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure hydration consistency
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const itemAnimation = {
     hidden: { y: 50, opacity: 0 },
@@ -34,7 +40,7 @@ const Footer = () => {
     <motion.div
       ref={ref}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={isClient && isInView ? "visible" : "hidden"}
       variants={itemAnimation}
       custom={0}
       className="space-y-10 relative  "
