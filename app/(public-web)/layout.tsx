@@ -187,7 +187,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         
         <CookieBot />
         <Analytics />
-        <ModalClientWrapper />
+        {/* <ModalClientWrapper /> */}
         <Suspense fallback={<div>loading...</div>}>
           <ConfidentialFlagValues values={values} />
           <Navbar />
