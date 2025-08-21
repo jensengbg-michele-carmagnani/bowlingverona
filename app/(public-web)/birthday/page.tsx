@@ -65,30 +65,11 @@ const Birthday = async () => {
         />
       </div>
       <div className="flex flex-col md:flex-row  gap-7 relative py-20 flex-wrap justify-center items-center">
-        <div className="w-full relative md:max-w-[470px] max-w-[380px]">
-          <PricingCard
-            className="border-red-600 mx-auto"
-            title="Ragazzi sotto i 14 anni"
-            subtitle="min 8/10 persone"
-            label="Primary"
-            headerImage={
-              BthPics ? findAndCreateLink(BthPics, "headerRed") || "/#" : "/#"
-            }
-            footerImage={
-              (BthPics &&
-                BthIcons &&
-                findAndCreateLink(BthIcons, "Bowling-bolls-icon")) ||
-              "/#"
-            }
-            price={"€ 22"}
-            menuItems={MENUITEMSBIRTHDAY}
-          />
-        </div>
         <div className="w-full relative md:max-w-[470px] max-w-[380px] ">
           <PricingCard
             className="border-blue-600 mx-auto"
-            title="Ragazzi sopra i 14 inclusi"
-            label="Secondary"
+            title="Ragazzi"
+            label="Kids & Teens"
             headerImage={
               BthPics ? findAndCreateLink(BthPics, "headerBlue") || "/#" : "/#"
             }
@@ -106,7 +87,7 @@ const Birthday = async () => {
           <PricingCard
             className="border-orange-600 mx-auto"
             title="Adulti"
-            label="Tertiary"
+            label="Adults & Groups"
             headerImage={
               BthPics ? findAndCreateLink(BthPics, "headerOrang") || "/#" : "/#"
             }
