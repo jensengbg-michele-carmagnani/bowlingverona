@@ -117,37 +117,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
         
-        {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-LZGJSKMGC2"
-        />
-        
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PWCW7Z96');`,
-          }}
-        />
+        {/* Remove the old Google Analytics scripts and replace with GoogleAnalytics component */}
       </Head>
 
-      {/* Add the gtag configuration script after Head but before GoogleTagManager */}
+      {/* Remove the old Script components for Google Analytics */}
+      {/* Use GoogleAnalytics from @next/third-parties instead */}
       <Script
-        id="google-analytics"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-LZGJSKMGC2`}
         strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-LZGJSKMGC2');
-          `,
-        }}
       />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LZGJSKMGC2');
+        `}
+      </Script>
+      
       <Script
         id="structured-data"
         type="application/ld+json"

@@ -112,7 +112,7 @@ const FAQ: React.FC = () => {
             </strong>
             <ul className="list-disc list-inside mt-1 space-y-1">
               <li>
-                Non si può portare cibo o bevande dall'esterno (la torta è già
+                Non si può portare cibo o bevande dall&apos;esterno (la torta è già
                 inclusa)
               </li>
               <li>
