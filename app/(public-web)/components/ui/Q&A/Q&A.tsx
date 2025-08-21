@@ -66,6 +66,74 @@ const FAQ: React.FC = () => {
         </span>
       ),
     },
+    {
+      question: "Qual è il prezzo per le feste di compleanno?",
+      answer: (
+        <div className="space-y-3">
+          <div>
+            <strong className="text-orange-600 text-lg">Prezzo:</strong> 25 € a
+            persona, minimo 8 bambini.
+          </div>
+
+          <div>
+            <strong className="text-orange-600 text-lg">
+              Incluso nel prezzo:
+            </strong>
+            <ul className="list-disc list-inside mt-1 space-y-1">
+              <li>Rinfresco con patatine, pizzette e panzerotti</li>
+              <li>1 soft drink a bambino</li>
+              <li>1 partita bowling</li>
+              <li>
+                Torta inclusa – puoi sceglierla direttamente{" "}
+                <Link
+                  href="https://cassandrini.it/le-nostre-torte/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-orange-400 underline transition-colors"
+                >
+                  qui
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <strong className="text-orange-600 text-lg">
+              Cosa puoi portare:
+            </strong>
+            <ul className="list-disc list-inside mt-1">
+              <li>Candeline per la torta</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong className="text-orange-600 text-lg">
+              Cosa non è previsto/consentito:
+            </strong>
+            <ul className="list-disc list-inside mt-1 space-y-1">
+              <li>
+                Non si può portare cibo o bevande dall'esterno (la torta è già
+                inclusa)
+              </li>
+              <li>
+                No fontane pirotecniche, coriandoli/glitter o decorazioni che
+                sporcano
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <strong className="text-orange-600 text-lg">
+              Extra su richiesta:
+            </strong>
+            <p className="mt-1">
+              Bibite per i genitori, bibite extra e cibo extra sono a consumo e
+              a vostro carico secondo listino.
+            </p>
+          </div>
+        </div>
+      ),
+    },
   ];
 
   return (
@@ -104,7 +172,7 @@ const FAQ: React.FC = () => {
                 activeIndex === index ? "max-h-screen" : "max-h-0"
               }`}
             >
-              <p className="mt-2 text-gray-600">{item.answer}</p>
+              <div className="mt-2 text-gray-600">{item.answer}</div>
             </div>
           </div>
         ))}

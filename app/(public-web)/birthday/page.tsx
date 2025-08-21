@@ -27,7 +27,6 @@ const Birthday = async () => {
   )) as S3Object[];
 
   const showForm = await showReservationForm();
-  console.log(findAndCreateLink(BthPics, "hero"));
 
   return (
     <div className="">
